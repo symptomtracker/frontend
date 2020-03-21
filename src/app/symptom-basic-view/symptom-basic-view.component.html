@@ -14,19 +14,19 @@
     <p class="symptom-name">Wie ist Ihr allgemeines Wohlbefinden?</p>
     <form>
       <div class="btn-group">
-        <label class="btn btn-outline-primary btn-margin">
+        <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
           <input type="hidden" id="well-being-good"> Gut
         </label>
-        <label class="btn btn-outline-primary btn-margin">
+        <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
           <input type="hidden" id="well-being-better"> Besser
         </label>
-        <label class="btn btn-outline-primary btn-margin">
+        <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
           <input type="hidden" id="well-being-normal"> Gleichbleibend
         </label>
-        <label class="btn btn-outline-primary btn-margin">
+        <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
           <input type="hidden" id="well-being-worse"> Schlechter
         </label>
-        <label class="btn btn-outline-primary btn-margin">
+        <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
           <input type="hidden" id="well-being-bad"> Schlecht
         </label>
       </div>
@@ -113,10 +113,10 @@
       <p class="symptom-name">Kopfschmerzen</p>
       <form>
         <div class="btn-group">
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="headache-yes"> Ja
           </label>
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="headache-no"> Nein
           </label>
         </div>
@@ -127,10 +127,10 @@
       <p class="symptom-name">Übelkeit / Erbrechen</p>
       <form>
         <div class="btn-group">
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="nausea-yes"> Ja
           </label>
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="nausea-no"> Nein
           </label>
         </div>
@@ -143,10 +143,10 @@
       <p class="symptom-name">Verstopfte Nase</p>
       <form>
         <div class="btn-group">
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="blocked-nose-yes"> Ja
           </label>
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="blocked-nose-no"> Nein
           </label>
         </div>
@@ -157,10 +157,10 @@
       <p class="symptom-name">Durchfall</p>
       <form>
         <div class="btn-group">
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="diarrhea-yes"> Ja
           </label>
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="diarrhea-no"> Nein
           </label>
         </div>
@@ -171,10 +171,10 @@
       <p class="symptom-name">Gliederschmerzen</p>
       <form>
         <div class="btn-group">
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="limb-pain-yes"> Ja
           </label>
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="limb-pain-no"> Nein
           </label>
         </div>
@@ -185,10 +185,10 @@
       <p class="symptom-name">Appetitlosigkeit</p>
       <form>
         <div class="btn-group">
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="appetit-loss-yes"> Ja
           </label>
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="appetit-loss-no"> Nein
           </label>
         </div>
@@ -199,10 +199,10 @@
       <p class="symptom-name">Gewichtsverlust</p>
       <form>
         <div class="btn-group">
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="weight-loss-yes"> Ja
           </label>
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="weight-loss-no"> Nein
           </label>
         </div>
@@ -213,11 +213,11 @@
       <p class="symptom-name">Bauchschmerzen</p>
       <form>
         <div class="btn-group">
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="stomachache-yes"> Ja
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="stomach-ache-yes"> Ja
           </label>
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="stomachache-no"> Nein
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="stomach-ache-no"> Nein
           </label>
         </div>
       </form>
@@ -227,10 +227,10 @@
       <p class="symptom-name">Konjunktivitis</p>
       <form>
         <div class="btn-group">
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="conjunctivitis-yes"> Ja
           </label>
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="conjunctivitis-no"> Nein
           </label>
         </div>
@@ -241,10 +241,10 @@
       <p class="symptom-name">Hautausschlag</p>
       <form>
         <div class="btn-group">
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="rash-yes"> Ja
           </label>
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="rash-no"> Nein
           </label>
         </div>
@@ -255,10 +255,10 @@
       <p class="symptom-name">Lymphknotenschwellung</p>
       <form>
         <div class="btn-group">
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="lymphoma-yes"> Ja
           </label>
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="stomachache-no"> Nein
           </label>
         </div>
@@ -269,10 +269,10 @@
       <p class="symptom-name">Apathie</p>
       <form>
         <div class="btn-group">
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="apathy-yes"> Ja
           </label>
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="apathy-no"> Nein
           </label>
         </div>
@@ -283,10 +283,10 @@
       <p class="symptom-name">Somnolenz</p>
       <form>
         <div class="btn-group">
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="somnolence-yes"> Ja
           </label>
-          <label class="btn btn-outline-primary">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
             <input type="hidden" id="somnolence-no"> Nein
           </label>
         </div>
