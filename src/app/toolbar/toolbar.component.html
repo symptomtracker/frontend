@@ -1,8 +1,24 @@
 <div class="toolbar" role="banner">
-  <!--<img
-    width="40"
-    alt="SymptomTracker"
-    src=""
-  />-->
+  <button class="navbar-toggler" type="button"
+          (click)="toggleNavbar()">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse"
+       [ngClass]="{ 'show': navbarOpen }">
+    <ul class="navbar-nav mr-lg-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Meine Daten</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Datenschutzerklärung</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#">Impressum</a>
+      </li>
+    </ul>
+  </div>
   <div class="heading"><a routerLink="/home"><img src="/assets/img/Logo_SymptomTracker.jpeg"/></a></div>
 </div>
+

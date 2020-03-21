@@ -35,5 +35,27 @@
 .toolbar .heading {
   color: #206F9D;
   font-size: 24px;
-  text-algin: center;
+  text-algin: left;
 }
+
+button.navbar-toggler{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+button.navbar-toggler span{
+  color: #206F9D;
+  background: rebeccapurple;
+}
+
+.collapse.navbar-collapse{
+  position: absolute;
+  top: 80px;
+  left: 0;
+  background: white;
+  width: 100%;
+  padding: 20px;
+}
+
+
