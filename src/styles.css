@@ -5,4 +5,38 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 h1 { text-align: center; }
 
+a,
+a:visited,
+a:hover {
+  color: #206F9D;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #206F9D;
+  text-decoration: none;
+}
+
+button a:visited {
+  color: #FFF;
+}
+
+.content-wrapper {
+  max-width: 700px;
+  display: flex;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  flex-direction: column;
+  align-items: center;
+  width: 100%
+}
+
+.content {
+  width: 100%;
+}
+
+app-profile-basic-view, app-profile-contact-view, app-symptom-basic-view {
+  width: 100%;
+}
+
 

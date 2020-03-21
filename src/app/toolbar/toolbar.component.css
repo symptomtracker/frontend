@@ -1,8 +1,7 @@
 .toolbar img {
-  margin: 0 16px;
-  position: absolute;
-  top: 4px;
-  left: 8px;
+  height: 60px;
+  width: auto;
+  padding: 8px;
 }
 
 .toolbar #twitter-logo {
@@ -30,6 +29,7 @@
   justify-content: center;
   border-bottom: 1px solid lightgray;
   position: fixed;
+  z-index: 10000;
 }
 
 .toolbar .heading {

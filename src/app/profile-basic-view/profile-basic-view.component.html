@@ -1,75 +1,69 @@
-<div class="formWrapper title-hello">
+<div class="content">
   <h1>Hallo!</h1>
-</div>
-<div class="formWrapper data-label">
-  <p></p>
-  <b>Bitte aktualisiere hier deine persönlichen Daten.</b>
-</div>
-
-<div class="formWrapper name-age-fields">
-  <div class="name-input">
-    <p>Name</p>
-    <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp"
-           placeholder="Geben Sie hier Ihren Namen ein">
-    <small id="nameHelp" class="form-text text-muted">Deine Daten sind bei uns sicher.</small>
-  </div>
-</div>
-<div class="formWrapper">
-  <div class="age-input">
-    <p>Alter</p>
-    <input type="password" class="form-control" id="ageInput" placeholder="Ihr Alter">
-  </div>
-</div>
-<!--<div class="form-check">
-  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-  <label class="form-check-label" for="exampleCheck1">Check me out</label>
-</div>-->
-
-<div class="formWrapper group-gender">
-  <p>Bitte geben Sie Ihr Geschlecht an:</p>
-
-  <div class="btn-group" data-toggle="buttons">
-    <label class="btn btn-outline-primary">
-      <input type="hidden" name="options" id="male" autocomplete="off" checked> Weiblich
-    </label>
-    <label class="btn btn-outline-primary">
-      <input type="hidden" name="options" id="female" autocomplete="off"> Männlich
-    </label>
-    <label class="btn btn-outline-primary">
-      <input type="hidden" name="options" id="diverse" autocomplete="off"> Divers
-    </label>
-  </div>
-</div>
-
-<div class="formWrapper job-label">
-  <p>In welchem Berufsfeld / in welcher beruflichen Situation befinden Sie sich gerade?</p>
-
-  <div class="form-check">
-    <label class="form-check-label">
-      <input type="radio" class="form-check-input" name="optradio">Ich arbeite derzeit von zu Hause
-    </label>
-  </div>
-  <div class="form-check">
-    <label class="form-check-label">
-      <input type="radio" class="form-check-input" name="optradio">Lebensmittelbranche / Versorger
-    </label>
-  </div>
-  <div class="form-check">
-    <label class="form-check-label">
-      <input type="radio" class="form-check-input" name="optradio">Gesundheitsbranche
-    </label>
-  </div>
-  <div class="form-check">
-    <label class="form-check-label">
-      <input type="radio" class="form-check-input" name="optradio">Öffentlicher Dienst
-    </label>
-  </div>
-  <div class="form-check">
-    <label class="form-check-label">
-      <input type="radio" class="form-check-input" name="optradio">Sonstiges
-    </label>
+  <div class="formWrapper data-label">
+    <p>Hier können Sie Ihre persönlichen Daten eingeben.</p>
   </div>
 
+  <div class="formWrapper name-age-fields">
+    <div class="name-input">
+      <p>Name</p>
+      <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp"
+             placeholder="Geben Sie hier Ihren Namen ein">
+      <small id="nameHelp" class="form-text text-muted">Deine Daten sind bei uns sicher.</small>
+    </div>
+  </div>
+  <div class="formWrapper">
+    <div class="age-input">
+      <p>Alter</p>
+      <input type="number" class="form-control" id="ageInput" placeholder="Ihr Alter">
+    </div>
+  </div>
+
+  <div class="formWrapper group-gender">
+    <p>Bitte geben Sie Ihr Geschlecht an:</p>
+
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-outline-primary">
+        <input type="hidden" name="options" id="male" autocomplete="off" checked> Weiblich
+      </label>
+      <label class="btn btn-outline-primary">
+        <input type="hidden" name="options" id="female" autocomplete="off"> Männlich
+      </label>
+      <label class="btn btn-outline-primary">
+        <input type="hidden" name="options" id="diverse" autocomplete="off"> Divers
+      </label>
+    </div>
+  </div>
+
+  <div class="formWrapper job-label">
+    <p>In welchem Berufsfeld / in welcher beruflichen Situation befinden Sie sich gerade?</p>
+
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optradio">Ich arbeite derzeit von zu Hause
+      </label>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optradio">Lebensmittelbranche / Versorger
+      </label>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optradio">Gesundheitsbranche
+      </label>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optradio">Öffentlicher Dienst
+      </label>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="radio" class="form-check-input" name="optradio">Sonstiges
+      </label>
+    </div>
+  </div>
   <div class="formWrapper contact-label">
     <p>Wie viel Kontakt besteht in Ihrer momentanen Tätigkeit zu Mitarbeitern / Kunden?</p>
 
@@ -86,5 +80,6 @@
   </div>
 
   <div class="formWrapper confirm-button">
-    <button type="submit" class="btn btn-primary">Weiter</button>
+    <button type="submit" class="btn btn-primary"><a routerLink="/profilecontact">Weiter</a></button>
   </div>
+</div>

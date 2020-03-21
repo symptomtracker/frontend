@@ -9,7 +9,7 @@
     display:flex;
 }
 
-.formWrapper.nextButton{
+.formWrapper.confirm-button{
     display: flex;
     justify-content: flex-end;
 }
