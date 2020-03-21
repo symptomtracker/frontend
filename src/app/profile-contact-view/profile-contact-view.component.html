@@ -1,0 +1,104 @@
+<h1>Aufenthalt / Kontaktpersonen</h1>
+<div class ="formWrapper riskArea">
+    <p>Kommen Sie aus einem Risikogebiet?</p>
+
+    <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-outline-primary">
+          <input type="hidden" name="options" id="male" autocomplete="off" checked> Ja
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="hidden" name="options" id="female" autocomplete="off"> Nein
+        </label>
+      </div>
+</div>
+
+<div class ="formWrapper infectedContactArea">
+    <p>Hatten Sie Kontakt zu einer Person die positiv auf COVID-19 getestet wurde?</p>
+    <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-outline-primary">
+          <input type="hidden" name="options" id="male" autocomplete="off" checked> Ja
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="hidden" name="options" id="female" autocomplete="off"> Nein
+        </label>
+      </div>
+</div>
+
+<div class ="formWrapper lastContactArea">
+    <p>Wenn Ja, wann war der letzte Kontakt?</p>
+    <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp" placeholder="Datum des letzten Kontakts">
+</div>
+
+<div class ="formWrapper smokerArea">
+    <p>Sind Sie Raucher?</p>
+    <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-outline-primary">
+          <input type="hidden" name="options" id="male" autocomplete="off" checked> Ja
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="hidden" name="options" id="female" autocomplete="off"> Nein
+        </label>
+      </div>
+</div>
+
+<div class ="formWrapper preexistingIllnessArea">
+    <p>Ist eine der folgenden Vorerkrankungen bei Ihnen bekannt?</p>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optradio"> Immunschwäche
+        </label>
+    </div>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optradio"> Herz-Kreislauf-Erkrankung
+        </label>
+    </div>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optradio"> Diabetes
+        </label>
+    </div>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optradio"> Lungen Vorerkrankungen
+        </label>
+    </div>
+</div>
+
+
+<div class ="formWrapper otherIllnessArea">
+    <p>Haben Sie andere Vorerkrankungen?</p>
+    <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp" placeholder="Vorerkrankungen">
+</div>
+
+<div class ="formWrapper immunSupressivaArea">
+    <p>Nehmen Sie aktuell Immunsupressiva?</p>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optradio"> Nein
+        </label>
+    </div>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optradio"> ja
+        </label>
+    </div>
+</div>
+
+<div class ="formWrapper pregnantArea">
+    <p>Sind Sie schwanger?</p>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optradio"> Nein
+        </label>
+    </div>
+    <div class="form-check">
+        <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optradio"> ja
+        </label>
+    </div>
+</div>
+
+<div class ="formWrapper nextButton">
+    <button type="button" class="btn btn-primary btn-lg">Weiter</button>
+</div>
