@@ -36,8 +36,16 @@
   <div class="formWrapper">
     <p class="symptom-name">Fieber</p>
     <form>
-      <p>Bitte geben Sie ihre gemessene Körpertemperatur ein</p>
-      <input type="number" step="0.1" class="temperature-fever">
+      <div class="form-group">
+        <label for="exampleSelect2">Bitte geben Sie ihre gemessene Körpertemperatur ein</label>
+        <select class="form-control" id="exampleSelect2">
+          <option>&lt; 38°C </option>
+          <option>38,1 - 38,5 °C </option>
+          <option>38,6 - 39,0 °C </option>
+          <option>39,1 - 39,9 °C </option>
+          <option>&gt; 40°C </option>
+        </select>
+      </div>
     </form>
   </div>
 
@@ -280,6 +288,10 @@
         </label>
       </div>
     </form>
+  </div>
+
+  <div class="formWrapper nextButton">
+    <button type="button" class="btn btn-primary btn-lg">Weiter</button>
   </div>
 
 </div>

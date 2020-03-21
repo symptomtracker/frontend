@@ -12,6 +12,8 @@ import { SymptomBasicViewComponent } from './symptom-basic-view/symptom-basic-vi
 import { RouterModule, Routes } from "@angular/router";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProfileContactViewComponent } from "./profile-contact-view/profile-contact-view.component";
+import { PrivacyStatementViewComponent } from './privacy-statement-view/privacy-statement-view.component';
+import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: LandingPageViewComponent },
@@ -30,6 +32,9 @@ const appRoutes: Routes = [
   { path: '**', component: PageNotFoundComponent }
 ];
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +44,8 @@ const appRoutes: Routes = [
     ToolbarComponent,
     SymptomBasicViewComponent,
     PageNotFoundComponent,
+    PrivacyStatementViewComponent,
+    LegalNoticeComponent,
   ],
   imports: [
     BrowserModule,
