@@ -1,7 +1,12 @@
-<h1>Hallo!</h1>
-<p>Bitte aktualisiere hier deine persönlichen Daten.</p>
+<div class="title-hello">
+  <h1>Hallo!</h1>
+</div>
+<div class="data-label">
+<p></p>
+<b>Bitte aktualisiere hier deine persönlichen Daten.</b>
+</div>
 <form>
-  <div class="form-group">
+  <div class="name-age-fields">
     <label for="nameInput">Name</label>
     <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp" placeholder="Geben Sie hier Ihren Namen ein">
     <small id="nameHelp" class="form-text text-muted">Deine Daten sind bei uns sicher.</small>
@@ -14,5 +19,75 @@
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>-->
-  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+<div class="gender-label">
+<p></p>
+<b>Bitte geben Sie Ihr Geschlecht an:</b>
+<p></p>
+</div>
+
+<div class="btn-group-gender" data-toggle="buttons">
+  <label class="btn btn-outline-primary">
+    <input type="radio" name="options" id="male" autocomplete="off" checked> Weiblich
+  </label>
+  <label class="btn btn-outline-primary">
+    <input type="radio" name="options" id="female" autocomplete="off"> Männlich
+  </label>
+  <label class="btn btn-outline-primary">
+    <input type="radio" name="options" id="diverse" autocomplete="off"> Divers
+  </label>
+</div>
+
+<div class="job-label">
+<p></p>
+<b>In welchem Brufsfeld / in welcher beruflichen Situation befinden Sie sich gerade?</b>
+<p></p>
+
+<div class="form-check">
+  <label class="form-check-label">
+    <input type="radio" class="form-check-input" name="optradio">Ich arbeite derzeit von zu Hause
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label">
+    <input type="radio" class="form-check-input" name="optradio">Lebensmittelbranche / Versorger
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label">
+    <input type="radio" class="form-check-input" name="optradio">Gesundheitsbranche
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label">
+    <input type="radio" class="form-check-input" name="optradio">Öffentlicher Dienst
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label">
+    <input type="radio" class="form-check-input" name="optradio">Sonstiges
+  </label>
+</div>
+
+  <div class="contact-label">
+<p></p>
+<b>Wie viel Kontakt besteht in Ihrer momentanen Tätigkeit zu Mitarbeitern / Kunden?</b>
+<p></p>
+  </div>
+
+<div class="form-check">
+  <label class="form-check-label">
+    <input type="radio" class="form-check-input" name="optradio">kein Kontakt
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label">
+    <input type="radio" class="form-check-input" name="optradio">wenig Kontakt bis viel Kontakt
+  </label>
+</div>
+
+  <div class="confirm-button">
+<p></p>
+<button type="submit" class="btn btn-primary">Weiter</button>
+  </div>
