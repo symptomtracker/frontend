@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './profile-contact-view.component.html',
   styleUrls: ['./profile-contact-view.component.css']
 })
+
 export class ProfileContactViewComponent implements OnInit {
 
   constructor() { }
