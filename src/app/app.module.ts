@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { LandingPageViewComponent } from './landing-page-view/landing-page-view.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AlertModule} from 'ngx-bootstrap';
+import { ProfileBasicViewComponent } from './profile-basic-view/profile-basic-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageViewComponent,
+    ProfileBasicViewComponent,
   ],
   imports: [
     BrowserModule,
