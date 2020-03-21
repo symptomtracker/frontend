@@ -12,4 +12,13 @@ export class SymptomBasicViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  toggleActiveStatus(event) {
+    var targetLabel: HTMLElement = <HTMLElement>event.target;
+    for (let index = 0; index < targetLabel.parentElement.children.length; index++) {
+      const element = targetLabel.parentElement.children.item(index);
+      element.classList.remove("active");
+    }
+    targetLabel.classList.add("active");
+  }
+
 }
