@@ -1,8 +1,7 @@
 .toolbar img {
-  margin: 0 16px;
-  position: absolute;
-  top: 4px;
-  left: 8px;
+  height: 60px;
+  width: auto;
+  padding: 8px;
 }
 
 .toolbar #twitter-logo {
