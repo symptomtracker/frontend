@@ -14,18 +14,19 @@ import { ProfileContactViewComponent } from "./profile-contact-view/profile-cont
 import { PrivacyStatementViewComponent } from './privacy-statement-view/privacy-statement-view.component';
 import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import { CodeInputViewComponent } from './code-input-view/code-input-view.component';
 
 const appRoutes: Routes = [
-  { path: 'home', component: LandingPageViewComponent },
+  { path: 'home',
+    component: LandingPageViewComponent,
+    data: { title: 'SymptomTracker' }},
   { path: 'profilebasic', component: ProfileBasicViewComponent },
   { path: 'profilecontact', component: ProfileContactViewComponent },
   { path: 'symptombasic', component: SymptomBasicViewComponent },
+  { path: 'codeinput', component: CodeInputViewComponent },
   { path: 'impressum', component: LegalNoticeComponent },
-/*  {
-    path: 'heroes',
-    component: HeroListComponent,
-    data: { title: 'Heroes List' }
-  }, */
+  { path: 'datenschutzerklärung', component: PrivacyStatementViewComponent },
+  { path: 'meinedaten', component: CodeInputViewComponent },
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
@@ -44,6 +45,7 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     PrivacyStatementViewComponent,
     LegalNoticeComponent,
+    CodeInputViewComponent,
   ],
   imports: [
     BrowserModule,
