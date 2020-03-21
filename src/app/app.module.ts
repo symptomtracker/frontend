@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AlertModule} from 'ngx-bootstrap';
 import { ProfileBasicViewComponent } from './profile-basic-view/profile-basic-view.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { SymptomBasicViewComponent } from './symptom-basic-view/symptom-basic-view.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     LandingPageViewComponent,
     ProfileBasicViewComponent,
     ToolbarComponent,
+    SymptomBasicViewComponent,
   ],
   imports: [
     BrowserModule,

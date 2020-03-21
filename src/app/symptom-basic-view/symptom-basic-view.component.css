@@ -1,0 +1,23 @@
+.symptom-info {
+  font-style: italic;
+}
+
+.symptom-name {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.formWrapper {
+  margin-top: 20px;
+}
+
+.formWrapper p {
+  font-weight: bold;
+}
+
+.formWrapper .btn-group {
+  display: flex;
+}
+.symptom-header {
+  color: rgb(72, 72, 72);
+}

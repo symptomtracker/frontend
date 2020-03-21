@@ -1,0 +1,287 @@
+
+<h1> Krankeitssymptome </h1>
+
+<div class="formWrapper">
+  <p> Bitte erfassen Sie Ihre Krankheitssymptome und bewerten Sie, wie stark diese Symptome bei Ihnen ausgeprägt sind</p>
+  <p class="symptom-info"> Symptomausprägungen gemäß <a href="https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Steckbrief.html#doc13776792bodyText2">RKI</a> </p>
+</div>
+<br>
+
+<div class="well-being formWrapper">
+  <p class="symptom-name">Wie ist Ihr allgemeines Wohlbefinden?</p>
+  <form>
+    <div class="btn-group">
+      <label class="btn btn-outline-primary btn-margin">
+        <input type="hidden" id="well-being-good"> Gut
+      </label>
+      <label class="btn btn-outline-primary btn-margin">
+        <input type="hidden" id="well-being-better"> Besser
+      </label>
+      <label class="btn btn-outline-primary btn-margin">
+        <input type="hidden" id="well-being-normal"> Gleichbleibend
+      </label>
+      <label class="btn btn-outline-primary btn-margin">
+        <input type="hidden" id="well-being-worse"> Schlechter
+      </label>
+      <label class="btn btn-outline-primary btn-margin">
+        <input type="hidden" id="well-being-bad"> Schlecht
+      </label>
+    </div>
+  </form>
+</div>
+
+<div class="symptom-list formWrapper">
+  <h2 class="symptom-header">Hauptsymptome</h2>
+
+  <div class="formWrapper">
+    <p class="symptom-name">Fieber</p>
+    <form>
+      <p>Bitte geben Sie ihre gemessene Körpertemperatur ein</p>
+      <div class="text-symptom">
+
+      </div>
+    </form>
+  </div>
+
+
+  <div class="formWrapper">
+    <p class="symptom-name">Husten</p>
+    <form>
+      <div class="btn-group">
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="cough-yes"> Ja
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="cough-no"> Nein
+        </label>
+      </div>
+    </form>
+  </div>
+
+  <div class="formWrapper">
+    <p class="symptom-name">Kurzatmigkeit</p>
+    <form>
+      <div class="btn-group">
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="breathlessness-yes"> Ja
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="breathlessness-no"> Nein
+        </label>
+      </div>
+    </form>
+  </div>
+
+  <div class="formWrapper">
+    <p class="symptom-name">Muskel-/Gelenkschmerzen</p>
+    <form>
+      <div class="btn-group">
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="muscular-pains-yes"> Ja
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="muscular-pains-no"> Nein
+        </label>
+      </div>
+    </form>
+  </div>
+
+  <div class="formWrapper">
+    <p class="symptom-name">Halsschmerzen</p>
+    <form>
+      <div class="btn-group">
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="sore-yes"> Ja
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="sore-no"> Nein
+        </label>
+      </div>
+    </form>
+  </div>
+
+  <div class="formWrapper">
+    <p class="symptom-name">Kopfschmerzen</p>
+    <form>
+      <div class="btn-group">
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="headache-yes"> Ja
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="headache-no"> Nein
+        </label>
+      </div>
+    </form>
+  </div>
+
+  <div class="formWrapper">
+    <p class="symptom-name">Übelkeit / Erbrechen</p>
+    <form>
+      <div class="btn-group">
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="nausea-yes"> Ja
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="nausea-no"> Nein
+        </label>
+      </div>
+    </form>
+  </div>
+
+<h2 class="symptom-header formWrapper"> Weitere Symptome </h2>
+
+<div class="formWrapper">
+  <p class="symptom-name">Verstopfte Nase</p>
+  <form>
+    <div class="btn-group">
+      <label class="btn btn-outline-primary">
+        <input type="hidden" id="blocked-nose-yes"> Ja
+      </label>
+      <label class="btn btn-outline-primary">
+        <input type="hidden" id="blocked-nose-no"> Nein
+      </label>
+    </div>
+  </form>
+</div>
+
+<div class="formWrapper">
+  <p class="symptom-name">Durchfall</p>
+  <form>
+    <div class="btn-group">
+      <label class="btn btn-outline-primary">
+        <input type="hidden" id="diarrhea-yes"> Ja
+      </label>
+      <label class="btn btn-outline-primary">
+        <input type="hidden" id="diarrhea-no"> Nein
+      </label>
+    </div>
+  </form>
+</div>
+
+  <div class="formWrapper">
+    <p class="symptom-name">Gliederschmerzen</p>
+    <form>
+      <div class="btn-group">
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="limb-pain-yes"> Ja
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="limb-pain-no"> Nein
+        </label>
+      </div>
+    </form>
+  </div>
+
+  <div class="formWrapper">
+    <p class="symptom-name">Appetitlosigkeit</p>
+    <form>
+      <div class="btn-group">
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="appetit-loss-yes"> Ja
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="appetit-loss-no"> Nein
+        </label>
+      </div>
+    </form>
+  </div>
+
+  <div class="formWrapper">
+    <p class="symptom-name">Gewichtsverlust</p>
+    <form>
+      <div class="btn-group">
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="weight-loss-yes"> Ja
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="weight-loss-no"> Nein
+        </label>
+      </div>
+    </form>
+  </div>
+
+  <div class="formWrapper">
+    <p class="symptom-name">Bauchschmerzen</p>
+    <form>
+      <div class="btn-group">
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="stomachache-yes"> Ja
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="stomachache-no"> Nein
+        </label>
+      </div>
+    </form>
+  </div>
+
+  <div class="formWrapper">
+    <p class="symptom-name">Konjunktivitis</p>
+    <form>
+      <div class="btn-group">
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="conjunctivitis-yes"> Ja
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="conjunctivitis-no"> Nein
+        </label>
+      </div>
+    </form>
+  </div>
+
+  <div class="formWrapper">
+    <p class="symptom-name">Hautausschlag</p>
+    <form>
+      <div class="btn-group">
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="rash-yes"> Ja
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="rash-no"> Nein
+        </label>
+      </div>
+    </form>
+  </div>
+
+  <div class="formWrapper">
+    <p class="symptom-name">Lymphknotenschwellung</p>
+    <form>
+      <div class="btn-group">
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="lymphoma-yes"> Ja
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="stomachache-no"> Nein
+        </label>
+      </div>
+    </form>
+  </div>
+
+  <div class="formWrapper">
+    <p class="symptom-name">Apathie</p>
+    <form>
+      <div class="btn-group">
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="apathy-yes"> Ja
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="apathy-no"> Nein
+        </label>
+      </div>
+    </form>
+  </div>
+
+  <div class="formWrapper">
+    <p class="symptom-name">Somnolenz</p>
+    <form>
+      <div class="btn-group">
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="somnolence-yes"> Ja
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="hidden" id="somnolence-no"> Nein
+        </label>
+      </div>
+    </form>
+  </div>
+
+</div>
