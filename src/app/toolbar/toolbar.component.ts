@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
+  navbarOpen: boolean;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen
+  }
 }
