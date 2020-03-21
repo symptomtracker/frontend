@@ -7,12 +7,14 @@ import { LandingPageViewComponent } from './landing-page-view/landing-page-view.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AlertModule} from 'ngx-bootstrap';
 import { ProfileBasicViewComponent } from './profile-basic-view/profile-basic-view.component';
+import { SymptomBasicViewComponent } from './symptom-basic-view/symptom-basic-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageViewComponent,
     ProfileBasicViewComponent,
+    SymptomBasicViewComponent,
   ],
   imports: [
     BrowserModule,
