@@ -8,14 +8,14 @@
     <div class="name-input">
       <p>Name</p>
       <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp"
-             placeholder="Geben Sie hier Ihren Namen ein">
+             placeholder="Geben Sie hier Ihren Namen ein" [(ngModel)]="patient.name">
       <small id="nameHelp" class="form-text text-muted">Deine Daten sind bei uns sicher.</small>
     </div>
   </div>
   <div class="formWrapper">
     <div class="age-input">
       <p>Alter</p>
-      <input type="number" class="form-control" id="ageInput" placeholder="Ihr Alter">
+      <input [(ngModel)]="patient.age" type="number" class="form-control" id="ageInput" placeholder="Ihr Alter" >
     </div>
   </div>
 
