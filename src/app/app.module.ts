@@ -15,6 +15,7 @@ import { PrivacyStatementViewComponent } from './privacy-statement-view/privacy-
 import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import { CodeInputViewComponent } from './code-input-view/code-input-view.component';
+import { DashboardViewComponent } from './dashboard-view/dashboard-view.component';
 
 const appRoutes: Routes = [
   { path: 'home',
@@ -46,6 +47,7 @@ const appRoutes: Routes = [
     PrivacyStatementViewComponent,
     LegalNoticeComponent,
     CodeInputViewComponent,
+    DashboardViewComponent,
   ],
   imports: [
     BrowserModule,
