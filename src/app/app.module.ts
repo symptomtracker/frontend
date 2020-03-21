@@ -10,6 +10,7 @@ import { ProfileBasicViewComponent } from './profile-basic-view/profile-basic-vi
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SymptomBasicViewComponent } from './symptom-basic-view/symptom-basic-view.component';
 import { PrivacyStatementViewComponent } from './privacy-statement-view/privacy-statement-view.component';
+import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { PrivacyStatementViewComponent } from './privacy-statement-view/privacy-
     ToolbarComponent,
     SymptomBasicViewComponent,
     PrivacyStatementViewComponent,
+    LegalNoticeComponent,
   ],
   imports: [
     BrowserModule,
