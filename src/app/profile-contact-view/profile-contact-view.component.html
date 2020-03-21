@@ -4,11 +4,11 @@
     <p>Kommen Sie aus einem Risikogebiet?</p>
 
     <div class="btn-group" data-toggle="buttons">
-      <label class="btn btn-outline-primary">
-        <input type="hidden" name="options" id="male" autocomplete="off" checked> Ja
+      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+        <input type="hidden" name="options" id="risk-yes" autocomplete="off"> Ja
       </label>
-      <label class="btn btn-outline-primary">
-        <input type="hidden" name="options" id="female" autocomplete="off"> Nein
+      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+        <input type="hidden" name="options" id="risk-no" autocomplete="off"> Nein
       </label>
     </div>
   </div>
@@ -16,28 +16,28 @@
   <div class="formWrapper infectedContactArea">
     <p>Hatten Sie Kontakt zu einer Person die positiv auf COVID-19 getestet wurde?</p>
     <div class="btn-group" data-toggle="buttons">
-      <label class="btn btn-outline-primary">
-        <input type="hidden" name="options" id="male" autocomplete="off" checked> Ja
+      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+        <input type="hidden" name="options" id="contact-yes" autocomplete="off" checked> Ja
       </label>
-      <label class="btn btn-outline-primary">
-        <input type="hidden" name="options" id="female" autocomplete="off"> Nein
+      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+        <input type="hidden" name="options" id="contact-no" autocomplete="off"> Nein
       </label>
     </div>
   </div>
 
   <div class="formWrapper lastContactArea">
     <p>Wenn Ja, wann war der letzte Kontakt?</p>
-    <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp"
+    <input type="text" class="form-control" id="lastContact" aria-describedby="nameHelp"
            placeholder="Datum des letzten Kontakts">
   </div>
 
   <div class="formWrapper smokerArea">
     <p>Sind Sie Raucher?</p>
     <div class="btn-group" data-toggle="buttons">
-      <label class="btn btn-outline-primary">
+      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
         <input type="hidden" name="options" id="male" autocomplete="off" checked> Ja
       </label>
-      <label class="btn btn-outline-primary">
+      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
         <input type="hidden" name="options" id="female" autocomplete="off"> Nein
       </label>
     </div>

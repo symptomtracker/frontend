@@ -16,9 +16,18 @@ export class ProfileBasicViewComponent implements OnInit {
   }
   patient: PatientModel;
   async loadPatient(){
-    this.patient = (await this.patientService.getPatient(123)).data  
+    this.patient = (await this.patientService.getPatient(123)).data
     console.log(this.patient);
-    
+
+  }
+
+  toggleActiveStatus(event) {
+    var targetLabel: HTMLElement = <HTMLElement>event.target;
+    for (let index = 0; index < targetLabel.parentElement.children.length; index++) {
+      const element = targetLabel.parentElement.children.item(index);
+      element.classList.remove("active");
+    }
+    targetLabel.classList.add("active");
   }
 
 }

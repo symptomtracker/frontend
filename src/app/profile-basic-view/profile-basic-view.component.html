@@ -23,13 +23,13 @@
     <p>Bitte geben Sie Ihr Geschlecht an:</p>
 
     <div class="btn-group" data-toggle="buttons">
-      <label class="btn btn-outline-primary">
+      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
         <input type="hidden" name="options" id="male" autocomplete="off" checked> Weiblich
       </label>
-      <label class="btn btn-outline-primary">
+      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
         <input type="hidden" name="options" id="female" autocomplete="off"> Männlich
       </label>
-      <label class="btn btn-outline-primary">
+      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
         <input type="hidden" name="options" id="diverse" autocomplete="off"> Divers
       </label>
     </div>
@@ -37,44 +37,43 @@
 
   <div class="formWrapper job-label">
     <p>In welchem Berufsfeld / in welcher beruflichen Situation befinden Sie sich gerade?</p>
-
     <div class="form-check">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optradio">Ich arbeite derzeit von zu Hause
+        <input type="radio" class="form-check-input" name="job">Ich arbeite derzeit von zu Hause
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optradio">Lebensmittelbranche / Versorger
+        <input type="radio" class="form-check-input" name="job">Lebensmittelbranche / Versorger
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optradio">Gesundheitsbranche
+        <input type="radio" class="form-check-input" name="job">Gesundheitsbranche
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optradio">Öffentlicher Dienst
+        <input type="radio" class="form-check-input" name="job">Öffentlicher Dienst
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optradio">Sonstiges
+        <input type="radio" class="form-check-input" name="job">Sonstiges
       </label>
     </div>
   </div>
+
   <div class="formWrapper contact-label">
     <p>Wie viel Kontakt besteht in Ihrer momentanen Tätigkeit zu Mitarbeitern / Kunden?</p>
-
     <div class="form-check">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optradio">kein Kontakt
+        <input type="radio" class="form-check-input" name="contact">kein Kontakt
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optradio">wenig Kontakt bis viel Kontakt
+        <input type="radio" class="form-check-input" name="contact">wenig Kontakt bis viel Kontakt
       </label>
     </div>
   </div>
