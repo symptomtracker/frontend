@@ -10,16 +10,17 @@ import { ProfileBasicViewComponent } from './profile-basic-view/profile-basic-vi
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SymptomBasicViewComponent } from './symptom-basic-view/symptom-basic-view.component';
 import { RouterModule, Routes } from "@angular/router";
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProfileContactViewComponent } from "./profile-contact-view/profile-contact-view.component";
 import { PrivacyStatementViewComponent } from './privacy-statement-view/privacy-statement-view.component';
 import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
+import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 
 const appRoutes: Routes = [
   { path: 'home', component: LandingPageViewComponent },
   { path: 'profilebasic', component: ProfileBasicViewComponent },
   { path: 'profilecontact', component: ProfileContactViewComponent },
   { path: 'symptombasic', component: SymptomBasicViewComponent },
+  { path: 'impressum', component: LegalNoticeComponent },
 /*  {
     path: 'heroes',
     component: HeroListComponent,
@@ -31,9 +32,6 @@ const appRoutes: Routes = [
   },
   { path: '**', component: PageNotFoundComponent }
 ];
-
-
-
 
 @NgModule({
   declarations: [
