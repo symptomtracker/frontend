@@ -1,24 +1,26 @@
 <div class="toolbar" role="banner">
-  <button class="navbar-toggler" type="button"
+  <button class="navbar-toggler" [ngClass]="{'open' : navbarOpen}" type="button"
           (click)="toggleNavbar()">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse"
        [ngClass]="{ 'show': navbarOpen }">
     <ul class="navbar-nav mr-lg-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Meine Daten</a>
+      <li class="nav-item" (click)="toggleNavbar()">
+        <a class="nav-link" routerLink="/meinedaten">Meine Daten</a>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="#">Datenschutzerklärung</a>
+      <li class="nav-item" (click)="toggleNavbar()">
+        <a class="nav-link" routerLink="/datenschutzerklärung">Datenschutzerklärung</a>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="#">Impressum</a>
+      <li class="nav-item" (click)="toggleNavbar()">
+        <a class="nav-link" routerLink="/impressum">Impressum</a>
       </li>
     </ul>
   </div>
   <div class="heading"><a routerLink="/home"><img src="/assets/img/Logo_SymptomTracker.jpeg"/></a></div>
 </div>
+
+<span class="nav-overlay" (click)="toggleNavbar()" [ngClass]="{'open' : navbarOpen}"></span>
 
