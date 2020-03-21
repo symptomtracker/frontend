@@ -35,7 +35,7 @@ button:hover {
   border-color: gray !important;
 }
 
-button a:visited {
+button a, button a:visited {
   color: #FFF;
 }
 
