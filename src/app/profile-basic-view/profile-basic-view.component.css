@@ -1,0 +1,16 @@
+.formWrapper p{
+  font-weight: bold;
+}
+
+.formWrapper{
+  margin-top: 20px;
+}
+
+.formWrapper .btn-group{
+  display: flex;
+}
+
+.formWrapper .confirm-button{
+  display: flex;
+  justify-content: flex-end;
+}
