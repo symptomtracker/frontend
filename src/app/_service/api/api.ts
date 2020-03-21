@@ -19,6 +19,173 @@ import globalAxios, { AxiosPromise, AxiosInstance } from 'axios';
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS, RequestArgs, BaseAPI, RequiredError } from './base';
 
+/**
+ * 
+ * @export
+ * @interface PatientCreateRequest
+ */
+export interface PatientCreateRequest {
+    /**
+     * 
+     * @type {string}
+     * @memberof PatientCreateRequest
+     */
+    name: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof PatientCreateRequest
+     */
+    age: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof PatientCreateRequest
+     */
+    gender: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PatientCreateRequest
+     */
+    city: string;
+}
+/**
+ * 
+ * @export
+ * @interface PatientModel
+ */
+export interface PatientModel {
+    /**
+     * 
+     * @type {number}
+     * @memberof PatientModel
+     */
+    id?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof PatientModel
+     */
+    linkedCode?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PatientModel
+     */
+    name?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof PatientModel
+     */
+    age?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof PatientModel
+     */
+    gender?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PatientModel
+     */
+    city?: string;
+    /**
+     * 
+     * @type {Array<RelatedAttribute>}
+     * @memberof PatientModel
+     */
+    relatedAttributes?: Array<RelatedAttribute>;
+    /**
+     * 
+     * @type {Array<SymptomJourneyModel>}
+     * @memberof PatientModel
+     */
+    symptomJourney?: Array<SymptomJourneyModel>;
+}
+/**
+ * 
+ * @export
+ * @interface RelatedAttribute
+ */
+export interface RelatedAttribute {
+    /**
+     * 
+     * @type {string}
+     * @memberof RelatedAttribute
+     */
+    Type?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RelatedAttribute
+     */
+    Value?: string;
+}
+/**
+ * 
+ * @export
+ * @interface SymptomCatalogueItem
+ */
+export interface SymptomCatalogueItem {
+    /**
+     * 
+     * @type {string}
+     * @memberof SymptomCatalogueItem
+     */
+    Category: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SymptomCatalogueItem
+     */
+    description?: string;
+    /**
+     * 
+     * @type {Array<string>}
+     * @memberof SymptomCatalogueItem
+     */
+    symptomSeverity: Array<string>;
+}
+/**
+ * 
+ * @export
+ * @interface SymptomJourneyModel
+ */
+export interface SymptomJourneyModel {
+    /**
+     * 
+     * @type {string}
+     * @memberof SymptomJourneyModel
+     */
+    Category: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SymptomJourneyModel
+     */
+    description?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SymptomJourneyModel
+     */
+    symptomSeverity: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SymptomJourneyModel
+     */
+    comment?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SymptomJourneyModel
+     */
+    createdAt?: string;
+}
 
 /**
  * PatientApi - axios parameter creator
@@ -29,10 +196,16 @@ export const PatientApiAxiosParamCreator = function (configuration?: Configurati
         /**
          * 
          * @summary Create new patient
+         * @param {PatientCreateRequest} body Describing the new patient
+         * @param {number} [invitationCode] Invitation Code of the Health Department
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        addNewPatient(options: any = {}): RequestArgs {
+        addNewPatient(body: PatientCreateRequest, invitationCode?: number, options: any = {}): RequestArgs {
+            // verify required parameter 'body' is not null or undefined
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling addNewPatient.');
+            }
             const localVarPath = `/patient`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
             let baseOptions;
@@ -43,13 +216,21 @@ export const PatientApiAxiosParamCreator = function (configuration?: Configurati
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
+            if (invitationCode !== undefined) {
+                localVarQueryParameter['invitationCode'] = invitationCode;
+            }
+
 
     
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
             localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
             localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -92,6 +273,51 @@ export const PatientApiAxiosParamCreator = function (configuration?: Configurati
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Patch a current Patient
+         * @param {number} patientId Id of the Patient
+         * @param {PatientModel} body Representation of the current patient
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        patchPatient(patientId: number, body: PatientModel, options: any = {}): RequestArgs {
+            // verify required parameter 'patientId' is not null or undefined
+            if (patientId === null || patientId === undefined) {
+                throw new RequiredError('patientId','Required parameter patientId was null or undefined when calling patchPatient.');
+            }
+            // verify required parameter 'body' is not null or undefined
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling patchPatient.');
+            }
+            const localVarPath = `/patient/{patientId}`
+                .replace(`{${"patientId"}}`, encodeURIComponent(String(patientId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -104,11 +330,13 @@ export const PatientApiFp = function(configuration?: Configuration) {
         /**
          * 
          * @summary Create new patient
+         * @param {PatientCreateRequest} body Describing the new patient
+         * @param {number} [invitationCode] Invitation Code of the Health Department
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        addNewPatient(options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void> {
-            const localVarAxiosArgs = PatientApiAxiosParamCreator(configuration).addNewPatient(options);
+        addNewPatient(body: PatientCreateRequest, invitationCode?: number, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<PatientModel> {
+            const localVarAxiosArgs = PatientApiAxiosParamCreator(configuration).addNewPatient(body, invitationCode, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -121,8 +349,23 @@ export const PatientApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPatient(patientId: number, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void> {
+        getPatient(patientId: number, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<PatientModel> {
             const localVarAxiosArgs = PatientApiAxiosParamCreator(configuration).getPatient(patientId, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
+         * @summary Patch a current Patient
+         * @param {number} patientId Id of the Patient
+         * @param {PatientModel} body Representation of the current patient
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        patchPatient(patientId: number, body: PatientModel, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<PatientModel> {
+            const localVarAxiosArgs = PatientApiAxiosParamCreator(configuration).patchPatient(patientId, body, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -140,11 +383,13 @@ export const PatientApiFactory = function (configuration?: Configuration, basePa
         /**
          * 
          * @summary Create new patient
+         * @param {PatientCreateRequest} body Describing the new patient
+         * @param {number} [invitationCode] Invitation Code of the Health Department
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        addNewPatient(options?: any): AxiosPromise<void> {
-            return PatientApiFp(configuration).addNewPatient(options)(axios, basePath);
+        addNewPatient(body: PatientCreateRequest, invitationCode?: number, options?: any): AxiosPromise<PatientModel> {
+            return PatientApiFp(configuration).addNewPatient(body, invitationCode, options)(axios, basePath);
         },
         /**
          * 
@@ -153,8 +398,19 @@ export const PatientApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getPatient(patientId: number, options?: any): AxiosPromise<void> {
+        getPatient(patientId: number, options?: any): AxiosPromise<PatientModel> {
             return PatientApiFp(configuration).getPatient(patientId, options)(axios, basePath);
+        },
+        /**
+         * 
+         * @summary Patch a current Patient
+         * @param {number} patientId Id of the Patient
+         * @param {PatientModel} body Representation of the current patient
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        patchPatient(patientId: number, body: PatientModel, options?: any): AxiosPromise<PatientModel> {
+            return PatientApiFp(configuration).patchPatient(patientId, body, options)(axios, basePath);
         },
     };
 };
@@ -169,12 +425,14 @@ export class PatientApi extends BaseAPI {
     /**
      * 
      * @summary Create new patient
+     * @param {PatientCreateRequest} body Describing the new patient
+     * @param {number} [invitationCode] Invitation Code of the Health Department
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof PatientApi
      */
-    public addNewPatient(options?: any) {
-        return PatientApiFp(this.configuration).addNewPatient(options)(this.axios, this.basePath);
+    public addNewPatient(body: PatientCreateRequest, invitationCode?: number, options?: any) {
+        return PatientApiFp(this.configuration).addNewPatient(body, invitationCode, options)(this.axios, this.basePath);
     }
 
     /**
@@ -187,6 +445,119 @@ export class PatientApi extends BaseAPI {
      */
     public getPatient(patientId: number, options?: any) {
         return PatientApiFp(this.configuration).getPatient(patientId, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
+     * @summary Patch a current Patient
+     * @param {number} patientId Id of the Patient
+     * @param {PatientModel} body Representation of the current patient
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PatientApi
+     */
+    public patchPatient(patientId: number, body: PatientModel, options?: any) {
+        return PatientApiFp(this.configuration).patchPatient(patientId, body, options)(this.axios, this.basePath);
+    }
+
+}
+
+
+/**
+ * QuestionaireApi - axios parameter creator
+ * @export
+ */
+export const QuestionaireApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @summary get catalogue questsions
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getCatalogueItems(options: any = {}): RequestArgs {
+            const localVarPath = `/catalogue`;
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * QuestionaireApi - functional programming interface
+ * @export
+ */
+export const QuestionaireApiFp = function(configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @summary get catalogue questsions
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getCatalogueItems(options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SymptomCatalogueItem>> {
+            const localVarAxiosArgs = QuestionaireApiAxiosParamCreator(configuration).getCatalogueItems(options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+    }
+};
+
+/**
+ * QuestionaireApi - factory interface
+ * @export
+ */
+export const QuestionaireApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    return {
+        /**
+         * 
+         * @summary get catalogue questsions
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getCatalogueItems(options?: any): AxiosPromise<Array<SymptomCatalogueItem>> {
+            return QuestionaireApiFp(configuration).getCatalogueItems(options)(axios, basePath);
+        },
+    };
+};
+
+/**
+ * QuestionaireApi - object-oriented interface
+ * @export
+ * @class QuestionaireApi
+ * @extends {BaseAPI}
+ */
+export class QuestionaireApi extends BaseAPI {
+    /**
+     * 
+     * @summary get catalogue questsions
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof QuestionaireApi
+     */
+    public getCatalogueItems(options?: any) {
+        return QuestionaireApiFp(this.configuration).getCatalogueItems(options)(this.axios, this.basePath);
     }
 
 }
@@ -202,13 +573,18 @@ export const SymptomsApiAxiosParamCreator = function (configuration?: Configurat
          * 
          * @summary Add a new
          * @param {number} patientId ID patient
+         * @param {Array<SymptomJourneyModel>} body Representation of the current patient
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        addNewSymptoms(patientId: number, options: any = {}): RequestArgs {
+        addNewSymptoms(patientId: number, body: Array<SymptomJourneyModel>, options: any = {}): RequestArgs {
             // verify required parameter 'patientId' is not null or undefined
             if (patientId === null || patientId === undefined) {
                 throw new RequiredError('patientId','Required parameter patientId was null or undefined when calling addNewSymptoms.');
+            }
+            // verify required parameter 'body' is not null or undefined
+            if (body === null || body === undefined) {
+                throw new RequiredError('body','Required parameter body was null or undefined when calling addNewSymptoms.');
             }
             const localVarPath = `/patient/{patientId}/symptom`
                 .replace(`{${"patientId"}}`, encodeURIComponent(String(patientId)));
@@ -217,7 +593,47 @@ export const SymptomsApiAxiosParamCreator = function (configuration?: Configurat
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
+            delete localVarUrlObj.search;
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
+            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+
+            return {
+                url: globalImportUrl.format(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @summary Get Symptoms
+         * @param {number} patientId ID patient
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAllSymptoms(patientId: number, options: any = {}): RequestArgs {
+            // verify required parameter 'patientId' is not null or undefined
+            if (patientId === null || patientId === undefined) {
+                throw new RequiredError('patientId','Required parameter patientId was null or undefined when calling getAllSymptoms.');
+            }
+            const localVarPath = `/patient/{patientId}/symptom`
+                .replace(`{${"patientId"}}`, encodeURIComponent(String(patientId)));
+            const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
@@ -247,11 +663,26 @@ export const SymptomsApiFp = function(configuration?: Configuration) {
          * 
          * @summary Add a new
          * @param {number} patientId ID patient
+         * @param {Array<SymptomJourneyModel>} body Representation of the current patient
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        addNewSymptoms(patientId: number, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void> {
-            const localVarAxiosArgs = SymptomsApiAxiosParamCreator(configuration).addNewSymptoms(patientId, options);
+        addNewSymptoms(patientId: number, body: Array<SymptomJourneyModel>, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void> {
+            const localVarAxiosArgs = SymptomsApiAxiosParamCreator(configuration).addNewSymptoms(patientId, body, options);
+            return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
+                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                return axios.request(axiosRequestArgs);
+            };
+        },
+        /**
+         * 
+         * @summary Get Symptoms
+         * @param {number} patientId ID patient
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAllSymptoms(patientId: number, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SymptomJourneyModel>> {
+            const localVarAxiosArgs = SymptomsApiAxiosParamCreator(configuration).getAllSymptoms(patientId, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
                 const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
                 return axios.request(axiosRequestArgs);
@@ -270,11 +701,22 @@ export const SymptomsApiFactory = function (configuration?: Configuration, baseP
          * 
          * @summary Add a new
          * @param {number} patientId ID patient
+         * @param {Array<SymptomJourneyModel>} body Representation of the current patient
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        addNewSymptoms(patientId: number, options?: any): AxiosPromise<void> {
-            return SymptomsApiFp(configuration).addNewSymptoms(patientId, options)(axios, basePath);
+        addNewSymptoms(patientId: number, body: Array<SymptomJourneyModel>, options?: any): AxiosPromise<void> {
+            return SymptomsApiFp(configuration).addNewSymptoms(patientId, body, options)(axios, basePath);
+        },
+        /**
+         * 
+         * @summary Get Symptoms
+         * @param {number} patientId ID patient
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getAllSymptoms(patientId: number, options?: any): AxiosPromise<Array<SymptomJourneyModel>> {
+            return SymptomsApiFp(configuration).getAllSymptoms(patientId, options)(axios, basePath);
         },
     };
 };
@@ -290,12 +732,25 @@ export class SymptomsApi extends BaseAPI {
      * 
      * @summary Add a new
      * @param {number} patientId ID patient
+     * @param {Array<SymptomJourneyModel>} body Representation of the current patient
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof SymptomsApi
      */
-    public addNewSymptoms(patientId: number, options?: any) {
-        return SymptomsApiFp(this.configuration).addNewSymptoms(patientId, options)(this.axios, this.basePath);
+    public addNewSymptoms(patientId: number, body: Array<SymptomJourneyModel>, options?: any) {
+        return SymptomsApiFp(this.configuration).addNewSymptoms(patientId, body, options)(this.axios, this.basePath);
+    }
+
+    /**
+     * 
+     * @summary Get Symptoms
+     * @param {number} patientId ID patient
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof SymptomsApi
+     */
+    public getAllSymptoms(patientId: number, options?: any) {
+        return SymptomsApiFp(this.configuration).getAllSymptoms(patientId, options)(this.axios, this.basePath);
     }
 
 }
