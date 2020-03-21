@@ -9,6 +9,7 @@ import {AlertModule} from 'ngx-bootstrap';
 import { ProfileBasicViewComponent } from './profile-basic-view/profile-basic-view.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SymptomBasicViewComponent } from './symptom-basic-view/symptom-basic-view.component';
+import { PrivacyStatementViewComponent } from './privacy-statement-view/privacy-statement-view.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SymptomBasicViewComponent } from './symptom-basic-view/symptom-basic-vi
     ProfileBasicViewComponent,
     ToolbarComponent,
     SymptomBasicViewComponent,
+    PrivacyStatementViewComponent,
   ],
   imports: [
     BrowserModule,
