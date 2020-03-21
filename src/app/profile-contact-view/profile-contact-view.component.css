@@ -1,0 +1,15 @@
+.formWrapper{
+    margin-top: 20px;
+}
+.formWrapper p{
+    font-weight: bold;
+}
+
+.formWrapper .btn-group{
+    display:flex;
+}
+
+.formWrapper.nextButton{
+    display: flex;
+    justify-content: flex-end;
+}
