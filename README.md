@@ -25,3 +25,27 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Built With
+
+* [Angular](https://angular.io/) 
+
+## Authors
+
+The initial Project was created by participants of the [Symptomtracker Team](https://devpost.com/software/symptomtracker-62xhkp).
+
+* **Jana** - - [janaesselborn] (https://github.com/janaesselborn)
+* **...** -
+* **...** -
+
+See also the list of [contributors](https://github.com/symptomtracker/backend/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## See also on
+
+* [YouTube](https://www.youtube.com/channel/UCQtwhY5A4YLoXUxC61mvbaA)
+* [Twitter](https://twitter.com/symptomtracker1)
+* [DevPost](https://devpost.com/software/symptomtracker-62xhkp)
