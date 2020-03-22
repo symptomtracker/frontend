@@ -14,11 +14,31 @@ export class ProfileBasicViewComponent implements OnInit {
   ngOnInit(): void {
     this.loadPatient();
   }
+  elements ={
+    gender:"male",
+    joblabel:null,
+    contact:null
+  }
+
+  gender:string;
   patient: PatientModel;
+  joblabel:number;
   async loadPatient(){
-    this.patient = (await this.patientService.getPatient(123)).data  
+    this.patient = (await this.patientService.getPatient("123")).data  
+    // this.gender ="male";
     console.log(this.patient);
     
+  }
+
+  onSubmit(){
+
+    switch(this.elements.contact){
+      case "nocontact":
+        this.patient.relatedAttributes.push({Type:"contact", Value:"nocontact"})
+        break;
+        
+    }
+
   }
 
 }

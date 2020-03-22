@@ -1,4 +1,4 @@
-<div class="content">
+<div class="content" *ngIf="patient">
   <h1>Hallo!</h1>
   <div class="formWrapper data-label">
     <p>Hier können Sie Ihre persönlichen Daten eingeben.</p>
@@ -22,20 +22,20 @@
   <div class="formWrapper group-gender">
     <p>Bitte geben Sie Ihr Geschlecht an:</p>
 
-    <div class="btn-group" data-toggle="buttons">
+    <div class="btn-group " data-toggle="buttons" >
       <label class="btn btn-outline-primary">
-        <input type="hidden" name="options" id="male" autocomplete="off" checked> Weiblich
+        <input type="radio" name="options" id="male" [(ngModel)]="patient.gender" autocoplete="off" value="female" checked> Weiblich
       </label>
       <label class="btn btn-outline-primary">
-        <input type="hidden" name="options" id="female" autocomplete="off"> Männlich
+        <input type="radio" name="options" id="female" [(ngModel)]="patient.gender" autocomplete="off" value="male"> Männlich
       </label>
       <label class="btn btn-outline-primary">
-        <input type="hidden" name="options" id="diverse" autocomplete="off"> Divers
+        <input type="radio" name="options" id="diverse" [(ngModel)]="patient.gender"autocomplete="off" value="diverse"> Divers
       </label>
     </div>
   </div>
 
-  <div class="formWrapper job-label">
+  <div class="formWrapper job-label" >
     <p>In welchem Berufsfeld / in welcher beruflichen Situation befinden Sie sich gerade?</p>
 
     <div class="form-check">
