@@ -17,8 +17,9 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 import { CodeInputViewComponent } from './code-input-view/code-input-view.component';
 import { DashboardViewComponent } from './dashboard-view/dashboard-view.component';
 import { MyDataViewComponent } from './my-data-view/my-data-view.component';
+import { PatientDataViewComponent } from './patient-data-view/patient-data-view.component';
 import { HealthOfficeViewComponent } from './health-office-view/health-office-view.component';
-import {PatientDataViewComponent} from "./patient-data-view/patient-data-view.component";
+import { ChartsModule } from 'ng2-charts';
 
 const appRoutes: Routes = [
   { path: 'home',
@@ -54,6 +55,7 @@ const appRoutes: Routes = [
     CodeInputViewComponent,
     DashboardViewComponent,
     MyDataViewComponent,
+    PatientDataViewComponent,
     HealthOfficeViewComponent,
   ],
   imports: [
@@ -65,7 +67,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
+    ChartsModule
   ],
   exports: [
     RouterModule
