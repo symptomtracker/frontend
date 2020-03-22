@@ -2,6 +2,13 @@
 
 Platform to track symptomes of COVID-19 for patients and discharge of the health department.
 
+The symptome tracker works in two different modes.
+
+# Patient-Mode: 
+The patient can track his own symptoms in a diary like website and supports the health department with important data about COVID-19.
+
+# Health-Department-Mode: 
+The health-department can track the symptoms of it's patients and can watch the progression of the COVID-19 desease.
 ![alt text](src/assets/img/ex.PNG)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 
