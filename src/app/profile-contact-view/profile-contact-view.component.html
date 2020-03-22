@@ -72,7 +72,7 @@
     <p>Haben Sie andere Vorerkrankungen?</p>
     <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp" placeholder="Vorerkrankungen">
   </div>
-
+<!--
   <div class="formWrapper immunSupressivaArea">
     <p>Nehmen Sie aktuell Immunsupressiva?</p>
     <div class="form-check">
@@ -97,6 +97,30 @@
     <div class="form-check">
       <label class="form-check-label">
         <input type="radio" class="form-check-input" name="optradio"> ja
+      </label>
+    </div>
+  </div>
+-->
+  <div class="formWrapper smokerArea">
+    <p>Nehmen Sie aktuell Immunsupressiva?</p>
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+        <input type="hidden" name="options" id="immun-yes" autocomplete="off" checked> Ja
+      </label>
+      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+        <input type="hidden" name="options" id="immun-no" autocomplete="off"> Nein
+      </label>
+    </div>
+  </div>
+
+  <div class="formWrapper smokerArea">
+    <p>Sind Sie schwanger?</p>
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+        <input type="hidden" name="options" id="smoker-yes" autocomplete="off" checked> Ja
+      </label>
+      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+        <input type="hidden" name="options" id="smoker-no" autocomplete="off"> Nein
       </label>
     </div>
   </div>

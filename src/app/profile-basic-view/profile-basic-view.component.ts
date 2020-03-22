@@ -27,7 +27,16 @@ export class ProfileBasicViewComponent implements OnInit {
     this.patient = (await this.patientService.getPatient("123")).data  
     // this.gender ="male";
     console.log(this.patient);
-    
+
+  }
+
+  toggleActiveStatus(event) {
+    var targetLabel: HTMLElement = <HTMLElement>event.target;
+    for (let index = 0; index < targetLabel.parentElement.children.length; index++) {
+      const element = targetLabel.parentElement.children.item(index);
+      element.classList.remove("active");
+    }
+    targetLabel.classList.add("active");
   }
 
   onSubmit(){
@@ -36,7 +45,7 @@ export class ProfileBasicViewComponent implements OnInit {
       case "nocontact":
         this.patient.relatedAttributes.push({Type:"contact", Value:"nocontact"})
         break;
-        
+
     }
 
   }
