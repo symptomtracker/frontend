@@ -1,5 +1,6 @@
 <div class="formWrapper">
-    <p class="symptom-name">{{symptomDescription.description}}<img (tooltipHtml)="symptomDescription.tooltip"
+    {{symptomDescription.toolTip}}
+    <p class="symptom-name">{{symptomDescription.description}}<img (tooltipHtml)="symptomDescription.toolTip"
             class="lamp" alt='Hint' src='./assets/img/lamp.svg' /></p>
     <form>
         <div class="btn-group btn-group-toggle" data-toggle="buttons"
@@ -7,7 +8,7 @@
             <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
                 <input type="radio" name="options" autocomplete="off" [id]="item" [value]="item"
                     [(ngModel)]="selectedValue">
-                {{item}}
+                {{item || "Nein"}}
             </label>
         </div>
     </form>

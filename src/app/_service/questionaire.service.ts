@@ -6,4 +6,7 @@ import { QuestionaireApi } from './api';
 })
 export class QuestionaireService extends QuestionaireApi {
 
+  constructor() {
+    super({ basePath: 'https://api.symptomtracker.de/1.0.0/' });
+  }
 }
