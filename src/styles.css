@@ -13,6 +13,10 @@ h1 {
 h2 {
   margin-top: 40px !important;
 }
+
+h3 {
+  color: #206F9D !important;
+}
 a,
 a:visited,
 a:hover {

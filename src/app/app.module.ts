@@ -16,6 +16,7 @@ import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import { CodeInputViewComponent } from './code-input-view/code-input-view.component';
 import { DashboardViewComponent } from './dashboard-view/dashboard-view.component';
+import { MyDataViewComponent } from './my-data-view/my-data-view.component';
 
 const appRoutes: Routes = [
   { path: 'home',
@@ -27,7 +28,7 @@ const appRoutes: Routes = [
   { path: 'codeinput', component: CodeInputViewComponent },
   { path: 'impressum', component: LegalNoticeComponent },
   { path: 'datenschutzerklärung', component: PrivacyStatementViewComponent },
-  { path: 'meinedaten', component: CodeInputViewComponent },
+  { path: 'meinedaten', component: MyDataViewComponent },
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
@@ -48,6 +49,7 @@ const appRoutes: Routes = [
     LegalNoticeComponent,
     CodeInputViewComponent,
     DashboardViewComponent,
+    MyDataViewComponent,
   ],
   imports: [
     BrowserModule,
