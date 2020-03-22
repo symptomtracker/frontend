@@ -11,29 +11,11 @@ import * as _ from 'lodash';
 })
 export class SymptomBasicViewComponent implements OnInit {
   categories: string[];
-  cat: _.CollectionChain<{ color: string; users: SymptomCatalogueItem[]; }>;
   symptomGroups: any;
 
   constructor(private symptomService: SymptomsService, private questionaireService: QuestionaireService) { }
   lastSymptomValues: SymptomJourneyModel[];
   symptomsCatalogue: SymptomCatalogueItem[];
-
-  values = _
-
-  mainSymptomsCatalogue: SymptomCatalogueItem[] = [
-    {
-      Category: "Hauptsymptome",
-      description: "Husten",
-      symptomSeverity: ["KeinHusten", "Leicht", "Mittel", "Schwer"],
-      toolTip: "Handelt es sich um trockenen Husten und hat sich der Husten schon länger manifestiert? (Bei einer Erkältung beginnt der Husten ebenfalls trocken, ändert sich aber im Laufe der Zeit.)"
-    },
-    {
-      Category: "Hauptsymptome",
-      description: "Kurzatmigkeit",
-      symptomSeverity: ["Ja", "Nein"],
-      toolTip: ""
-    }
-  ];
 
   ngOnInit(): void {
     this.loadSymptoms();
@@ -45,12 +27,9 @@ export class SymptomBasicViewComponent implements OnInit {
     }, {});
   };
   private async loadSymptoms() {
-
-
     this.symptomsCatalogue = (await this.questionaireService.getCatalogueItems()).data;
     this.symptomGroups = this.groupBy(this.symptomsCatalogue, '@Category');
     this.categories = Object.keys(this.symptomGroups);
-    console.log(this.symptomsCatalogue);
   }
 
   toggleActiveStatus(event) {
