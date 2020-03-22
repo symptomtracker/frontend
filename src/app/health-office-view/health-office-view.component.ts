@@ -25,6 +25,7 @@ export class HealthOfficeViewComponent implements OnInit {
   }
 
   goToPatientDetailView(id: String) {
-    this.router.navigateByUrl('patientdata');
+    const url = 'patientdata?id='+ id;
+    this.router.navigateByUrl(url);
   }
 }

@@ -8,15 +8,13 @@
         <th>Geschlecht</th>
         <th>Alter</th>
         <th>Stadt</th>
-        <th>Actions</th>
       </tr>
-      <tr *ngFor="let patientItem of this.patientsList" (click)="goToPatientDetailView(patientItem?._id)">
+      <tr class="patient-row" *ngFor="let patientItem of this.patientsList" (click)="goToPatientDetailView(patientItem?._id)">
         <td>{{patientItem?._id}}</td>
         <td>{{patientItem?.name}}</td>
         <td>{{patientItem?.gender}}</td>
         <td>{{patientItem?.age}}</td>
         <td>{{patientItem?.city}}</td>
-        <td><a (click)="goToPatientDetailView(patientItem?._id)">Patient anzeigen</a></td>
       </tr>
     </table>
   </div>

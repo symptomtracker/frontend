@@ -1,81 +1,86 @@
 <div class="content">
-    <h1>Daten von Patient {{patient?.linkedCode}}</h1>
-    <p>Krankheitsverlauf von Patient {{patient?.linkedCode}}</p>
-  
-    <div class="container data-container">
-      <div class="row overall-data-row">
-        <div class="col-md">
-          <h3>Allgemeine Daten</h3>
-          <div class="info-row row">
-            <div class="info-col title col">Name</div>
-            <div class="info-col info col">{{patient?.name}}</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Geschlecht</div>
-            <div class="info-col info col">{{patient?.gender}}</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Alter</div>
-            <div class="info-col info col">{{patient?.age}}</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Location</div>
-            <div class="info-col info col">{{patient?.city}}</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Code</div>
-            <div class="info-col info col">{{patient?.linkedCode}}</div>
-          </div>
+  <a routerLink="/overviewpatients">< Zurück zur Patientenübersicht</a>
+  <h1>Daten von Patient {{patient?.name}}</h1>
+  <p>Krankheitsverlauf von Patient {{patient?.name}}</p>
+
+  <div class="container data-container">
+    <div class="row overall-data-row">
+      <div class="col-md">
+        <h3>Allgemeine Daten</h3>
+        <div class="info-row row">
+          <div class="info-col title col">Name</div>
+          <div class="info-col info col">{{patient?.name}}</div>
         </div>
-        <div class="col-md specific-data">
-          <h3>Spezifische Daten</h3>
-          <div class="info-row row">
-            <div class="info-col title col">Aufenthalt in Risikogebiet:</div>
-            <div class="info-col info col">insert attribute</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Kontakt zu positiv getester Person:</div>
-            <div class="info-col info col">insert attribute</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Datum des letzten Kontaktes:</div>
-            <div class="info-col info col">insert attribute</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Raucher:</div>
-            <div class="info-col info col">insert attribute</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Vorerkrankungen:</div>
-            <div class="info-col info col">insert attribute</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Nimmt Immunsupressiva:</div>
-            <div class="info-col info col">insert attribute</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Schwanger:</div>
-            <div class="info-col info col">insert attribute</div>
-          </div>
+        <div class="info-row row">
+          <div class="info-col title col">Geschlecht</div>
+          <div class="info-col info col">{{patient?.gender}}</div>
+        </div>
+        <div class="info-row row">
+          <div class="info-col title col">Alter</div>
+          <div class="info-col info col">{{patient?.age}}</div>
+        </div>
+        <div class="info-row row">
+          <div class="info-col title col">Location</div>
+          <div class="info-col info col">{{patient?.city}}</div>
+        </div>
+        <div class="info-row row">
+          <div class="info-col title col">Code</div>
+          <div class="info-col info col">{{patient?.linkedCode}}</div>
         </div>
       </div>
-  
-      <div class="row">
-        <div class="col-md charts">
-          <h3>Symptome</h3>
-          <script src="node_modules/chart.js/src/chart.js"></script>
-          <div>
-            <div style="display: block">
-              <canvas baseChart
-                      [datasets]="barChartData"
-                      [labels]="barChartLabels"
-                      [options]="barChartOptions"
-                      [legend]="barChartLegend"
-                      [chartType]="barChartType">
-              </canvas>
-            </div>
+      <div class="col-md specific-data">
+        <h3>Spezifische Daten</h3>
+        <div class="info-row row">
+          <div class="info-col title col">Aufenthalt in Risikogebiet</div>
+          <div class="info-col info col">insert attribute</div>
+        </div>
+        <div class="info-row row">
+          <div class="info-col title col">Kontakt zu positiv getester Person</div>
+          <div class="info-col info col">insert attribute</div>
+        </div>
+        <div class="info-row row">
+          <div class="info-col title col">Datum des letzten Kontaktes</div>
+          <div class="info-col info col">insert attribute</div>
+        </div>
+        <div class="info-row row">
+          <div class="info-col title col">Raucher</div>
+          <div class="info-col info col">insert attribute</div>
+        </div>
+        <div class="info-row row">
+          <div class="info-col title col">Vorerkrankungen</div>
+          <div class="info-col info col">insert attribute</div>
+        </div>
+        <div class="info-row row">
+          <div class="info-col title col">Nimmt Immunsupressiva</div>
+          <div class="info-col info col">insert attribute</div>
+        </div>
+        <div class="info-row row">
+          <div class="info-col title col">Schwanger</div>
+          <div class="info-col info col">insert attribute</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md charts">
+        <h3>Symptome</h3>
+        <script src="node_modules/chart.js/src/chart.js"></script>
+        <div>
+          <div style="display: block">
+            <canvas baseChart
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType">
+            </canvas>
           </div>
+        </div>
+        <div *ngFor="let symtom of this.patient?.symptomJourney"  class="info-row row">
+          <div class="info-col title col">{{symtom?.description}}</div>
+          <div class="info-col info col">{{symtom?.symptomSeverity}}</div>
         </div>
       </div>
     </div>
   </div>
+</div>
