@@ -1,24 +1,26 @@
 <div class="content">
-
   <h1>Willkommen beim SymptomTracker!</h1>
-
-  <h2>Führen Sie ein Symptomtagebuch!</h2>
-  <div class="symptom-area-wrapper">
-    <div>
-      <p>Hier können Sie täglich Ihre Symptome eintragen, erhalten so einen eigenen Überblick und können im Falle einer
+  <h2 class="row col-md-12">Führen Sie ein Symptomtagebuch!</h2>
+  <div class="symptom-area-wrapper container">
+    <div class="row">
+      <div class="col col-md-6 col-sm-12">
+        <p>Hier können Sie täglich Ihre Symptome eintragen, erhalten so einen eigenen Überblick und können im Falle einer
         bestätigten Infektion Ihren Mitmenschen.</p>
-      <button type="button" class="btn btn-primary btn-lg"><a routerLink="/profilebasic">Symptome tracken</a></button>
+        <button type="button" class="btn btn-primary btn-lg"><a routerLink="/profilebasic">Symptome tracken</a></button>
+      </div>
+      <img class="col-md-6 col-sm-12" src="./assets/img/undraw_to_do_list.svg" alt="Symptome tracken"/>
     </div>
-    <img src="./assets/img/undraw_to_do_list.svg" alt="Warning. Page not found"/>
   </div>
 
-
-  <h2>Sie haben einen Code vom Gesundheitsamt erhalten?</h2>
-  <p>Wenn Sie einen Code vom Gesundheitsamt erhalten haben, können Sie diesen hier eintragen und im Anschluss Ihr
-    Symtomtagebuch führen.</p>
-  <button type="button" class="btn btn-primary btn-lg"><a routerLink="/codeinput">Code eingeben</a>
-  </button>
-
+  <h2 class="row col-md-12">Sie haben einen Code vom Gesundheitsamt erhalten?</h2>
+  <div class="row col-md-12">
+    <div class="col col-md-12">
+      <p>Wenn Sie einen Code vom Gesundheitsamt erhalten haben, können Sie diesen hier eintragen und im Anschluss Ihr
+        Symtomtagebuch führen.</p>
+      <button type="button" class="btn btn-primary btn-lg"><a routerLink="/codeinput">Code eingeben</a>
+      </button>
+    </div>
+  </div>
   <!--<h2>Du bist auf der Suche nach weiteren Informationen zum SymptomeTracker?</h2>-->
 </div>
 

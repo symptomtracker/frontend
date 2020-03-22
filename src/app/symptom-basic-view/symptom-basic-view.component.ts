@@ -19,7 +19,9 @@ export class SymptomBasicViewComponent implements OnInit {
   }
 
   private async loadSymptoms(){
-    this.symptoms = (await this.symptomService.getAllSymptoms(123)).data;    
+    this.symptoms = (await this.symptomService.getAllSymptoms("123")).data;    
+
+    // this.symptoms[0].
   }
 
   toggleActiveStatus(event) {
