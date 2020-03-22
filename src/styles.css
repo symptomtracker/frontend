@@ -43,6 +43,16 @@ button a, button a:visited {
   color: #FFF;
 }
 
+label.btn-outline-primary {
+  color: #206F9D;
+  border-color: #206F9D;
+}
+
+label.btn-outline-primary.active, label.btn-outline-primary:hover, .btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show>.btn-outline-primary.dropdown-toggle {
+  background-color: #206F9D;
+  color: #FFF;
+  border-color: #206F9D;
+}
 .content-wrapper {
   max-width: 700px;
   display: flex;
