@@ -1,5 +1,6 @@
 <div class="formWrapper">
-    <p class="symptom-name">{{symptomDescription.description}}</p>
+    <p class="symptom-name">{{symptomDescription.description}}<img (tooltipHtml)="symptomDescription.tooltip"
+            class="lamp" alt='Hint' src='./assets/img/lamp.svg' /></p>
     <form>
         <div class="btn-group btn-group-toggle" data-toggle="buttons"
             *ngFor="let item of symptomDescription.symptomSeverity">

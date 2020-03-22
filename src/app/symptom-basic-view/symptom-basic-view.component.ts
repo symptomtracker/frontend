@@ -18,22 +18,16 @@ export class SymptomBasicViewComponent implements OnInit {
     {
       Category: "Hauptsymptome",
       description: "Husten",
-      symptomSeverity: ["KeinHusten", "Leicht", "Mittel", "Schwer"]
+      symptomSeverity: ["KeinHusten", "Leicht", "Mittel", "Schwer"],
+      tooltip: "Handelt es sich um trockenen Husten und hat sich der Husten schon länger manifestiert? (Bei einer Erkältung beginnt der Husten ebenfalls trocken, ändert sich aber im Laufe der Zeit.)"
     },
     {
       Category: "Hauptsymptome",
       description: "Kurzatmigkeit",
-      symptomSeverity: ["Ja", "Nein"]
+      symptomSeverity: ["Ja", "Nein"],
+      tooltip: ""
     }
-
-
-
   ];
-  hustenDesc: SymptomCatalogueItem = {
-    Category: "Lunge",
-    description: "Husten",
-    symptomSeverity: ["Leicht", "Mittel", "Schwer"]
-  };
 
   ngOnInit(): void {
     this.loadSymptoms();
