@@ -13,3 +13,10 @@
     display: flex;
     justify-content: flex-end;
 }
+
+.lamp{
+  margin-top: -5px;
+  width: 15px;
+  height: 15px;
+
+}

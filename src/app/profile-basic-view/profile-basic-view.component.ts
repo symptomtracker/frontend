@@ -21,10 +21,10 @@ export class ProfileBasicViewComponent implements OnInit {
   }
 
   gender:string;
-  patient: PatientModel;
+  patient: PatientModel = {}; //TODO Empty object
   joblabel:number;
   async loadPatient(){
-    this.patient = (await this.patientService.getPatient("123")).data  
+    this.patient = (await this.patientService.getPatient("123")).data
     // this.gender ="male";
     console.log(this.patient);
 

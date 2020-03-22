@@ -1,8 +1,7 @@
 <div class="content">
   <h1>Aufenthalt / Kontaktpersonen</h1>
   <div class="formWrapper riskArea">
-    <p>Kommen Sie aus einem Risikogebiet?</p>
-
+    <p>Kommen Sie aus einem Risikogebiet?<img tooltipHtml="Wo sind Sie in den letzten 2 Wochen gewesen? Sie können auf rki.de überprüfen, ob Sie in einem Risikogebiet waren." class="lamp" alt='Hint' src='./assets/img/lamp.svg'/></p>
     <div class="btn-group" data-toggle="buttons">
       <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
         <input type="hidden" name="options" id="risk-yes" autocomplete="off"> Ja
@@ -14,7 +13,8 @@
   </div>
 
   <div class="formWrapper infectedContactArea">
-    <p>Hatten Sie Kontakt zu einer Person die positiv auf COVID-19 getestet wurde?</p>
+    <p>Hatten Sie Kontakt zu einer Person die positiv auf COVID-19 getestet wurde?<img tooltipHtml="Kennen Sie einen Menschen mit Corona-Virus? Haben Sie diesen Menschen getroffen?
+" class="lamp" alt='Hint' src='./assets/img/lamp.svg'/></p>
     <div class="btn-group" data-toggle="buttons">
       <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
         <input type="hidden" name="options" id="contact-yes" autocomplete="off" checked> Ja
@@ -72,37 +72,9 @@
     <p>Haben Sie andere Vorerkrankungen?</p>
     <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp" placeholder="Vorerkrankungen">
   </div>
-<!--
-  <div class="formWrapper immunSupressivaArea">
-    <p>Nehmen Sie aktuell Immunsupressiva?</p>
-    <div class="form-check">
-      <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optradio"> Nein
-      </label>
-    </div>
-    <div class="form-check">
-      <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optradio"> ja
-      </label>
-    </div>
-  </div>
 
-  <div class="formWrapper pregnantArea">
-    <p>Sind Sie schwanger?</p>
-    <div class="form-check">
-      <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optradio"> Nein
-      </label>
-    </div>
-    <div class="form-check">
-      <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="optradio"> ja
-      </label>
-    </div>
-  </div>
--->
   <div class="formWrapper smokerArea">
-    <p>Nehmen Sie aktuell Immunsupressiva?</p>
+    <p>Nehmen Sie aktuell Immunsupressiva?<img tooltipHtml="Nehmen Sie Medikamente, die die Funktion Ihres Immunsystems beeinträchtigen (z.B. Cortison)" class="lamp" alt='Hint' src='./assets/img/lamp.svg'/></p>
     <div class="btn-group" data-toggle="buttons">
       <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
         <input type="hidden" name="options" id="immun-yes" autocomplete="off" checked> Ja
