@@ -2,6 +2,10 @@
 
 Platform to track symptomes of COVID-19 for patients and discharge of the health department.
 
+This project is one of the core components of the whole [Symptomtracker](https://devpost.com/software/symptomtracker-62xhkp) Project. This project arose during the [WirVsVirusHackathon](https://www.bundesregierung.de/breg-de/themen/coronavirus/wir-vs-virus-1731968)
+
+
+
 The symptome tracker works in two different modes.
 
 # Patient-Mode: 
@@ -10,11 +14,10 @@ The patient can track his own symptoms in a diary like website and supports the 
 # Health-Department-Mode: 
 The health-department can track the symptoms of it's patients and can watch the progression of the COVID-19 desease.
 ![alt text](src/assets/img/ex.PNG)
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Clone the repository and run `npm install` to get the dependencies. Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Built With
 
@@ -27,7 +30,7 @@ The initial Project was created by participants of the [Symptomtracker Team](htt
 
 * **Jana** -- [janaesselborn](https://github.com/janaesselborn)
 * **Domenik** - [koalamitice](https://github.com/koalamitice)
-* **Maxi ** - [vonunwerth]((https://github.com/vonunwerth)
+* **Maxi ** - [vonunwerth](https://github.com/vonunwerth)
 * **Alex** - [xan2063](https://github.com/xan2063)
 * **Andrea** - [andreaaa87](https://github.com/andreaaa87)
 * **Jannis** - [Jannis912](https://github.com/jannis912)
