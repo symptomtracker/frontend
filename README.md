@@ -32,9 +32,9 @@ Clone the repository and run `npm install` to get the dependencies. Run `ng serv
 
 The initial Project was created by participants of the [Symptomtracker Team](https://devpost.com/software/symptomtracker-62xhkp).
 
-* **Jana** -- [janaesselborn](https://github.com/janaesselborn)
+* **Jana** - [janaesselborn](https://github.com/janaesselborn)
 * **Domenik** - [koalamitice](https://github.com/koalamitice)
-* **Maxi ** - [vonunwerth](https://github.com/vonunwerth)
+* **Maxi** - [vonunwerth](https://github.com/vonunwerth)
 * **Alex** - [xan2063](https://github.com/xan2063)
 * **Andrea** - [andreaaa87](https://github.com/andreaaa87)
 * **Jannis** - [Jannis912](https://github.com/jannis912)
