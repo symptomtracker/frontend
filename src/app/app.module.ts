@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageViewComponent } from './landing-page-view/landing-page-view.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AlertModule } from 'ngx-bootstrap';
+import { AlertModule, TooltipModule } from 'ngx-bootstrap';
 import { ProfileBasicViewComponent } from './profile-basic-view/profile-basic-view.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { SymptomBasicViewComponent } from './symptom-basic-view/symptom-basic-view.component';
@@ -59,6 +59,7 @@ const appRoutes: Routes = [
     HealthOfficeViewComponent,
   ],
   imports: [
+    TooltipModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
