@@ -19,7 +19,9 @@ import { DashboardViewComponent } from './dashboard-view/dashboard-view.componen
 import { MyDataViewComponent } from './my-data-view/my-data-view.component';
 import { PatientDataViewComponent } from './patient-data-view/patient-data-view.component';
 import { HealthOfficeViewComponent } from './health-office-view/health-office-view.component';
+import { SymptomsDailyViewComponent } from './symptoms-daily-view/symptoms-daily-view.component';
 import { ChartsModule } from 'ng2-charts';
+
 
 const appRoutes: Routes = [
   { path: 'home',
@@ -57,6 +59,7 @@ const appRoutes: Routes = [
     MyDataViewComponent,
     PatientDataViewComponent,
     HealthOfficeViewComponent,
+    SymptomsDailyViewComponent,
   ],
   imports: [
     TooltipModule.forRoot(),
