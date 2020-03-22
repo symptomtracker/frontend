@@ -6,4 +6,7 @@ import { SymptomsApi } from './api';
 })
 export class SymptomsService extends SymptomsApi {
 
+  constructor() {
+    super({ basePath: 'https://api.symptomtracker.de/1.0.0/' });
+  }
 }
