@@ -41,12 +41,14 @@
 button.navbar-toggler{
   position: absolute;
   top: 0;
-  left: 0;
+  left: -20px;
   height: 100%;
-  background-color: white !important;
+  background-color: transparent !important;
   border: none !important;
   width: 80px;
 }
+
+
 
 button.navbar-toggler span.navbar-toggler-icon, button.navbar-toggler span.navbar-toggler-icon:before, button.navbar-toggler span.navbar-toggler-icon:after {
   color: #206F9D;
@@ -110,5 +112,4 @@ button.navbar-toggler.open span.navbar-toggler-icon:after {
   font-size: 20px;
   margin: 8px 0;
 }
-
 
