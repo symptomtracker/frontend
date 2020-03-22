@@ -16,7 +16,7 @@
         <td>{{patientItem?.gender}}</td>
         <td>{{patientItem?.age}}</td>
         <td>{{patientItem?.city}}</td>
-        <td><a href='https://symptomtracker.de/meinedaten'>Patient anzeigen</a></td>
+        <td><a (click)="goToPatientDetailView(patientItem?._id)">Patient anzeigen</a></td>
       </tr>
     </table>
   </div>

@@ -32,7 +32,7 @@ const appRoutes: Routes = [
   { path: 'impressum', component: LegalNoticeComponent },
   { path: 'datenschutzerklärung', component: PrivacyStatementViewComponent },
   { path: 'meinedaten', component: MyDataViewComponent },
-  { path: 'patient', component: PatientDataViewComponent },
+  { path: 'patientdata', component: PatientDataViewComponent },
   { path: 'overviewpatients', component: HealthOfficeViewComponent },
   { path: '',
     redirectTo: '/home',
