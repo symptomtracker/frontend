@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { FormControl, FormControlName } from '@angular/forms'
+import { PatientModel } from '../_service/api';
 
 @Component({
   selector: 'app-symptom-basic-view',
@@ -9,18 +10,9 @@ import { FormControl, FormControlName } from '@angular/forms'
 
 export class SymptomBasicViewComponent implements OnInit {
   constructor() {
-    this.registerDebugOutputForFormControl();
   }
 
   ngOnInit(): void {}
-
-  registerDebugOutputForFormControl() {
-    for (var key in this.data) {
-      let form = <FormControl>this.data[key];
-      let name = key;
-      form.valueChanges.subscribe((value) => console.log(name+": "+value));
-    }
-  }
 
   toggleActiveStatus(event) {
     let targetLabel = <HTMLElement>event.target;
@@ -31,26 +23,33 @@ export class SymptomBasicViewComponent implements OnInit {
     targetLabel.classList.add("active");
   }
 
+  showSymptomData() {
+    console.log(this.data);
+  }
+
+  patient: PatientModel;
+
   data = {
     // Main symptomes
-    cough: new FormControl(undefined),
-    shortBreath: new FormControl(undefined),
-    muscularPains: new FormControl(undefined),
-    soreThroat: new FormControl(undefined),
-    headache: new FormControl(undefined),
-    nausea: new FormControl(undefined),
+    fever: undefined,
+    cough: undefined,
+    shortBreath: undefined,
+    muscularPains: undefined,
+    soreThroat: undefined,
+    headache: undefined,
+    nausea: undefined,
 
     // Further symptomes
-    blockedNose: new FormControl(undefined),
-    diarrhea: new FormControl(undefined),
-    limbPain: new FormControl(undefined),
-    appetiteLoss: new FormControl(undefined),
-    weightLoss: new FormControl(undefined),
-    stomachache: new FormControl(undefined),
-    conjunctivitis: new FormControl(undefined),
-    rash: new FormControl(undefined),
-    lymphoma: new FormControl(undefined),
-    apathy: new FormControl(undefined),
-    somnolence: new FormControl(undefined)
+    blockedNose: undefined,
+    diarrhea: undefined,
+    limbPain: undefined,
+    appetiteLoss: undefined,
+    weightLoss: undefined,
+    stomachache: undefined,
+    conjunctivitis: undefined,
+    rash: undefined,
+    lymphoma: undefined,
+    apathy: undefined,
+    somnolence: undefined
   }
 }

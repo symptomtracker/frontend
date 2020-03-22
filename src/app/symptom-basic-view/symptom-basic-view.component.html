@@ -13,21 +13,21 @@
   <div class="well-being formWrapper">
     <p class="symptom-name">Wie ist Ihr allgemeines Wohlbefinden?</p>
     <form>
-      <div class="btn-group">
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
         <label class="btn btn-outline-primary btn-margin">
-          <input type="hidden" id="well-being-good"> Gut
+          <input type="radio" id="well-being-good"> Gut
         </label>
         <label class="btn btn-outline-primary btn-margin">
-          <input type="hidden" id="well-being-better"> Besser
+          <input type="radio" id="well-being-better"> Besser
         </label>
         <label class="btn btn-outline-primary btn-margin">
-          <input type="hidden" id="well-being-normal"> Gleichbleibend
+          <input type="radio" id="well-being-normal"> Gleichbleibend
         </label>
         <label class="btn btn-outline-primary btn-margin">
-          <input type="hidden" id="well-being-worse"> Schlechter
+          <input type="radio" id="well-being-worse"> Schlechter
         </label>
         <label class="btn btn-outline-primary btn-margin">
-          <input type="hidden" id="well-being-bad"> Schlecht
+          <input type="radio" id="well-being-bad"> Schlecht
         </label>
       </div>
     </form>
@@ -57,11 +57,11 @@
       <p class="symptom-name">Husten</p>
       <form>
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-          <label class="btn btn-outline-primary active" (click)="toggleActiveStatus($event)">
-            <input type="radio" value="yes" id="cough-yes" [formControl]="data.cough" checked> Ja
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="1" name="cough" id="cough-yes" [(ngModel)]="data.cough" checked> Ja
           </label>
           <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-            <input type="radio" value="no" id="cough-no" [formControl]="data.cough"> Nein
+            <input type="radio" value="0" name="cough" id="cough-no" [(ngModel)]="data.cough"> Nein
           </label>
         </div>
       </form>
@@ -71,11 +71,11 @@
       <p class="symptom-name">Kurzatmigkeit</p>
       <form>
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
-          <label class="btn btn-outline-primary active" (click)="toggleActiveStatus($event)">
-            <input type="radio" value="yes" id="shortness-of-breath-yes" [formControl]="data.shortBreath"> Ja
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="1" name="shortBreath" id="shortness-of-breath-yes" [(ngModel)]="data.shortBreath"> Ja
           </label>
           <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-            <input type="radio" value="no" id="shortness-of-breath-no" [formControl]="data.shortBreath"> Nein
+            <input type="radio" value="0" name="shortBreath" id="shortness-of-breath-no" [(ngModel)]="data.shortBreath"> Nein
           </label>
         </div>
       </form>
@@ -84,12 +84,12 @@
     <div class="formWrapper">
       <p class="symptom-name">Muskel-/Gelenkschmerzen</p>
       <form>
-        <div class="btn-group">
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="muscular-pains-yes"> Ja
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="1" name="muscularPain" id="muscular-pains-yes" [(ngModel)]="data.muscularPains"> Ja
           </label>
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="muscular-pains-no"> Nein
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="0" name="muscularPain" id="muscular-pains-no" [(ngModel)]="data.muscularPains"> Nein
           </label>
         </div>
       </form>
@@ -98,12 +98,12 @@
     <div class="formWrapper">
       <p class="symptom-name">Halsschmerzen</p>
       <form>
-        <div class="btn-group">
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="sore-yes"> Ja
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="1" name="soreThroat" id="sore-yes" [(ngModel)]="data.soreThroat"> Ja
           </label>
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="sore-no"> Nein
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="0" name="soreThroat" id="sore-no" [(ngModel)]="data.soreThroat"> Nein
           </label>
         </div>
       </form>
@@ -112,12 +112,12 @@
     <div class="formWrapper">
       <p class="symptom-name">Kopfschmerzen</p>
       <form>
-        <div class="btn-group">
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="headache-yes"> Ja
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="1" name="headache" id="headache-yes" [(ngModel)]="data.headache"> Ja
           </label>
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="headache-no"> Nein
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="0" name="headache" id="headache-no" [(ngModel)]="data.headache"> Nein
           </label>
         </div>
       </form>
@@ -126,12 +126,12 @@
     <div class="formWrapper">
       <p class="symptom-name">Übelkeit / Erbrechen</p>
       <form>
-        <div class="btn-group">
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="nausea-yes"> Ja
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="1" name="nausea" id="nausea-yes" [(ngModel)]="data.nausea"> Ja
           </label>
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="nausea-no"> Nein
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="0" name="nausea" id="nausea-no" [(ngModel)]="data.nausea"> Nein
           </label>
         </div>
       </form>
@@ -142,12 +142,12 @@
     <div class="formWrapper">
       <p class="symptom-name">Verstopfte Nase</p>
       <form>
-        <div class="btn-group">
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="blocked-nose-yes"> Ja
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="1" name="blockedNode" id="blocked-nose-yes" [(ngModel)]="data.blockedNose"> Ja
           </label>
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="blocked-nose-no"> Nein
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="0" name="blockedNose" id="blocked-nose-no" [(ngModel)]="data.blockedNose"> Nein
           </label>
         </div>
       </form>
@@ -156,12 +156,12 @@
     <div class="formWrapper">
       <p class="symptom-name">Durchfall</p>
       <form>
-        <div class="btn-group">
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="diarrhea-yes"> Ja
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="1" name="diarrhea" id="diarrhea-yes" [(ngModel)]="data.diarrhea"> Ja
           </label>
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="diarrhea-no"> Nein
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="0" name="diarrhea" id="diarrhea-no" [(ngModel)]="data.diarrhea"> Nein
           </label>
         </div>
       </form>
@@ -170,12 +170,12 @@
     <div class="formWrapper">
       <p class="symptom-name">Gliederschmerzen</p>
       <form>
-        <div class="btn-group">
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="limb-pain-yes"> Ja
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="1" name="libPain" id="limb-pain-yes" [(ngModel)]="data.limbPain"> Ja
           </label>
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="limb-pain-no"> Nein
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="0" name="limbPain" id="limb-pain-no" [(ngModel)]="data.limbPain"> Nein
           </label>
         </div>
       </form>
@@ -184,12 +184,12 @@
     <div class="formWrapper">
       <p class="symptom-name">Appetitlosigkeit</p>
       <form>
-        <div class="btn-group">
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="appetit-loss-yes"> Ja
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="1" name="appetitLoss" id="appetit-loss-yes" [(ngModel)]="data.appetiteLoss"> Ja
           </label>
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="appetit-loss-no"> Nein
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="0" name="appetitLoss" id="appetit-loss-no" [(ngModel)]="data.appetiteLoss"> Nein
           </label>
         </div>
       </form>
@@ -198,12 +198,12 @@
     <div class="formWrapper">
       <p class="symptom-name">Gewichtsverlust</p>
       <form>
-        <div class="btn-group">
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="weight-loss-yes"> Ja
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="1" name="weightLoss" id="weight-loss-yes" [(ngModel)]="data.weightLoss"> Ja
           </label>
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="weight-loss-no"> Nein
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="0" name="weightLoss" id="weight-loss-no" [(ngModel)]="data.weightLoss"> Nein
           </label>
         </div>
       </form>
@@ -212,12 +212,12 @@
     <div class="formWrapper">
       <p class="symptom-name">Bauchschmerzen</p>
       <form>
-        <div class="btn-group">
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="stomachache-yes"> Ja
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="1" name="stomachache" id="stomachache-yes" [(ngModel)]="data.stomachache"> Ja
           </label>
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="stomachache-no"> Nein
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="0" name="stomachache" id="stomachache-no" [(ngModel)]="data.stomachache"> Nein
           </label>
         </div>
       </form>
@@ -226,12 +226,12 @@
     <div class="formWrapper">
       <p class="symptom-name">Konjunktivitis</p>
       <form>
-        <div class="btn-group">
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="conjunctivitis-yes"> Ja
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="1" name="conjunctivitis" id="conjunctivitis-yes" [(ngModel)]="data.conjunctivitis"> Ja
           </label>
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="conjunctivitis-no"> Nein
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="0" name="conjunctivitis" id="conjunctivitis-no" [(ngModel)]="data.conjunctivitis"> Nein
           </label>
         </div>
       </form>
@@ -240,12 +240,12 @@
     <div class="formWrapper">
       <p class="symptom-name">Hautausschlag</p>
       <form>
-        <div class="btn-group">
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="rash-yes"> Ja
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="1" name="rash" id="rash-yes" [(ngModel)]="data.rash"> Ja
           </label>
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="rash-no"> Nein
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="0" name="rash" id="rash-no" [(ngModel)]="data.rash"> Nein
           </label>
         </div>
       </form>
@@ -254,12 +254,12 @@
     <div class="formWrapper">
       <p class="symptom-name">Lymphknotenschwellung</p>
       <form>
-        <div class="btn-group">
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="lymphoma-yes"> Ja
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="1" name="lymphoma" id="lymphoma-yes" [(ngModel)]="data.lymphoma"> Ja
           </label>
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="stomachache-no"> Nein
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="0" name="lymphoma" id="stomachache-no" [(ngModel)]="data.lymphoma"> Nein
           </label>
         </div>
       </form>
@@ -268,12 +268,12 @@
     <div class="formWrapper">
       <p class="symptom-name">Apathie</p>
       <form>
-        <div class="btn-group">
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="apathy-yes"> Ja
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="1" name="apathy" id="apathy-yes" [(ngModel)]="data.apathy"> Ja
           </label>
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="apathy-no"> Nein
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="0" name="apathy" id="apathy-no" [(ngModel)]="data.apathy"> Nein
           </label>
         </div>
       </form>
@@ -282,19 +282,19 @@
     <div class="formWrapper">
       <p class="symptom-name">Somnolenz</p>
       <form>
-        <div class="btn-group">
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="somnolence-yes"> Ja
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="1" name="somnolence" id="somnolence-yes" [(ngModel)]="data.somnolence"> Ja
           </label>
-          <label class="btn btn-outline-primary">
-            <input type="hidden" id="somnolence-no"> Nein
+          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="0" name="somnolence" id="somnolence-no" [(ngModel)]="data.somnolence"> Nein
           </label>
         </div>
       </form>
     </div>
 
     <div class="formWrapper nextButton">
-      <button type="button" class="btn btn-primary btn-lg">Weiter</button>
+      <button type="button" class="btn btn-primary btn-lg" (click)="showSymptomData()">Weiter</button>
     </div>
 
   </div>
