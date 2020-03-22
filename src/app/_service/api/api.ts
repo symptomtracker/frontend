@@ -148,6 +148,8 @@ export interface SymptomCatalogueItem {
      * @memberof SymptomCatalogueItem
      */
     symptomSeverity: Array<string>;
+
+    tooltip: string;
 }
 /**
  * 
@@ -203,7 +205,7 @@ export const MessageApiAxiosParamCreator = function (configuration?: Configurati
         messagePatients(ids: Array<string>, options: any = {}): RequestArgs {
             // verify required parameter 'ids' is not null or undefined
             if (ids === null || ids === undefined) {
-                throw new RequiredError('ids','Required parameter ids was null or undefined when calling messagePatients.');
+                throw new RequiredError('ids', 'Required parameter ids was null or undefined when calling messagePatients.');
             }
             const localVarPath = `/messagePatients`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
@@ -211,7 +213,7 @@ export const MessageApiAxiosParamCreator = function (configuration?: Configurati
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
@@ -220,12 +222,12 @@ export const MessageApiAxiosParamCreator = function (configuration?: Configurati
             }
 
 
-    
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+
+            localVarUrlObj.query = { ...localVarUrlObj.query, ...localVarQueryParameter, ...options.query };
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -239,7 +241,7 @@ export const MessageApiAxiosParamCreator = function (configuration?: Configurati
  * MessageApi - functional programming interface
  * @export
  */
-export const MessageApiFp = function(configuration?: Configuration) {
+export const MessageApiFp = function (configuration?: Configuration) {
     return {
         /**
          * 
@@ -251,7 +253,7 @@ export const MessageApiFp = function(configuration?: Configuration) {
         messagePatients(ids: Array<string>, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void> {
             const localVarAxiosArgs = MessageApiAxiosParamCreator(configuration).messagePatients(ids, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = { ...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url };
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -316,7 +318,7 @@ export const PatientApiAxiosParamCreator = function (configuration?: Configurati
         addNewPatient(body: PatientCreateRequest, invitationCode?: number, options: any = {}): RequestArgs {
             // verify required parameter 'body' is not null or undefined
             if (body === null || body === undefined) {
-                throw new RequiredError('body','Required parameter body was null or undefined when calling addNewPatient.');
+                throw new RequiredError('body', 'Required parameter body was null or undefined when calling addNewPatient.');
             }
             const localVarPath = `/patient`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
@@ -324,7 +326,7 @@ export const PatientApiAxiosParamCreator = function (configuration?: Configurati
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
-            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
@@ -333,16 +335,16 @@ export const PatientApiAxiosParamCreator = function (configuration?: Configurati
             }
 
 
-    
+
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            localVarUrlObj.query = { ...localVarUrlObj.query, ...localVarQueryParameter, ...options.query };
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+            localVarRequestOptions.data = needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -359,7 +361,7 @@ export const PatientApiAxiosParamCreator = function (configuration?: Configurati
         getPatient(id: string, options: any = {}): RequestArgs {
             // verify required parameter 'id' is not null or undefined
             if (id === null || id === undefined) {
-                throw new RequiredError('id','Required parameter id was null or undefined when calling getPatient.');
+                throw new RequiredError('id', 'Required parameter id was null or undefined when calling getPatient.');
             }
             const localVarPath = `/patient/{_id}`
                 .replace(`{${"_id"}}`, encodeURIComponent(String(id)));
@@ -368,17 +370,17 @@ export const PatientApiAxiosParamCreator = function (configuration?: Configurati
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
 
-    
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+
+            localVarUrlObj.query = { ...localVarUrlObj.query, ...localVarQueryParameter, ...options.query };
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -396,11 +398,11 @@ export const PatientApiAxiosParamCreator = function (configuration?: Configurati
         patchPatient(id: string, body: PatientModel, options: any = {}): RequestArgs {
             // verify required parameter 'id' is not null or undefined
             if (id === null || id === undefined) {
-                throw new RequiredError('id','Required parameter id was null or undefined when calling patchPatient.');
+                throw new RequiredError('id', 'Required parameter id was null or undefined when calling patchPatient.');
             }
             // verify required parameter 'body' is not null or undefined
             if (body === null || body === undefined) {
-                throw new RequiredError('body','Required parameter body was null or undefined when calling patchPatient.');
+                throw new RequiredError('body', 'Required parameter body was null or undefined when calling patchPatient.');
             }
             const localVarPath = `/patient/{_id}`
                 .replace(`{${"_id"}}`, encodeURIComponent(String(id)));
@@ -409,21 +411,21 @@ export const PatientApiAxiosParamCreator = function (configuration?: Configurati
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
-            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'PATCH', ...baseOptions, ...options };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
 
-    
+
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            localVarUrlObj.query = { ...localVarUrlObj.query, ...localVarQueryParameter, ...options.query };
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+            localVarRequestOptions.data = needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -447,7 +449,7 @@ export const PatientApiAxiosParamCreator = function (configuration?: Configurati
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
@@ -468,12 +470,12 @@ export const PatientApiAxiosParamCreator = function (configuration?: Configurati
             }
 
 
-    
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+
+            localVarUrlObj.query = { ...localVarUrlObj.query, ...localVarQueryParameter, ...options.query };
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -487,7 +489,7 @@ export const PatientApiAxiosParamCreator = function (configuration?: Configurati
  * PatientApi - functional programming interface
  * @export
  */
-export const PatientApiFp = function(configuration?: Configuration) {
+export const PatientApiFp = function (configuration?: Configuration) {
     return {
         /**
          * 
@@ -500,7 +502,7 @@ export const PatientApiFp = function(configuration?: Configuration) {
         addNewPatient(body: PatientCreateRequest, invitationCode?: number, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<PatientModel> {
             const localVarAxiosArgs = PatientApiAxiosParamCreator(configuration).addNewPatient(body, invitationCode, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = { ...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url };
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -514,7 +516,7 @@ export const PatientApiFp = function(configuration?: Configuration) {
         getPatient(id: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<PatientModel> {
             const localVarAxiosArgs = PatientApiAxiosParamCreator(configuration).getPatient(id, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = { ...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url };
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -529,7 +531,7 @@ export const PatientApiFp = function(configuration?: Configuration) {
         patchPatient(id: string, body: PatientModel, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<PatientModel> {
             const localVarAxiosArgs = PatientApiAxiosParamCreator(configuration).patchPatient(id, body, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = { ...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url };
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -546,7 +548,7 @@ export const PatientApiFp = function(configuration?: Configuration) {
         queryPatients(highRisk?: boolean, inactive?: number, minAge?: number, maxAge?: number, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<PatientModel>> {
             const localVarAxiosArgs = PatientApiAxiosParamCreator(configuration).queryPatients(highRisk, inactive, minAge, maxAge, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = { ...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url };
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -689,17 +691,17 @@ export const QuestionaireApiAxiosParamCreator = function (configuration?: Config
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
 
-    
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+
+            localVarUrlObj.query = { ...localVarUrlObj.query, ...localVarQueryParameter, ...options.query };
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -716,7 +718,7 @@ export const QuestionaireApiAxiosParamCreator = function (configuration?: Config
         putCatalogueQuestion(body: Array<SymptomCatalogueItem>, options: any = {}): RequestArgs {
             // verify required parameter 'body' is not null or undefined
             if (body === null || body === undefined) {
-                throw new RequiredError('body','Required parameter body was null or undefined when calling putCatalogueQuestion.');
+                throw new RequiredError('body', 'Required parameter body was null or undefined when calling putCatalogueQuestion.');
             }
             const localVarPath = `/catalogue`;
             const localVarUrlObj = globalImportUrl.parse(localVarPath, true);
@@ -724,21 +726,21 @@ export const QuestionaireApiAxiosParamCreator = function (configuration?: Config
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
-            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
 
-    
+
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            localVarUrlObj.query = { ...localVarUrlObj.query, ...localVarQueryParameter, ...options.query };
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+            localVarRequestOptions.data = needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -752,7 +754,7 @@ export const QuestionaireApiAxiosParamCreator = function (configuration?: Config
  * QuestionaireApi - functional programming interface
  * @export
  */
-export const QuestionaireApiFp = function(configuration?: Configuration) {
+export const QuestionaireApiFp = function (configuration?: Configuration) {
     return {
         /**
          * 
@@ -763,7 +765,7 @@ export const QuestionaireApiFp = function(configuration?: Configuration) {
         getCatalogueItems(options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SymptomCatalogueItem>> {
             const localVarAxiosArgs = QuestionaireApiAxiosParamCreator(configuration).getCatalogueItems(options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = { ...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url };
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -777,7 +779,7 @@ export const QuestionaireApiFp = function(configuration?: Configuration) {
         putCatalogueQuestion(body: Array<SymptomCatalogueItem>, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SymptomCatalogueItem>> {
             const localVarAxiosArgs = QuestionaireApiAxiosParamCreator(configuration).putCatalogueQuestion(body, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = { ...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url };
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -864,17 +866,17 @@ export const ReportApiAxiosParamCreator = function (configuration?: Configuratio
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
 
-    
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+
+            localVarUrlObj.query = { ...localVarUrlObj.query, ...localVarQueryParameter, ...options.query };
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -888,7 +890,7 @@ export const ReportApiAxiosParamCreator = function (configuration?: Configuratio
  * ReportApi - functional programming interface
  * @export
  */
-export const ReportApiFp = function(configuration?: Configuration) {
+export const ReportApiFp = function (configuration?: Configuration) {
     return {
         /**
          * 
@@ -899,7 +901,7 @@ export const ReportApiFp = function(configuration?: Configuration) {
         getReport(options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void> {
             const localVarAxiosArgs = ReportApiAxiosParamCreator(configuration).getReport(options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = { ...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url };
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -962,11 +964,11 @@ export const SymptomsApiAxiosParamCreator = function (configuration?: Configurat
         addNewSymptoms(id: string, body: Array<SymptomJourneyModel>, options: any = {}): RequestArgs {
             // verify required parameter 'id' is not null or undefined
             if (id === null || id === undefined) {
-                throw new RequiredError('id','Required parameter id was null or undefined when calling addNewSymptoms.');
+                throw new RequiredError('id', 'Required parameter id was null or undefined when calling addNewSymptoms.');
             }
             // verify required parameter 'body' is not null or undefined
             if (body === null || body === undefined) {
-                throw new RequiredError('body','Required parameter body was null or undefined when calling addNewSymptoms.');
+                throw new RequiredError('body', 'Required parameter body was null or undefined when calling addNewSymptoms.');
             }
             const localVarPath = `/patient/{_id}/symptom`
                 .replace(`{${"_id"}}`, encodeURIComponent(String(id)));
@@ -975,21 +977,21 @@ export const SymptomsApiAxiosParamCreator = function (configuration?: Configurat
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
-            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
 
-    
+
             localVarHeaderParameter['Content-Type'] = 'application/json';
 
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+            localVarUrlObj.query = { ...localVarUrlObj.query, ...localVarQueryParameter, ...options.query };
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
             const needsSerialization = (typeof body !== "string") || localVarRequestOptions.headers['Content-Type'] === 'application/json';
-            localVarRequestOptions.data =  needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
+            localVarRequestOptions.data = needsSerialization ? JSON.stringify(body !== undefined ? body : {}) : (body || "");
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -1006,7 +1008,7 @@ export const SymptomsApiAxiosParamCreator = function (configuration?: Configurat
         getAllSymptoms(id: string, options: any = {}): RequestArgs {
             // verify required parameter 'id' is not null or undefined
             if (id === null || id === undefined) {
-                throw new RequiredError('id','Required parameter id was null or undefined when calling getAllSymptoms.');
+                throw new RequiredError('id', 'Required parameter id was null or undefined when calling getAllSymptoms.');
             }
             const localVarPath = `/patient/{_id}/symptom`
                 .replace(`{${"_id"}}`, encodeURIComponent(String(id)));
@@ -1015,17 +1017,17 @@ export const SymptomsApiAxiosParamCreator = function (configuration?: Configurat
             if (configuration) {
                 baseOptions = configuration.baseOptions;
             }
-            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options };
             const localVarHeaderParameter = {} as any;
             const localVarQueryParameter = {} as any;
 
 
-    
-            localVarUrlObj.query = {...localVarUrlObj.query, ...localVarQueryParameter, ...options.query};
+
+            localVarUrlObj.query = { ...localVarUrlObj.query, ...localVarQueryParameter, ...options.query };
             // fix override query string Detail: https://stackoverflow.com/a/7517673/1077943
             delete localVarUrlObj.search;
             let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
-            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.headers = { ...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers };
 
             return {
                 url: globalImportUrl.format(localVarUrlObj),
@@ -1039,7 +1041,7 @@ export const SymptomsApiAxiosParamCreator = function (configuration?: Configurat
  * SymptomsApi - functional programming interface
  * @export
  */
-export const SymptomsApiFp = function(configuration?: Configuration) {
+export const SymptomsApiFp = function (configuration?: Configuration) {
     return {
         /**
          * 
@@ -1052,7 +1054,7 @@ export const SymptomsApiFp = function(configuration?: Configuration) {
         addNewSymptoms(id: string, body: Array<SymptomJourneyModel>, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<void> {
             const localVarAxiosArgs = SymptomsApiAxiosParamCreator(configuration).addNewSymptoms(id, body, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = { ...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url };
                 return axios.request(axiosRequestArgs);
             };
         },
@@ -1066,7 +1068,7 @@ export const SymptomsApiFp = function(configuration?: Configuration) {
         getAllSymptoms(id: string, options?: any): (axios?: AxiosInstance, basePath?: string) => AxiosPromise<Array<SymptomJourneyModel>> {
             const localVarAxiosArgs = SymptomsApiAxiosParamCreator(configuration).getAllSymptoms(id, options);
             return (axios: AxiosInstance = globalAxios, basePath: string = BASE_PATH) => {
-                const axiosRequestArgs = {...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url};
+                const axiosRequestArgs = { ...localVarAxiosArgs.options, url: basePath + localVarAxiosArgs.url };
                 return axios.request(axiosRequestArgs);
             };
         },

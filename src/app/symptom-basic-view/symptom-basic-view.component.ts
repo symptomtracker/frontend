@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SymptomsService } from '../_service/symptoms.service';
-import { SymptomJourneyModel } from '../_service/api';
+import { SymptomJourneyModel, SymptomCatalogueItem } from '../_service/api';
+import { QuestionaireService } from '../_service/questionaire.service';
 
 @Component({
   selector: 'app-symptom-basic-view',
@@ -9,19 +10,32 @@ import { SymptomJourneyModel } from '../_service/api';
 })
 export class SymptomBasicViewComponent implements OnInit {
 
-  constructor(private symptomService:SymptomsService) { }
+  constructor(private symptomService: SymptomsService, private questionaireService: QuestionaireService) { }
 
-  symptoms:SymptomJourneyModel[];
-  
+  lastSymptomValues: SymptomJourneyModel[];
+  symptomsCatalogue: SymptomCatalogueItem[];
+  mainSymptomsCatalogue: SymptomCatalogueItem[] = [
+    {
+      Category: "Hauptsymptome",
+      description: "Husten",
+      symptomSeverity: ["KeinHusten", "Leicht", "Mittel", "Schwer"],
+      tooltip: "Handelt es sich um trockenen Husten und hat sich der Husten schon länger manifestiert? (Bei einer Erkältung beginnt der Husten ebenfalls trocken, ändert sich aber im Laufe der Zeit.)"
+    },
+    {
+      Category: "Hauptsymptome",
+      description: "Kurzatmigkeit",
+      symptomSeverity: ["Ja", "Nein"],
+      tooltip: ""
+    }
+  ];
 
   ngOnInit(): void {
     this.loadSymptoms();
   }
 
-  private async loadSymptoms(){
-    this.symptoms = (await this.symptomService.getAllSymptoms("123")).data;    
-
-    // this.symptoms[0].
+  private async loadSymptoms() {
+    this.lastSymptomValues = (await this.symptomService.getAllSymptoms("123")).data;
+    this.symptomsCatalogue = (await this.questionaireService.getCatalogueItems()).data;
   }
 
   toggleActiveStatus(event) {

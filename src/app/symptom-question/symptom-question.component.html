@@ -1,0 +1,14 @@
+<div class="formWrapper">
+    <p class="symptom-name">{{symptomDescription.description}}<img (tooltipHtml)="symptomDescription.tooltip"
+            class="lamp" alt='Hint' src='./assets/img/lamp.svg' /></p>
+    <form>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons"
+            *ngFor="let item of symptomDescription.symptomSeverity">
+            <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+                <input type="radio" name="options" autocomplete="off" [id]="item" [value]="item"
+                    [(ngModel)]="selectedValue">
+                {{item}}
+            </label>
+        </div>
+    </form>
+</div>
