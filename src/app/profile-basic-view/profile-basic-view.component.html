@@ -22,13 +22,13 @@
   <div class="formWrapper group-gender">
     <p>Bitte geben Sie Ihr Geschlecht an:</p>
     <div class="btn-group " data-toggle="buttons" >
-      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)>
+      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
         <input class="radio-button" type="radio" name="options" id="male" [(ngModel)]="patient.gender" autocoplete="off" value="female" checked> Weiblich
       </label>
-      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)>
+      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
         <input class="radio-button" type="radio" name="options" id="female" [(ngModel)]="patient.gender" autocomplete="off" value="male"> Männlich
       </label>
-      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)>
+      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
         <input class="radio-button" type="radio" name="options" id="diverse" [(ngModel)]="patient.gender"autocomplete="off" value="diverse"> Divers
       </label>
     </div>
