@@ -18,6 +18,7 @@ import { CodeInputViewComponent } from './code-input-view/code-input-view.compon
 import { DashboardViewComponent } from './dashboard-view/dashboard-view.component';
 import { MyDataViewComponent } from './my-data-view/my-data-view.component';
 import { HealthOfficeViewComponent } from './health-office-view/health-office-view.component';
+import { SymptomsDailyViewComponent } from './symptoms-daily-view/symptoms-daily-view.component';
 
 const appRoutes: Routes = [
   { path: 'home',
@@ -53,6 +54,7 @@ const appRoutes: Routes = [
     DashboardViewComponent,
     MyDataViewComponent,
     HealthOfficeViewComponent,
+    SymptomsDailyViewComponent,
   ],
   imports: [
     BrowserModule,
