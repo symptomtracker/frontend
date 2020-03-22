@@ -1,7 +1,7 @@
 <div class="formWrapper">
     <p class="symptom-name">{{symptomDescription.description}}<img (tooltipHtml)="symptomDescription.tooltip"
             class="lamp" alt='Hint' src='./assets/img/lamp.svg' /></p>
-    <form>
+    <form class="symptom-question-form">
         <div class="btn-group btn-group-toggle" data-toggle="buttons"
             *ngFor="let item of symptomDescription.symptomSeverity">
             <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
