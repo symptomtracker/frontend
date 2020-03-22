@@ -5,6 +5,6 @@ import {PatientApi} from './api/api'
 })
 export class PatientService extends PatientApi{
   constructor() {
-    super({basePath: 'https://api.symptomtracker.de/alchmi/Symptom_Tracker_Patient_API/1.0.0'});
+    super({basePath: 'https://api.symptomtracker.de/1.0.0'});
   }
 }
