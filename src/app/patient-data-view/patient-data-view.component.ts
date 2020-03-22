@@ -27,7 +27,7 @@ export class PatientDataViewComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.loadPatient()
+    this.loadPatient();
   }
 
   patient: PatientModel;

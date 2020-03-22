@@ -17,6 +17,8 @@ import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import { CodeInputViewComponent } from './code-input-view/code-input-view.component';
 import { DashboardViewComponent } from './dashboard-view/dashboard-view.component';
 import { MyDataViewComponent } from './my-data-view/my-data-view.component';
+import { PatientDataViewComponent } from './patient-data-view/patient-data-view.component';
+import { ChartsModule } from 'ng2-charts';
 
 const appRoutes: Routes = [
   { path: 'home',
@@ -29,6 +31,7 @@ const appRoutes: Routes = [
   { path: 'impressum', component: LegalNoticeComponent },
   { path: 'datenschutzerklärung', component: PrivacyStatementViewComponent },
   { path: 'meinedaten', component: MyDataViewComponent },
+  { path: 'patient', component: PatientDataViewComponent },
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
@@ -50,6 +53,7 @@ const appRoutes: Routes = [
     CodeInputViewComponent,
     DashboardViewComponent,
     MyDataViewComponent,
+    PatientDataViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +64,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
