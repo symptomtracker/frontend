@@ -5,7 +5,7 @@
     <p> Bitte erfassen Sie Ihre Krankheitssymptome und bewerten Sie, wie stark diese Symptome bei Ihnen ausgeprägt
       sind</p>
     <p class="symptom-info"> Symptomausprägungen gemäß <a
-      href="https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Steckbrief.html#doc13776792bodyText2">RKI</a>
+        href="https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Steckbrief.html#doc13776792bodyText2">RKI</a>
     </p>
   </div>
   <br>
@@ -51,20 +51,8 @@
         </div>
       </form>
     </div>
-
-
-    <div class="formWrapper">
-      <p class="symptom-name">Husten</p>
-      <form>
-        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-          <label class="btn btn-outline-primary active" (click)="toggleActiveStatus($event)">
-            <input type="radio" name="options" autocomplete="off" id="cough-yes" checked> Ja
-          </label>
-          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-            <input type="radio" name="options" autocomplete="off" id="cough-no"> Nein
-          </label>
-        </div>
-      </form>
+    <div *ngFor="let symptomelement of mainSymptomsCatalogue">
+      <app-symptom-question [symptomDescription]="symptomelement"></app-symptom-question>
     </div>
 
     <div class="formWrapper">
