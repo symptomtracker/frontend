@@ -13,7 +13,7 @@
   <div class="well-being formWrapper">
     <p class="symptom-name">Wie ist Ihr allgemeines Wohlbefinden?</p>
     <form>
-      <div class="btn-group">
+      <div class="btn-group wohlbefinden">
         <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
           <input type="hidden" id="well-being-good"> Gut
         </label>
@@ -61,7 +61,7 @@
       </div>
     </div>
 
-    <div class="formWrapper nextButton">
+    <div class="formWrapper confirm-button">
       <button type="button" class="btn btn-primary btn-lg"><a routerLink="/success">Daten senden</a></button>
     </div>
   </div>

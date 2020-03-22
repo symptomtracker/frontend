@@ -22,9 +22,25 @@
   color: rgb(72, 72, 72);
 }
 
-.lamp{
+.lamp {
   margin-top: -5px;
   width: 15px;
   height: 15px;
-
 }
+
+.formWrapper.confirm-button{
+  display: flex;
+  justify-content: flex-end;
+}
+@media screen and (max-width: 600px) {
+  .formWrapper .btn-group.wohlbefinden {
+    display: block;
+  }
+  .formWrapper .btn-group.wohlbefinden label {
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 0;
+  }
+}
+
+
