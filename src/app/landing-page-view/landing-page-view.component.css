@@ -20,3 +20,11 @@
   width: 200px;
   object-fit: cover;
 }
+
+.linksammlung {
+}
+
+.linksammlung img {
+  max-width: 150px;
+  height: auto;
+}
