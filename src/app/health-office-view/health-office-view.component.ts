@@ -2,7 +2,6 @@ import {Component, NgModule, OnInit} from '@angular/core';
 import {PatientModel, RelatedAttribute, SymptomJourneyModel} from "../_service/api";
 import {PatientService} from "../_service/patient.service";
 import {Router, RouterModule, Routes} from "@angular/router";
-import {MyDataViewComponent} from "../my-data-view/my-data-view.component";
 
 @Component({
   selector: 'app-health-office-view',
@@ -26,7 +25,6 @@ export class HealthOfficeViewComponent implements OnInit {
   }
 
   goToPatientDetailView(id: String) {
-    this.router.navigate['../home'];
-    console.log("KLICK");
+    this.router.navigateByUrl('patientdata');
   }
 }
