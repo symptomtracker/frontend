@@ -22,6 +22,7 @@ import { PatientDataViewComponent } from './patient-data-view/patient-data-view.
 import { HealthOfficeViewComponent } from './health-office-view/health-office-view.component';
 import { SymptomsDailyViewComponent } from './symptoms-daily-view/symptoms-daily-view.component';
 import { ChartsModule } from 'ng2-charts';
+import { InputSuccessViewComponent } from './input-success-view/input-success-view.component';
 
 
 const appRoutes: Routes = [
@@ -39,8 +40,8 @@ const appRoutes: Routes = [
   { path: 'meinedaten', component: MyDataViewComponent },
   { path: 'patientdata', component: PatientDataViewComponent },
   { path: 'overviewpatients', component: HealthOfficeViewComponent },
-  {
-    path: '',
+  { path: 'success', component: InputSuccessViewComponent },
+  { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
   },
@@ -65,6 +66,7 @@ const appRoutes: Routes = [
     PatientDataViewComponent,
     HealthOfficeViewComponent,
     SymptomsDailyViewComponent,
+    InputSuccessViewComponent,
   ],
   imports: [
     TooltipModule.forRoot(),
