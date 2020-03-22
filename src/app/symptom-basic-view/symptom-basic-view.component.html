@@ -34,26 +34,6 @@
   </div>
 
   <div class="symptom-list formWrapper">
-    <h2 class="symptom-header">Hauptsymptome</h2>
-
-    <div class="formWrapper">
-      <p class="symptom-name">Fieber<img
-          tooltipHtml="Von Fieber kann gesprochen werden, sobald die eigene Körpertemperatur 38°C überschreitet. Bitte messen Sie das Fieber immer mit der gleichen Methode."
-          class="lamp" alt='Hint' src='./assets/img/lamp.svg' /></p>
-      <form>
-        <div class="form-group">
-          <label for="exampleSelect2">Bitte geben Sie ihre gemessene Körpertemperatur ein</label>
-          <select class="form-control" id="exampleSelect2">
-            <option>&lt; 38°C</option>
-            <option>38,1 - 38,5 °C</option>
-            <option>38,6 - 39,0 °C</option>
-            <option>39,1 - 39,9 °C</option>
-            <option>&gt; 40°C</option>
-          </select>
-        </div>
-      </form>
-    </div>
-
     <div *ngFor="let symptomcategory of categories">
       <h2 class="symptom-header">{{symptomcategory}}</h2>
       <div *ngFor="let symptomelement of symptomGroups[symptomcategory]">
