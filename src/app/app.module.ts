@@ -37,7 +37,7 @@ const appRoutes: Routes = [
   { path: 'codeinput', component: CodeInputViewComponent },
   { path: 'impressum', component: LegalNoticeComponent },
   { path: 'datenschutzerklärung', component: PrivacyStatementViewComponent },
-  { path: 'meinedaten', component: MyDataViewComponent },
+  { path: 'meinedaten', component: CodeInputViewComponent },
   { path: 'patientdata', component: PatientDataViewComponent },
   { path: 'overviewpatients', component: HealthOfficeViewComponent },
   { path: 'success', component: InputSuccessViewComponent },
