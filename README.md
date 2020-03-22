@@ -1,9 +1,8 @@
-# Symptomtracker
 ![alt text](src/assets/img/Logo_SymptomTracker.jpeg)
 
 Platform to track symptomes of COVID-19 for patients and discharge of the health department.
 
-
+![alt text](src/assets/img/ex.PNG)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 
 ## Development server
