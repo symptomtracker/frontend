@@ -4,6 +4,12 @@
   padding: 8px;
 }
 
+@media screen and (max-width: 600px) {
+  .toolbar img {
+    height: 50px;
+  }
+}
+
 .toolbar #twitter-logo {
   height: 40px;
   margin: 0 16px;
@@ -47,8 +53,6 @@ button.navbar-toggler{
   border: none !important;
   width: 80px;
 }
-
-
 
 button.navbar-toggler span.navbar-toggler-icon, button.navbar-toggler span.navbar-toggler-icon:before, button.navbar-toggler span.navbar-toggler-icon:after {
   color: #206F9D;
@@ -106,6 +110,7 @@ button.navbar-toggler.open span.navbar-toggler-icon:after {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: 50;
 }
 
 .navbar-collapse .nav-item {

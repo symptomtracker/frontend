@@ -2,5 +2,8 @@
   margin-top: -5px;
   width: 15px;
   height: 15px;
+}
 
+tr.patient-row {
+  cursor: pointer;
 }

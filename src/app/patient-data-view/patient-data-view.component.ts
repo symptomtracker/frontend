@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PatientService} from "../_service/patient.service";
 import {PatientModel} from "../_service/api";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-patient-data-view',
@@ -9,9 +10,16 @@ import {PatientModel} from "../_service/api";
 })
 export class PatientDataViewComponent implements OnInit {
 
+  id: string;
+
   constructor(
-    private patientService:PatientService
-  ) { }
+    private patientService:PatientService,
+    private activeRoute: ActivatedRoute
+  ) {
+    this.activeRoute.queryParams.subscribe(params => {
+      this.id = params['id'];
+    });
+  }
 
   public barChartOptions = {
     scaleShowVerticalLines: false,
@@ -27,12 +35,12 @@ export class PatientDataViewComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.loadPatient();
+    this.loadPatient(this.id);
   }
 
   patient: PatientModel;
-  async loadPatient() {
-    this.patient = (await this.patientService.getPatient("0")).data;
+  async loadPatient(id: string) {
+    this.patient = (await this.patientService.getPatient(id)).data;
     console.log(this.patient);
   }
 
