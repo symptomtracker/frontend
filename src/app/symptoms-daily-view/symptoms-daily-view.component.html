@@ -1,1 +1,352 @@
-<p>symptoms-daily-view works!</p>
+<div class="content">
+  <h1> Krankeitssymptome </h1>
+
+  <div class="formWrapper">
+    <p> Bitte erfassen Sie Ihre Krankheitssymptome und bewerten Sie, wie stark diese Symptome bei Ihnen ausgeprägt
+      sind</p>
+    <p class="symptom-info"> Symptomausprägungen gemäß <a
+      href="https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Steckbrief.html#doc13776792bodyText2">RKI</a>
+    </p>
+  </div>
+  <br>
+
+  <div class="well-being formWrapper">
+    <p class="symptom-name">Wie ist Ihr allgemeines Wohlbefinden?</p>
+    <form>
+      <div class="btn-group">
+        <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+          <input type="hidden" id="well-being-good-daily"> Gut
+        </label>
+        <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+          <input type="hidden" id="well-being-better-daily"> Besser
+        </label>
+        <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+          <input type="hidden" id="well-being-normal-daily"> Gleichbleibend
+        </label>
+        <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+          <input type="hidden" id="well-being-worse-daily"> Schlechter
+        </label>
+        <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+          <input type="hidden" id="well-being-bad-daily"> Schlecht
+        </label>
+      </div>
+    </form>
+  </div>
+
+  <div class="symptom-list formWrapper">
+    <h2 class="symptom-header">Hauptsymptome</h2>
+
+    <div class="formWrapper">
+      <p class="symptom-name">Fieber</p>
+      <form>
+        <div class="form-group">
+          <label for="exampleSelect2">Bitte geben Sie ihre gemessene Körpertemperatur ein</label>
+          <select class="form-control" id="fever-temperature-daily">
+            <option>&lt; 38°C</option>
+            <option>38,1 - 38,5 °C</option>
+            <option>38,6 - 39,0 °C</option>
+            <option>39,1 - 39,9 °C</option>
+            <option>&gt; 40°C</option>
+          </select>
+        </div>
+      </form>
+    </div>
+
+
+    <div class="formWrapper">
+      <p class="symptom-name">Husten</p>
+      <form>
+        <div class="btn-group">
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="cough-better-daily"> Besser
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="cough-same-daily"> Gleichbleibend
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="cough-worse-daily"> Schlechter
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="formWrapper">
+      <p class="symptom-name">Kurzatmigkeit</p>
+      <form>
+        <div class="btn-group">
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="shortnessofbreath-better-daily"> Besser
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="shortnessobreath-same-daily"> Gleichbleibend
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="shortnessofbreath-worse-daily"> Schlechter
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="formWrapper">
+      <p class="symptom-name">Muskel-/Gelenkschmerzen</p>
+      <form>
+        <div class="btn-group">
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="muscular-pain-better-daily"> Besser
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="muscular-pain-same-daily"> Gleichbleibend
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="muscular-pain-worse-daily"> Schlechter
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="formWrapper">
+      <p class="symptom-name">Halsschmerzen</p>
+      <form>
+        <div class="btn-group">
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="sore-better-daily"> Besser
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="sore-same-daily"> Gleichbleibend
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="sore-worse-daily"> Schlechter
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="formWrapper">
+      <p class="symptom-name">Kopfschmerzen</p>
+      <form>
+        <div class="btn-group">
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="headache-better-daily"> Besser
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="headache-same-daily"> Gleichbleibend
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="headache-worse-daily"> Schlechter
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="formWrapper">
+      <p class="symptom-name">Übelkeit / Erbrechen</p>
+      <form>
+        <div class="btn-group">
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="nausea-better-daily"> Besser
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="nausea-same-daily"> Gleichbleibend
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="nausea-worse-daily"> Schlechter
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <h2 class="symptom-header formWrapper"> Weitere Symptome </h2>
+
+    <div class="formWrapper">
+      <p class="symptom-name">Verstopfte Nase</p>
+      <form>
+        <div class="btn-group">
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="blocked-nose-better-daily"> Besser
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="blocked-nose-same-daily"> Gleichbleibend
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="blocked-nose-worse-daily"> Schlechter
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="formWrapper">
+      <p class="symptom-name">Durchfall</p>
+      <form>
+        <div class="btn-group">
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="diarrhea-better-daily"> Besser
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="diarrhea-same-daily"> Gleichbleibend
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="diarrhea-worse-daily"> Schlechter
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="formWrapper">
+      <p class="symptom-name">Gliederschmerzen</p>
+      <form>
+        <div class="btn-group">
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="limb-pain-better-daily"> Besser
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="limb-pain-same-daily"> Gleichbleibend
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="limb-pain-worse-daily"> Schlechter
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="formWrapper">
+      <p class="symptom-name">Appetitlosigkeit</p>
+      <form>
+        <div class="btn-group">
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="appetit-loss-better-daily"> Besser
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="appetit-loss-same-daily"> Gleichbleibend
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="appetit-loss-worse-daily"> Schlechter
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="formWrapper">
+      <p class="symptom-name">Gewichtsverlust</p>
+      <form>
+        <div class="btn-group">
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="weight-loss-better-daily"> Besser
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="weight-loss-same-daily"> Gleichbleibend
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="weight-loss-worse-daily"> Schlechter
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="formWrapper">
+      <p class="symptom-name">Bauchschmerzen</p>
+      <form>
+        <div class="btn-group">
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="stomach-ache-better-daily"> Besser
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="stomach-ache-same-daily"> Gleichbleibend
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="stomach-ache-worse-daily"> Schlechter
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="formWrapper">
+      <p class="symptom-name">Konjunktivitis</p>
+      <form>
+        <div class="btn-group">
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="conjuctivitis-better-daily"> Besser
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="conjunctivitis-same-daily"> Gleichbleibend
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="conjunctivitis-worse-daily"> Schlechter
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="formWrapper">
+      <p class="symptom-name">Hautausschlag</p>
+      <form>
+        <div class="btn-group">
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="rash-better-daily"> Besser
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="rash-same-daily"> Gleichbleibend
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="rash-worse-daily"> Schlechter
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="formWrapper">
+      <p class="symptom-name">Lymphknotenschwellung</p>
+      <form>
+        <div class="btn-group">
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="lymphoma-better-daily"> Besser
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="lymphoma-same-daily"> Gleichbleibend
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="lymphoma-worse-daily"> Schlechter
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="formWrapper">
+      <p class="symptom-name">Apathie</p>
+      <form>
+        <div class="btn-group">
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="apathy-better-daily"> Besser
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="apathy-same-daily"> Gleichbleibend
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="apathy-worse-daily"> Schlechter
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="formWrapper">
+      <p class="symptom-name">Somnolenz</p>
+      <form>
+        <div class="btn-group">
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="somnolence-better-daily"> Besser
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="somnolence-same-daily"> Gleichbleibend
+          </label>
+          <label class="btn btn-outline-primary btn-margin" (click)="toggleActiveStatus($event)">
+            <input type="hidden" id="somnolence-worse-daily"> Schlechter
+          </label>
+        </div>
+      </form>
+    </div>
+
+    <div class="formWrapper nextButton">
+      <button type="button" class="btn btn-primary btn-lg">Weiter</button>
+    </div>
+
+  </div>
+</div>
