@@ -34,7 +34,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 The initial Project was created by participants of the [Symptomtracker Team](https://devpost.com/software/symptomtracker-62xhkp).
 
-* **Jana** - - [janaesselborn] (https://github.com/janaesselborn)
+* **Jana** -- [janaesselborn](https://github.com/janaesselborn)
 * **...** -
 * **...** -
 
