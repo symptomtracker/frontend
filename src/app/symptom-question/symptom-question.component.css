@@ -36,3 +36,16 @@
 .symptom-question-form > div {
   width: 100%;
 }
+
+.symptom-question-form label{
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .symptom-question-form {
+    display: block;
+  }
+}
