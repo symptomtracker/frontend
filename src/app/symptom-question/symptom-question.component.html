@@ -1,6 +1,5 @@
 <div class="formWrapper">
-    {{symptomDescription.toolTip}}
-    <p class="symptom-name">{{symptomDescription.description}}<img (tooltipHtml)="symptomDescription.toolTip"
+    <p class="symptom-name">{{symptomDescription.description}}<img [tooltipHtml]="symptomDescription.toolTip"
             class="lamp" alt='Hint' src='./assets/img/lamp.svg' /></p>
     <form class="symptom-question-form">
         <div class="btn-group btn-group-toggle" data-toggle="buttons"
