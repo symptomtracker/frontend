@@ -14,6 +14,7 @@ import { ProfileContactViewComponent } from "./profile-contact-view/profile-cont
 import { PrivacyStatementViewComponent } from './privacy-statement-view/privacy-statement-view.component';
 import { LegalNoticeComponent } from './legal-notice/legal-notice.component';
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import {ReactiveFormsModule } from '@angular/forms'
 
 const appRoutes: Routes = [
   { path: 'home', component: LandingPageViewComponent },
@@ -47,6 +48,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AlertModule.forRoot(),

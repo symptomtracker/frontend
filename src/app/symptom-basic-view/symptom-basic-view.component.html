@@ -58,10 +58,10 @@
       <form>
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
           <label class="btn btn-outline-primary active" (click)="toggleActiveStatus($event)">
-            <input type="radio" name="options" autocomplete="off" id="cough-yes" checked> Ja
+            <input type="radio" value="yes" id="cough-yes" [formControl]="data.cough" checked> Ja
           </label>
           <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-            <input type="radio" name="options" autocomplete="off" id="cough-no"> Nein
+            <input type="radio" value="no" id="cough-no" [formControl]="data.cough"> Nein
           </label>
         </div>
       </form>
@@ -70,12 +70,12 @@
     <div class="formWrapper">
       <p class="symptom-name">Kurzatmigkeit</p>
       <form>
-        <div class="btn-group">
-          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-            <input type="hidden" id="breathlessness-yes"> Ja
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label class="btn btn-outline-primary active" (click)="toggleActiveStatus($event)">
+            <input type="radio" value="yes" id="shortness-of-breath-yes" [formControl]="data.shortBreath"> Ja
           </label>
           <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-            <input type="hidden" id="breathlessness-no"> Nein
+            <input type="radio" value="no" id="shortness-of-breath-no" [formControl]="data.shortBreath"> Nein
           </label>
         </div>
       </form>
@@ -86,10 +86,10 @@
       <form>
         <div class="btn-group">
           <label class="btn btn-outline-primary">
-            <input type="hidden" id="muscular-pains-yes" (click)="toggleActiveStatus($event)"> Ja
+            <input type="hidden" id="muscular-pains-yes"> Ja
           </label>
           <label class="btn btn-outline-primary">
-            <input type="hidden" id="muscular-pains-no" (click)="toggleActiveStatus($event)"> Nein
+            <input type="hidden" id="muscular-pains-no"> Nein
           </label>
         </div>
       </form>
@@ -99,10 +99,10 @@
       <p class="symptom-name">Halsschmerzen</p>
       <form>
         <div class="btn-group">
-          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+          <label class="btn btn-outline-primary">
             <input type="hidden" id="sore-yes"> Ja
           </label>
-          <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+          <label class="btn btn-outline-primary">
             <input type="hidden" id="sore-no"> Nein
           </label>
         </div>
