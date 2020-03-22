@@ -22,7 +22,11 @@ Clone the repository and run `npm install` to get the dependencies. Run `ng serv
 ## Built With
 
 * [Angular](https://angular.io/) To get started with Angular and our project, look here: `https://angular.io/guide/setup-local`
-* [Bootstrap](https://ng-bootstrap.github.io/#/home) To use bootstrap with angular: `https://ng-bootstrap.github.io/#/getting-started`
+* [Bootstrap](https://ng-bootstrap.github.io/+#/home) To use bootstrap with angular: `https://ng-bootstrap.github.io/#/getting-started`
+
+## Libraries
+
+* [Chart JS](https://www.chartjs.org/) For fancy graphs
 
 ## Authors
 
