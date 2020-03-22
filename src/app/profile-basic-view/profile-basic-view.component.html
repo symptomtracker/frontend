@@ -24,13 +24,13 @@
 
     <div class="btn-group" data-toggle="buttons">
       <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-        <input type="hidden" name="options" id="male" autocomplete="off" checked> Weiblich
+        <input class="radio-button" type="radio" name="options" id="male" autocomplete="off" checked> Weiblich
       </label>
       <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-        <input type="hidden" name="options" id="female" autocomplete="off"> Männlich
+        <input class="radio-button" type="radio" name="options" id="female" autocomplete="off"> Männlich
       </label>
       <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-        <input type="hidden" name="options" id="diverse" autocomplete="off"> Divers
+        <input clas="radio-button" type="radio" name="options" id="diverse" autocomplete="off"> Divers
       </label>
     </div>
   </div>
