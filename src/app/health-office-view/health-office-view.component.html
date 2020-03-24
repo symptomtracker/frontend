@@ -1,21 +1,51 @@
 <div class="content">
   <h1>Übersicht aller Patienten</h1>
+  <div class="filterWrapper">
+    <form>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="searchString"
+          placeholder="Nach Personen suchen"
+          [(ngModel)]="searchNameString"
+        />
+      </div>
+    </form>
+  </div>
   <div class="data-wrapper">
     <table class="table table-striped">
       <tr>
-        <th>Code<img tooltipHtml="Tracking-ID der COVID-Patienten" class="lamp" alt='Hint' src='./assets/img/lamp.svg'/></th>
+        <th>Getestet?</th>
+        <th>Infiziert?</th>
+        <th>Code<img tooltip="Tracking-ID der COVID-Patienten" class="lamp" alt='Hint' src='./assets/img/lamp.svg'/></th>
         <th>Name</th>
         <th>Geschlecht</th>
         <th>Alter</th>
         <th>Stadt</th>
+        <th>Raucher</th>
+        <th>Aus Risikogebiet?</th>
+        <th>Infizierten Kontakt?</th>
+        <th>Schwanger</th>
       </tr>
-      <tr class="patient-row" *ngFor="let patientItem of this.patientsList" (click)="goToPatientDetailView(patientItem?._id)">
+      <tr class="patient-row" *ngFor="let patientItem of this.patientsList | filter: 'name': searchNameString;"
+          (click)="goToPatientDetailView(patientItem?._id)">
+        <td>-</td>
+        <td>-</td>
         <td>{{patientItem?._id}}</td>
         <td>{{patientItem?.name}}</td>
         <td>{{patientItem?.gender}}</td>
-        <td>{{patientItem?.age}}</td>
+        <td [ngClass]="{'warning': patientItem?.age > 47}">{{patientItem?.age}}</td>
         <td>{{patientItem?.city}}</td>
+        <td *ngIf="patientItem?.smoker != null; else empty" [ngClass]="{'warning': patientItem?.smoker}">{{(patientItem?.smoker)? "Ja" : "Nein"}}</td>
+        <td *ngIf="patientItem?.geo_risk != null; else empty" [ngClass]="{'warning': patientItem?.geo_risk}">{{(patientItem?.geo_risk)? "Ja" : "Nein"}}</td>
+        <td *ngIf="patientItem?.contact_risk != null; else empty" [ngClass]="{'warning': patientItem?.contact_risk}">{{(patientItem?.contact_risk)? "Ja" : "Nein"}}</td>
+        <td *ngIf="patientItem?.pregnant != null; else empty" [ngClass]="{'warning': patientItem?.pregnant}">{{(patientItem?.pregnant)? "Ja" : "Nein"}}</td>
       </tr>
     </table>
   </div>
 </div>
+
+<ng-template #empty>
+  <td>-</td>
+</ng-template>

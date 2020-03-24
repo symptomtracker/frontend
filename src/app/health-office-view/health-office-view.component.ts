@@ -1,4 +1,4 @@
-import {Component, NgModule, OnInit} from '@angular/core';
+import {Component, NgModule, OnInit, Pipe} from '@angular/core';
 import {PatientModel, RelatedAttribute, SymptomJourneyModel} from "../_service/api";
 import {PatientService} from "../_service/patient.service";
 import {Router, RouterModule, Routes} from "@angular/router";
@@ -10,6 +10,9 @@ import {Router, RouterModule, Routes} from "@angular/router";
 })
 
 export class HealthOfficeViewComponent implements OnInit {
+
+  searchNameString: string;
+
   constructor(
     private patientService: PatientService,
     private router: Router

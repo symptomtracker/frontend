@@ -41,6 +41,7 @@ export class PatientDataViewComponent implements OnInit {
   patient: PatientModel;
   async loadPatient(id: string) {
     this.patient = (await this.patientService.getPatient(id)).data;
+    console.log("PATIENT");
     console.log(this.patient);
   }
 
