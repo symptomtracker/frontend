@@ -1,4 +1,5 @@
 <div class="content">
+  <a routerLink="/overviewpatients">< Zurück zur Übersicht</a>
     <h1>Daten von Patient {{patient?.name}}</h1>
     <p>Krankheitsverlauf von Patient {{patient?.name}}</p>
 
@@ -24,7 +25,7 @@
           </div>
           <div class="info-row row">
             <div class="info-col title col">Code</div>
-            <div class="info-col info col">{{patient?.linkedCode}}</div>
+            <div class="info-col info col">{{patient?._id}}</div>
           </div>
         </div>
         <div class="col-md specific-data">
