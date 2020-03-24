@@ -1,1 +1,84 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" fill="yellow" width="24" height="24" viewBox="0 0 24 24"><path d="M12,6A6,6 0 0,1 18,12C18,14.22 16.79,16.16 15,17.2V19A1,1 0 0,1 14,20H10A1,1 0 0,1 9,19V17.2C7.21,16.16 6,14.22 6,12A6,6 0 0,1 12,6M14,21V22A1,1 0 0,1 13,23H11A1,1 0 0,1 10,22V21H14M20,11H23V13H20V11M1,11H4V13H1V11M13,1V4H11V1H13M4.92,3.5L7.05,5.64L5.63,7.05L3.5,4.93L4.92,3.5M16.95,5.63L19.07,3.5L20.5,4.93L18.37,7.05L16.95,5.63Z" /></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg3713"
+   width="115"
+   height="166"
+   viewBox="0 0 115 166"
+   sodipodi:docname="bulb.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata3719">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3717" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview3715"
+     showgrid="false"
+     inkscape:zoom="5.1084337"
+     inkscape:cx="57.5"
+     inkscape:cy="83"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3713" />
+  <image
+     width="115"
+     height="166"
+     preserveAspectRatio="none"
+     xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHMAAACmCAIAAABm0ictAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAR5SURBVHhe7dzLcRRLEIVhSYEDeMKShZyRATgD
+BmiFJ1qwxAUcAAeAIaUsSq3qV71OZU73+YOI2wruAj4OqdFEiNvL5XLjssuvL+Fp0p8fX8PT/959
++BaenOVFdtFx3lx2nhNrS9lMzWk5stMMlQ1kK0BjpbKx8cRDZVtMtWpZbaTvCNl20FijbGwAMVa2
+o6nWS1aD+t6F/wLqztq9398/hidAkM3iTPtuNoYYb2dZ9E5Bslpf357XwP9f/+36HodustfOqnXE
+7XANRppCr8G09svQutljTHVe+3ibZI/KqjXi1ssem1Vrwa2UPQOrVo1bI3seVq0Ot1j2bKxaBW6Z
+7DlZtVLcAtkzs2pFuLmyZNXycbNkyTotE7f4MxjLbF+Wg52XM9sdWbKutYvLa4BqS5aD3W57tquy
+ZM1pA5fXANWyLAeb39psuVlUC7IcbGmLs+VmUaWyHGxd89lys6jeyHKwLSWz5WZRURbVqyxPQXvT
+g8DNoqIsqiDLU9CreBC4WVSURUVZVM+yPLJ901PLzaKiLCrKoqIsKsqiuuMLA0Ty8uD278/P4SPr
+bt9/Ck8vLf6RL36nXfJdcck70Fa5kE1MpyW+iezGdxqa+9rf2Q1WaeNnt7+Bs+83fldkLDu/APoj
+fPzSIu78AuiP8PFLtrheXhskoHPftRLQua9VlrLbd2Ba8n/mj9Fwti42uzbP3dmuzdPDbL1cg+NF
+WVQuZNcO7u4hXjujtq8KNOOvFPI/idVleHB5DVAZy2a+aK3L9hXC8799BP3ttRRvRfwVxvcN4iV1
+8nVBkvzyeA1QURYVZVFRFhVlUT3Lol+uny193cLNoqIsKsqiCrI8tb2KXxxys6goi+pVlgehvek7
+7twsKsqieiPLg9DS9BRI3CyqVJazrSsZrMTNolqQ5WyLkrXOBytxs6iWZTnbzBbXqnGzqFZlOdvd
+NgYrbW2WuBtts0q8Bqh2ZDnbxXYHK+1vlrhJOawSrwGqLFnONpY5WCl3s8SV8lmlgmtwctwiVqns
+zp4Wt5RVKv4MdkLcClapWFY6FW4dq1QjK50Et5pVqpSVDo/bwirVy0oHxm1klZpkpUPitrNKrbLS
+wXC7sEodZCXBPYCvmPZilfrIaleN29FU6ykrXeN4+0411llWuxZfkKkGkdWc4+JMNaCs5HO80KnG
+sLKaK9wBptoIWckJ7jBWaZDsCaMsKsqiGidrfmpHHlmJm0VFWVRDZQ0PwuBTIHGzqCiLarSsyUEY
+fwokbhYVZVFRFpWB7OBTa3JkJW4WFWVR2cgOOwhWp0DiZlFRFpWZ7ICDYHgKpOd/QT08Du/h4SE8
+YXp8fAxPFvEaoKIsKsqioiwqyqKiLCrKoqIsKsqioiwqyqKiLCrLd2Senp7CE6b7+/vwZBE3i4qy
+qCiLirKoKIuKsqgOK2v7kkuylMX95s1ZJV4DVMayiHF5GKxkv1knEN072jXw8+dk+Y5MUvsbNK7m
+72izjS7eroqjzWoVy/V5qd3Japm+Pk01p7KxRWLPoKGbm38G5pWnnl9GbwAAAABJRU5ErkJggg==
+"
+     id="image3721"
+     x="0"
+     y="0" />
+</svg>
