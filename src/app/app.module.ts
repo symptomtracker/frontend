@@ -24,6 +24,7 @@ import { SymptomsDailyViewComponent } from './symptoms-daily-view/symptoms-daily
 import { ChartsModule } from 'ng2-charts';
 import { InputSuccessViewComponent } from './input-success-view/input-success-view.component';
 import {FilterPipe} from "./pipes/filter.pipes";
+import { TooltipComponent } from './tooltip/tooltip.component';
 
 
 const appRoutes: Routes = [
@@ -68,7 +69,8 @@ const appRoutes: Routes = [
     HealthOfficeViewComponent,
     SymptomsDailyViewComponent,
     InputSuccessViewComponent,
-    FilterPipe
+    FilterPipe,
+    TooltipComponent
   ],
   imports: [
     TooltipModule.forRoot(),

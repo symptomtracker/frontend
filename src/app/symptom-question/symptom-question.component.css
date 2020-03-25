@@ -23,12 +23,6 @@
   color: rgb(72, 72, 72);
 }
 
-.lamp{
-  margin-top: -5px;
-  width: 15px;
-  height: 15px;
-}
-
 .symptom-question-form {
   display: flex;
 }
