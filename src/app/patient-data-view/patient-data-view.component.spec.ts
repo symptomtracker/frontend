@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PatientDataViewComponent } from './patient-data-view.component';
+import {RouterModule} from "@angular/router";
 
 describe('PatientDataViewComponent', () => {
   let component: PatientDataViewComponent;
@@ -8,7 +9,8 @@ describe('PatientDataViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PatientDataViewComponent ]
+      declarations: [ PatientDataViewComponent ],
+      imports: [RouterModule.forRoot([])]
     })
     .compileComponents();
   }));
