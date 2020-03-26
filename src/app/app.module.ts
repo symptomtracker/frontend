@@ -25,6 +25,7 @@ import { ChartsModule } from 'ng2-charts';
 import { InputSuccessViewComponent } from './input-success-view/input-success-view.component';
 import {FilterPipe} from "./pipes/filter.pipes";
 import { TooltipComponent } from './tooltip/tooltip.component';
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 
 const appRoutes: Routes = [
@@ -83,7 +84,8 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
-    ChartsModule
+    ChartsModule,
+    FontAwesomeModule
   ],
   exports: [
     RouterModule,
