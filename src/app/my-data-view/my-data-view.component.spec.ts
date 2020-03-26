@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MyDataViewComponent } from './my-data-view.component';
+import {RouterModule} from "@angular/router";
 
 describe('MyDataViewComponent', () => {
   let component: MyDataViewComponent;
@@ -8,7 +9,8 @@ describe('MyDataViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MyDataViewComponent ]
+      declarations: [ MyDataViewComponent ],
+      imports: [RouterModule.forRoot([])]
     })
     .compileComponents();
   }));
