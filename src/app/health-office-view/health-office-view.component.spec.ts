@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HealthOfficeViewComponent } from './health-office-view.component';
+import {RouterModule} from "@angular/router";
+import {FilterPipe} from "../pipes/filter.pipes";
 
 describe('HealthOfficeViewComponent', () => {
   let component: HealthOfficeViewComponent;
@@ -8,7 +10,11 @@ describe('HealthOfficeViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HealthOfficeViewComponent ]
+      declarations: [
+        HealthOfficeViewComponent,
+        FilterPipe
+      ],
+      imports: [RouterModule.forRoot([])]
     })
     .compileComponents();
   }));

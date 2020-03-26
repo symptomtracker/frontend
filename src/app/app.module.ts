@@ -71,7 +71,8 @@ const appRoutes: Routes = [
     SymptomsDailyViewComponent,
     InputSuccessViewComponent,
     FilterPipe,
-    TooltipComponent
+    TooltipComponent,
+
   ],
   imports: [
     TooltipModule.forRoot(),
