@@ -9,7 +9,8 @@ describe('ProfileBasicViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileBasicViewComponent ]
+      declarations: [ ProfileBasicViewComponent ],
+      imports: [RouterModule.forRoot([])]
     })
     .compileComponents();
   }));
