@@ -5,7 +5,7 @@ import { PatientModel } from '../_service/api';
 @Component({
   selector: 'app-profile-basic-view',
   templateUrl: './profile-basic-view.component.html',
-  styleUrls: ['./profile-basic-view.component.css']
+  styleUrls: ['./profile-basic-view.component.scss']
 })
 export class ProfileBasicViewComponent implements OnInit {
 
@@ -40,12 +40,10 @@ export class ProfileBasicViewComponent implements OnInit {
   }
 
   onSubmit(){
-
     switch(this.elements.contact){
       case "nocontact":
         this.patient.relatedAttributes.push({Type:"contact", Value:"nocontact"})
         break;
-
     }
 
   }
