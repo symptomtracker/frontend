@@ -7,7 +7,7 @@
   <div class="formWrapper name-age-fields">
     <div class="name-input">
       <p>Name</p>
-      <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp"
+      <input required type="text" class="form-control" id="nameInput" aria-describedby="nameHelp"
              placeholder="Geben Sie hier Ihren Namen ein" [(ngModel)]="patient.name">
       <small id="nameHelp" class="form-text text-muted">Ihre Daten sind bei uns sicher.</small>
     </div>
@@ -78,6 +78,7 @@
   </div>
 
   <div class="formWrapper confirm-button">
-    <button type="submit" class="btn btn-primary"><a routerLink="/profilecontact">Weiter</a></button>
+    <!--<button type="submit" class="btn btn-primary"><a routerLink="/profilecontact">Weiter</a></button>-->
+    <button (click)="onSubmit()" type="submit" class="btn btn-primary">Weiter</button>
   </div>
 </div>
