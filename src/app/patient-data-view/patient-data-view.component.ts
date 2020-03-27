@@ -6,7 +6,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 @Component({
   selector: 'app-patient-data-view',
   templateUrl: './patient-data-view.component.html',
-  styleUrls: ['./patient-data-view.component.css']
+  styleUrls: ['./patient-data-view.component.scss']
 })
 export class PatientDataViewComponent implements OnInit {
 

@@ -6,7 +6,7 @@ import {ActivatedRoute} from "@angular/router";
 @Component({
   selector: 'app-my-data-view',
   templateUrl: './my-data-view.component.html',
-  styleUrls: ['./my-data-view.component.css']
+  styleUrls: ['./my-data-view.component.scss']
 })
 export class MyDataViewComponent implements OnInit {
 

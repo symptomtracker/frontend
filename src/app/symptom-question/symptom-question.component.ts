@@ -4,7 +4,7 @@ import { SymptomJourneyModel, SymptomCatalogueItem } from '../_service/api';
 @Component({
   selector: 'app-symptom-question',
   templateUrl: './symptom-question.component.html',
-  styleUrls: ['./symptom-question.component.css']
+  styleUrls: ['./symptom-question.component.scss']
 })
 export class SymptomQuestionComponent implements OnInit {
 

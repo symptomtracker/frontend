@@ -1,0 +1,45 @@
+
+.symptom-info {
+  font-style: italic;
+}
+
+.symptom-name {
+  font-weight: bold;
+  color: #206F9D;
+}
+
+.formWrapper {
+  margin-top: 20px;
+}
+
+.formWrapper p {
+  font-weight: bold;
+}
+
+.formWrapper .btn-group {
+  display: flex;
+}
+.symptom-header {
+  color: rgb(72, 72, 72);
+}
+
+.symptom-question-form {
+  display: flex;
+}
+
+.symptom-question-form > div {
+  width: 100%;
+}
+
+.symptom-question-form label{
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .symptom-question-form {
+    display: block;
+  }
+}

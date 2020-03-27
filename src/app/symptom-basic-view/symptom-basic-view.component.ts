@@ -7,7 +7,7 @@ import * as _ from 'lodash';
 @Component({
   selector: 'app-symptom-basic-view',
   templateUrl: './symptom-basic-view.component.html',
-  styleUrls: ['./symptom-basic-view.component.css']
+  styleUrls: ['./symptom-basic-view.component.scss']
 })
 export class SymptomBasicViewComponent implements OnInit {
   categories: string[];

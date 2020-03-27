@@ -6,7 +6,7 @@ import {Router, RouterModule, Routes} from "@angular/router";
 @Component({
   selector: 'app-health-office-view',
   templateUrl: './health-office-view.component.html',
-  styleUrls: ['./health-office-view.component.css']
+  styleUrls: ['./health-office-view.component.scss']
 })
 
 export class HealthOfficeViewComponent implements OnInit {
