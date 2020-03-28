@@ -32,6 +32,8 @@
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",
+    "keycloak-angular": "^7.2.0",
+    "keycloak-js": "^9.0.2",
     "ng2-charts": "^2.3.0",
     "ngx-bootstrap": "^5.5.0",
     "rxjs": "~6.5.4",

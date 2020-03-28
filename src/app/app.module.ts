@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +28,9 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { StoreModule } from '@ngrx/store';
 import {reducer} from "./reducers/patientdata.reducer";
+import { KeycloakService, KeycloakAngularModule } from 'keycloak-angular';
+import { initializer } from './utils/app-init';
+import {CanAuthenticationGuard} from './authenticationguard/authenticationguard';
 
 
 const appRoutes: Routes = [
@@ -36,7 +39,7 @@ const appRoutes: Routes = [
     component: LandingPageViewComponent,
     data: { title: 'SymptomTracker' }
   },
-  { path: 'profilebasic', component: ProfileBasicViewComponent },
+  { path: 'profilebasic', component: ProfileBasicViewComponent, canActivate: [CanAuthenticationGuard] },
   { path: 'profilecontact', component: ProfileContactViewComponent },
   { path: 'symptombasic', component: SymptomBasicViewComponent },
   { path: 'codeinput', component: CodeInputViewComponent },
@@ -89,13 +92,21 @@ const appRoutes: Routes = [
     ),
     ChartsModule,
     FontAwesomeModule,
-    StoreModule.forRoot({patientdata: reducer}, {})
+    StoreModule.forRoot({patientdata: reducer}, {}),
+    KeycloakAngularModule
   ],
   exports: [
     RouterModule,
     FilterPipe
   ],
-  providers: [],
+  providers: [
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializer,
+      multi: true,
+      deps: [KeycloakService]
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
