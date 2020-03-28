@@ -30,7 +30,7 @@ import { StoreModule } from '@ngrx/store';
 import {reducer} from "./reducers/patientdata.reducer";
 import { KeycloakService, KeycloakAngularModule } from 'keycloak-angular';
 import { initializer } from './utils/app-init';
-import {CanAuthenticationGuard} from './authenticationguard/authenticationguard';
+import { CanAuthenticationGuard } from './authenticationguard/authenticationguard';
 
 
 const appRoutes: Routes = [
