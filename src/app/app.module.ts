@@ -27,6 +27,8 @@ import {FilterPipe} from "./pipes/filter.pipes";
 import { TooltipComponent } from './tooltip/tooltip.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { AboutViewComponent } from './about-view/about-view.component';
+import { StoreModule } from '@ngrx/store';
+import {reducer} from "./reducers/patientdata.reducer";
 
 
 const appRoutes: Routes = [
@@ -42,7 +44,7 @@ const appRoutes: Routes = [
   { path: 'about', component: AboutViewComponent },
   { path: 'impressum', component: LegalNoticeComponent },
   { path: 'datenschutzerklärung', component: PrivacyStatementViewComponent },
-  { path: 'meinedaten', component: CodeInputViewComponent },
+  { path: 'meinedaten', component: MyDataViewComponent },
   { path: 'patientdata', component: PatientDataViewComponent },
   { path: 'overviewpatients', component: HealthOfficeViewComponent },
   { path: 'success', component: InputSuccessViewComponent },
@@ -89,7 +91,8 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     ),
     ChartsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    StoreModule.forRoot({patientdata: reducer}, {})
   ],
   exports: [
     RouterModule,
