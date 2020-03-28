@@ -2,6 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {PatientService} from '../_service/patient.service';
 import {PatientModel} from '../_service/api';
 import {Router, RouterModule, Routes} from "@angular/router";
+import {Observable} from "rxjs";
+import {Patientdata} from "../models/patientdata.model";
+import {AppState} from "../app.state";
+import {Store} from "@ngrx/store";
+import * as PatientdataActions from '../actions/patientdata.actions'
 
 @Component({
   selector: 'app-profile-basic-view',
@@ -9,12 +14,20 @@ import {Router, RouterModule, Routes} from "@angular/router";
   styleUrls: ['./profile-basic-view.component.scss']
 })
 export class ProfileBasicViewComponent implements OnInit {
+  patientdata: Observable<Patientdata[]>
 
-  constructor(private patientService: PatientService, private router: Router) {
+
+  constructor(
+    private patientService: PatientService,
+    private router: Router,
+    private store: Store<AppState>) {
+    this.patientdata = store.select('patientdata')
   }
 
   ngOnInit(): void {
     this.loadPatient();
+    console.log("PATIENTDATA")
+    console.log(this.patientdata)
   }
 
   elements = {
@@ -44,6 +57,7 @@ export class ProfileBasicViewComponent implements OnInit {
   }
 
   onSubmit() {
+    this.addData("Testname", 99, "Weiblich", "Ich arbeite derzeit von zu Hause", "wenig Kontakt")
     let allAreFilled = true;
     let name = (<HTMLInputElement>document.getElementById("nameInput")).value;
     if (name.length == 0) {
@@ -68,7 +82,10 @@ export class ProfileBasicViewComponent implements OnInit {
     } else {
       alert("Nicht alle Felder ausgefüllt.")
     }
+  }
 
+  addData(name, alter, geschlecht, berufsfeld, menschenkontakt) {
+    this.store.dispatch(new PatientdataActions.AddPatientdata({name, alter, geschlecht, berufsfeld, menschenkontakt}))
   }
 
 }
