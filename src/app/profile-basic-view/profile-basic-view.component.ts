@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {PatientService} from '../_service/patient.service';
 import {PatientModel} from '../_service/api';
 import {Router, RouterModule, Routes} from "@angular/router";
@@ -13,6 +13,8 @@ import * as PatientdataActions from '../actions/patientdata.actions'
   templateUrl: './profile-basic-view.component.html',
   styleUrls: ['./profile-basic-view.component.scss']
 })
+
+@Injectable()
 export class ProfileBasicViewComponent implements OnInit {
   patientdata: Observable<Patientdata[]>
 
@@ -41,7 +43,7 @@ export class ProfileBasicViewComponent implements OnInit {
   joblabel: number;
 
   async loadPatient() {
-    this.patient = (await this.patientService.getPatient("123")).data;
+    // this.patient = (await this.patientService.getPatient("123")).data;
     // this.gender ="male";
     console.log(this.patient);
 

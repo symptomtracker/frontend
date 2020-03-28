@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Injectable, OnInit} from '@angular/core';
 import {PatientService} from "../_service/patient.service";
 import {PatientModel} from "../_service/api";
 import {ActivatedRoute} from "@angular/router";
@@ -12,6 +12,8 @@ import {Store} from "@ngrx/store";
   templateUrl: './my-data-view.component.html',
   styleUrls: ['./my-data-view.component.scss']
 })
+
+@Injectable()
 export class MyDataViewComponent implements OnInit {
   patientdata: Observable<Patientdata[]>
 

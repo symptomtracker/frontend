@@ -2,6 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MyDataViewComponent } from './my-data-view.component';
 import {RouterModule} from "@angular/router";
+import {provideMockStore} from "@ngrx/store/testing";
+import {Store, StoreModule} from "@ngrx/store";
 
 describe('MyDataViewComponent', () => {
   let component: MyDataViewComponent;
@@ -10,7 +12,11 @@ describe('MyDataViewComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ MyDataViewComponent ],
-      imports: [RouterModule.forRoot([])]
+      imports: [
+        RouterModule.forRoot([]),
+        StoreModule.forRoot([])
+      ],
+      providers: [Store]
     })
     .compileComponents();
   }));
