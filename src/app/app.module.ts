@@ -26,6 +26,7 @@ import { InputSuccessViewComponent } from './input-success-view/input-success-vi
 import {FilterPipe} from "./pipes/filter.pipes";
 import { TooltipComponent } from './tooltip/tooltip.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import { AboutViewComponent } from './about-view/about-view.component';
 
 
 const appRoutes: Routes = [
@@ -38,6 +39,7 @@ const appRoutes: Routes = [
   { path: 'profilecontact', component: ProfileContactViewComponent },
   { path: 'symptombasic', component: SymptomBasicViewComponent },
   { path: 'codeinput', component: CodeInputViewComponent },
+  { path: 'about', component: AboutViewComponent },
   { path: 'impressum', component: LegalNoticeComponent },
   { path: 'datenschutzerklärung', component: PrivacyStatementViewComponent },
   { path: 'meinedaten', component: CodeInputViewComponent },
@@ -72,6 +74,7 @@ const appRoutes: Routes = [
     InputSuccessViewComponent,
     FilterPipe,
     TooltipComponent,
+    AboutViewComponent,
 
   ],
   imports: [
