@@ -59,21 +59,21 @@ export class ProfileBasicViewComponent implements OnInit {
   }
 
   onSubmit() {
-    this.addData("Testname", 99, "Weiblich", "Ich arbeite derzeit von zu Hause", "wenig Kontakt")
-    let allAreFilled = true;
-    let name = (<HTMLInputElement>document.getElementById("nameInput")).value;
-    if (name.length == 0) {
-      allAreFilled = false;
-    } //TODO eigenen Fehler für no name und andere Felder
+    // this.addData("Testname", 99, "Weiblich", "Ich arbeite derzeit von zu Hause", "wenig Kontakt")
+    // let allAreFilled = true;
+    // let name = (<HTMLInputElement>document.getElementById("nameInput")).value;
+    // if (name.length == 0) {
+    //   allAreFilled = false;
+    // } //TODO eigenen Fehler für no name und andere Felder
+    //
+    // let ageField = (<HTMLInputElement>document.getElementById("ageInput"));
+    // if (!ageField || !ageField.value) {
+    //   allAreFilled = false;
+    // }
+    //
+    // //TODO Optionfields, ...
 
-    let ageField = (<HTMLInputElement>document.getElementById("ageInput"));
-    if (!ageField || !ageField.value) {
-      allAreFilled = false;
-    }
-
-    //TODO Optionfields, ...
-
-    if (allAreFilled) {
+    if (true) {
       const url = 'profilecontact';
       this.router.navigateByUrl(url);
       switch (this.elements.contact) {
