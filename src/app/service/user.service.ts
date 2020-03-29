@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {KeycloakService} from "keycloak-angular";
+import globalAxios from 'axios';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,9 @@ import {KeycloakService} from "keycloak-angular";
 export class UserService {
   constructor(
     protected keycloakAngular: KeycloakService
-  ) { }
+  ) {
+    this.addAxiosInterceptor();
+  }
 
   getUsername(): string {
     try {
@@ -37,5 +40,20 @@ export class UserService {
 
   logout() {
     return this.keycloakAngular.logout(window.location.origin + '/home');
+  }
+
+  addAxiosInterceptor() {
+    globalAxios.interceptors.request.use(async (config) => {
+      const token = await this.getToken();
+      if (token) {
+        config.headers.Authorization = 'Bearer ' + token;
+      }
+      console.log(JSON.stringify(config));
+
+      return config;
+    },  (error) => {
+      // Do something with request error
+      return Promise.reject(error);
+    });
   }
 }

@@ -3,7 +3,6 @@ import { SymptomsService } from '../_service/symptoms.service';
 import { SymptomJourneyModel, SymptomCatalogueItem } from '../_service/api';
 import { QuestionaireService } from '../_service/questionaire.service';
 import * as _ from 'lodash';
-import {UserService} from '../service/user.service';
 
 @Component({
   selector: 'app-symptom-basic-view',
@@ -14,7 +13,7 @@ export class SymptomBasicViewComponent implements OnInit {
   categories: string[];
   symptomGroups: any;
 
-  constructor(private symptomService: SymptomsService, private questionaireService: QuestionaireService, private userService: UserService) { }
+  constructor(private symptomService: SymptomsService, private questionaireService: QuestionaireService) { }
   lastSymptomValues: SymptomJourneyModel[];
   symptomsCatalogue: SymptomCatalogueItem[];
 
@@ -27,16 +26,10 @@ export class SymptomBasicViewComponent implements OnInit {
       return rv;
     }, {});
   };
-  private loadSymptoms() {
-    this.userService.getToken().then(async token => {
-      this.symptomsCatalogue = (await this.questionaireService.getCatalogueItems( {
-        headers: {
-          Authorization: 'Bearer ' + token
-        }
-      })).data;
-      this.symptomGroups = this.groupBy(this.symptomsCatalogue, '@Category');
-      this.categories = Object.keys(this.symptomGroups);
-    });
+  private async loadSymptoms() {
+    this.symptomsCatalogue = (await this.questionaireService.getCatalogueItems()).data;
+    this.symptomGroups = this.groupBy(this.symptomsCatalogue, '@Category');
+    this.categories = Object.keys(this.symptomGroups);
   }
 
   toggleActiveStatus(event) {
