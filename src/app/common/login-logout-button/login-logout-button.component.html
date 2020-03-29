@@ -1,0 +1,8 @@
+<div class="login-area" *ngIf="isLoggedIn; else loggedOut">
+  <p>{{this.username}}</p>
+  <button class="btn btn-primary" (click)="logout()">Logout</button>
+</div>
+
+<ng-template #loggedOut>
+  <button class="btn btn-primary" (click)="login()">Login</button>
+</ng-template>

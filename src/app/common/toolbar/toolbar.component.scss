@@ -36,6 +36,11 @@
   border-bottom: 1px solid lightgray;
   position: fixed;
   z-index: 10000;
+
+  app-login-logout-button {
+    position: absolute;
+    right: 20px;
+  }
 }
 
 .toolbar .heading {

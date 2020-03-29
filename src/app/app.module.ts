@@ -7,7 +7,7 @@ import { LandingPageViewComponent } from './landing-page-view/landing-page-view.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AlertModule, TooltipModule } from 'ngx-bootstrap';
 import { ProfileBasicViewComponent } from './profile-basic-view/profile-basic-view.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { ToolbarComponent } from './common/toolbar/toolbar.component';
 import { SymptomBasicViewComponent } from './symptom-basic-view/symptom-basic-view.component';
 import { RouterModule, Routes } from "@angular/router";
 import { ProfileContactViewComponent } from "./profile-contact-view/profile-contact-view.component";
@@ -35,6 +35,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import axios from 'axios';
 import {mergeMap} from 'rxjs/operators';
 import {from} from 'rxjs';
+import { LoginLogoutButtonComponent } from './common/login-logout-button/login-logout-button.component';
 
 
 const appRoutes: Routes = [
@@ -49,7 +50,7 @@ const appRoutes: Routes = [
   { path: 'codeinput', component: CodeInputViewComponent },
   { path: 'impressum', component: LegalNoticeComponent },
   { path: 'datenschutzerklärung', component: PrivacyStatementViewComponent },
-  { path: 'meinedaten', component: MyDataViewComponent },
+  { path: 'meinedaten', component: MyDataViewComponent, canActivate: [CanAuthenticationGuard] },
   { path: 'patientdata', component: PatientDataViewComponent },
   { path: 'overviewpatients', component: HealthOfficeViewComponent, canActivate: [CanAuthenticationGuard] },
   { path: 'success', component: InputSuccessViewComponent },
@@ -81,6 +82,7 @@ const appRoutes: Routes = [
     InputSuccessViewComponent,
     FilterPipe,
     TooltipComponent,
+    LoginLogoutButtonComponent,
 
   ],
   imports: [

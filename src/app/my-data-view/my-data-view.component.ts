@@ -6,6 +6,9 @@ import {Observable} from "rxjs";
 import {Patientdata} from "../models/patientdata.model";
 import {AppState} from "../app.state";
 import {Store} from "@ngrx/store";
+import {CanAuthenticationGuard} from "../authenticationguard/authenticationguard";
+import {KeycloakService} from "keycloak-angular";
+import {UserService} from "../service/user.service";
 
 @Component({
   selector: 'app-my-data-view',
@@ -15,28 +18,14 @@ import {Store} from "@ngrx/store";
 
 @Injectable()
 export class MyDataViewComponent implements OnInit {
-  patientdata: Observable<Patientdata[]>
-
-  id: string;
+  username: string;
 
   constructor(
-    private patientService:PatientService,
-    private activeRoute: ActivatedRoute,
-    private store: Store<AppState>
-  ) {
-    this.activeRoute.queryParams.subscribe(params => {
-      this.id = params['id'];
-    });
-    this.patientdata = store.select('patientdata')
-  }
-  ngOnInit(): void {
-    this.loadPatient(this.id)
-  }
+    private userService: UserService
+  ) { }
 
-  patient: PatientModel;
-  async loadPatient(id) {
-    this.id = '5e77416a0d65ff16cc8ed426';
-    this.patient = (await this.patientService.getPatient(id)).data;
+  ngOnInit(): void {
+    this.username = this.userService.getUsername()
   }
 }
 
