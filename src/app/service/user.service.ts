@@ -48,7 +48,6 @@ export class UserService {
       if (token) {
         config.headers.Authorization = 'Bearer ' + token;
       }
-      console.log(JSON.stringify(config));
 
       return config;
     },  (error) => {
