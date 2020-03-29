@@ -29,6 +29,7 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { AboutViewComponent } from './about-view/about-view.component';
 import { StoreModule } from '@ngrx/store';
 import {reducer} from "./reducers/patientdata.reducer";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 
 const appRoutes: Routes = [
@@ -92,7 +93,8 @@ const appRoutes: Routes = [
     ),
     ChartsModule,
     FontAwesomeModule,
-    StoreModule.forRoot({patientdata: reducer}, {})
+    StoreModule.forRoot({patientdata: reducer}, {}),
+    HttpClientModule
   ],
   exports: [
     RouterModule,
