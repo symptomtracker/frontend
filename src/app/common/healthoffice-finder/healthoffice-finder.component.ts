@@ -19,7 +19,7 @@ export class HealthofficeFinderComponent implements OnInit {
   ngOnInit(): void {}
 
   getHealthOffice(plz: number) {
-    this.dataService.sendHealthOfficeRequest(plz).subscribe((data: Healthoffice)=> {
+    this.dataService.sendHealthOfficeRequest(plz.toString()).subscribe((data: Healthoffice)=> {
       this.healthOffice = data;
     });
   }

@@ -83,7 +83,6 @@ const appRoutes: Routes = [
     AboutViewComponent,
     HealthofficeFinderComponent,
     HealthofficeFinderViewComponent,
-
   ],
   imports: [
     TooltipModule.forRoot(),

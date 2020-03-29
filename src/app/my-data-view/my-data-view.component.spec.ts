@@ -2,10 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MyDataViewComponent } from './my-data-view.component';
 import {RouterModule} from "@angular/router";
-import {provideMockStore} from "@ngrx/store/testing";
 import {Store, StoreModule} from "@ngrx/store";
-import {HealthofficeService} from "../service/healthoffice.service";
-import {DataService} from "../service/data.service";
+
 
 describe('MyDataViewComponent', () => {
   let component: MyDataViewComponent;
