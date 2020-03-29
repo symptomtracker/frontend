@@ -3,61 +3,95 @@
   <div class="formWrapper data-label">
     <p>Hier können Sie Ihre persönlichen Daten eingeben.</p>
   </div>
-  <div class="formWrapper name-age-fields">
-    <div class="name-input">
-      <p>Name</p>
-      <input required type="text" class="form-control" id="nameInput" aria-describedby="nameHelp"
-             placeholder="Geben Sie hier Ihren Namen ein" [(ngModel)]="patient.name">
-      <small id="nameHelp" class="form-text text-muted">Ihre Daten sind bei uns sicher.</small>
+
+  <div class="name-input">
+    <p>Name</p>
+    <input required type="text" minlength="2" class="form-control" id="nameInput" aria-describedby="nameHelp"
+           placeholder="Geben Sie hier Ihren Namen ein" [(ngModel)]="patient.name" #name="ngModel">
+    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+         class="alert alert-warning">
+      <div *ngIf="name.errors.required">
+        Geben Sie Ihren Namen ein.
+      </div>
+      <div *ngIf="name.errors.minlength">
+        Sie haben zu wenige Zeichen eingegeben.
+      </div>
+      <!--<div *ngIf="name.errors.forbiddenName">
+        Name cannot be Bob.
+      </div> CustomValidation Example-->
     </div>
+    <small id="nameHelp" class="form-text text-muted">Ihre Daten sind bei uns sicher.</small>
   </div>
-  <div class="formWrapper">
-    <div class="age-input">
-      <p>Alter</p>
-      <input [(ngModel)]="patient.age" type="number" step="1" min=0 max="120" class="form-control" id="ageInput" placeholder="Ihr Alter" >
+</div>
+
+<div class="formWrapper">
+  <div class="age-input">
+    <p>Alter</p>
+    <input required [(ngModel)]="patient.age" #age="ngModel" type="number" step="1" min=0 max="120"
+           class="form-control" id="ageInput" placeholder="Ihr Alter">
+    <div *ngIf="age.invalid && (age.dirty || age.touched)"
+         class="alert alert-warning">
+      <div *ngIf="age.errors.required">
+        Bitte geben Sie Ihr Alter ein.
+      </div>
+      <div *ngIf="age.errors.max">
+        Sie haben ein ungültiges Alter eingegebn
+      </div>
     </div>
   </div>
 
   <div class="formWrapper group-gender">
     <p>Bitte geben Sie Ihr Geschlecht an:</p>
-    <div class="btn-group " data-toggle="buttons" >
-      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-        <input class="radio-button" type="radio" name="options" id="male" [(ngModel)]="patient.gender" autocoplete="off" value="female" checked> Weiblich
-      </label>
-      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-        <input class="radio-button" type="radio" name="options" id="female" [(ngModel)]="patient.gender" autocomplete="off" value="male"> Männlich
-      </label>
-      <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-        <input class="radio-button" type="radio" name="options" id="diverse" [(ngModel)]="patient.gender"autocomplete="off" value="diverse"> Divers
-      </label>
-    </div>
   </div>
 
-  <div class="formWrapper job-label" >
+  <form name="form" #f="ngForm" (ngSubmit)="onSubmitTest()">
+        <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+          <input class="radio-button" type="radio" name="selectedBy" id="female" [(ngModel)]="patient.gender"
+                 value="female" checked #selectedBy="ngModel" required> Weiblich
+        </label>
+        <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+          <input class="radio-button" type="radio" name="selectedBy" id="male" [(ngModel)]="patient.gender"
+                 value="male" checked #selectedBy="ngModel" required> Männlich
+        </label>
+        <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+          <input class="radio-button" type="radio" name="options" id="diverse" [(ngModel)]="patient.gender"
+                 value="diverse" checked #selectedBy="ngModel" required> Divers
+        </label>
+        <div class="alert alert-warning" *ngIf="selectedBy.errors?.required && hasFormBeenSubmitted">Die Angabe eines
+          Geschlechts ist erforderlich.
+        </div>
+    <button type="submit" class="btn btn-primary">Weiter</button>
+  </form>
+
+
+  <div class="formWrapper job-label">
     <p>In welchem Berufsfeld / in welcher beruflichen Situation befinden Sie sich gerade?</p>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="job">Ich arbeite derzeit von zu Hause
+        <input type="radio" class="form-check-input" name="job" id="home" (click)="fieldRadioStatus($event)">Ich arbeite
+        derzeit von zu Hause
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="job">Lebensmittelbranche / Versorger
+        <input type="radio" class="form-check-input" name="job" id="food" (click)="fieldRadioStatus($event)">Lebensmittelbranche
+        / Versorger
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="job">Gesundheitsbranche
+        <input type="radio" class="form-check-input" name="job" id="health" (click)="fieldRadioStatus($event)">Gesundheitsbranche
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="job">Öffentlicher Dienst
+        <input type="radio" class="form-check-input" name="job" id="public" (click)="fieldRadioStatus($event)">Öffentlicher
+        Dienst
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="job">Sonstiges
+        <input type="radio" class="form-check-input" name="job" id="others" (click)="fieldRadioStatus($event)">Sonstiges
       </label>
     </div>
   </div>
@@ -66,12 +100,14 @@
     <p>Wie viel Kontakt besteht in Ihrer momentanen Tätigkeit zu Mitarbeitern / Kunden?</p>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="contact">kein Kontakt
+        <input type="radio" class="form-check-input" name="contact" id="nocontact" (click)="fieldRadioStatus($event)">kein
+        Kontakt
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="contact">wenig Kontakt bis viel Kontakt
+        <input type="radio" class="form-check-input" name="contact" id="contact" (click)="fieldRadioStatus($event)">wenig
+        Kontakt bis viel Kontakt
       </label>
     </div>
   </div>
