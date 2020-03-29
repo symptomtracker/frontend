@@ -11,7 +11,7 @@ export class LoginLogoutButtonComponent implements OnInit {
   username: string;
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
   ) { }
 
   ngOnInit(): void {
@@ -22,7 +22,7 @@ export class LoginLogoutButtonComponent implements OnInit {
   }
 
   logout() {
-    return this.userService.logout();
+    this.userService.logout();
   }
 
   login() {

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginLogoutButtonComponent } from './login-logout-button.component';
+import {KeycloakService} from "keycloak-angular";
 
 describe('LoginLogoutButtonComponent', () => {
   let component: LoginLogoutButtonComponent;
@@ -8,7 +9,8 @@ describe('LoginLogoutButtonComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginLogoutButtonComponent ]
+      declarations: [ LoginLogoutButtonComponent ],
+      providers: [ KeycloakService ]
     })
     .compileComponents();
   }));
