@@ -19,6 +19,12 @@ export class UserService {
     }
   }
 
+  async getToken(): Promise<string> {
+    try {
+      return await this.keycloakAngular.getToken();
+    } catch (e) { }
+  }
+
   async checkLogin(): Promise<boolean> {
     try {
       return await this.keycloakAngular.isLoggedIn();
