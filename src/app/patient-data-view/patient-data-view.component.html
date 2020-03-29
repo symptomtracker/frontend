@@ -1,87 +1,96 @@
-<div class="content">
+<div class="content row">
   <a routerLink="/overviewpatients">< Zurück zur Übersicht</a>
-    <h1>Daten von Patient {{patient?.name}}</h1>
-    <p>Krankheitsverlauf von Patient {{patient?.name}}</p>
+  <h1>Daten von Patient {{patient?.name}}</h1>
 
-    <div class="container data-container">
-      <div class="row overall-data-row">
-        <div class="col-md">
-          <h3>Allgemeine Daten</h3>
-          <div class="info-row row">
-            <div class="info-col title col">Name</div>
-            <div class="info-col info col">{{patient?.name}}</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Geschlecht</div>
-            <div class="info-col info col">{{patient?.gender}}</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Alter</div>
-            <div class="info-col info col">{{patient?.age}}</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Location</div>
-            <div class="info-col info col">{{patient?.city}}</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Code</div>
-            <div class="info-col info col">{{patient?._id}}</div>
-          </div>
+  <div class="container data-container col-md-8">
+    <div class="row overall-data-row">
+      <div class="col-md">
+        <h3>Allgemeine Daten</h3>
+        <div class="info-row row">
+          <div class="info-col title col">Name</div>
+          <div class="info-col info col">{{patient?.name}}</div>
         </div>
-        <div class="col-md specific-data">
-          <h3>Spezifische Daten</h3>
-          <div class="info-row row">
-            <div class="info-col title col">Aufenthalt in Risikogebiet</div>
-            <div class="info-col info col">Ja</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Kontakt zu positiv getester Person</div>
-            <div class="info-col info col">Ja</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Datum des letzten Kontaktes</div>
-            <div class="info-col info col">20.03.2020</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Raucher</div>
-            <div class="info-col info col">Ja</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Vorerkrankungen</div>
-            <div class="info-col info col">Nein</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Nimmt Immunsupressiva</div>
-            <div class="info-col info col">Nein</div>
-          </div>
-          <div class="info-row row">
-            <div class="info-col title col">Schwanger</div>
-            <div class="info-col info col">Nein</div>
-          </div>
+        <div class="info-row row">
+          <div class="info-col title col">Geschlecht</div>
+          <div class="info-col info col">{{patient?.gender}}</div>
+        </div>
+        <div class="info-row row">
+          <div class="info-col title col">Alter</div>
+          <div class="info-col info col">{{patient?.age}}</div>
+        </div>
+        <div class="info-row row">
+          <div class="info-col title col">Location</div>
+          <div class="info-col info col">{{patient?.city}}</div>
+        </div>
+        <div class="info-row row">
+          <div class="info-col title col">Code</div>
+          <div class="info-col info col">{{patient?._id}}</div>
         </div>
       </div>
-
-      <div class="row">
-        <div class="col-md charts">
-          <h3>Symptome</h3>
-          <script src="node_modules/chart.js/src/chart.js"></script>
-          <div>
-            <div style="display: block">
-              <canvas baseChart
-                      [datasets]="barChartData"
-                      [labels]="barChartLabels"
-                      [options]="barChartOptions"
-                      [legend]="barChartLegend"
-                      [chartType]="barChartType">
-              </canvas>
-            </div>
-          </div>
+      <div class="col-md specific-data">
+        <h3>Spezifische Daten</h3>
+        <div *ngIf="patient?.geo_risk" class="info-row row">
+          <div class="info-col title col">Aufenthalt in Risikogebiet</div>
+          <div class="info-col info col">{{(patient?.geo_risk) ? "Ja" : "Nein"}}</div>
         </div>
-      </div>
-
-      <div *ngFor="let symptom of patient?.symptomJourney" class="row">
-        <div class="info-col title col">{{symptom?.description}}</div>
-        <div class="info-col info col">{{symptom?.symptomSeverity}}</div>
+        <div *ngIf="patient?.contact_risk == true" class="info-row row">
+          <div class="info-col title col">Kontakt zu positiv getester Person</div>
+          <div class="info-col info col">{{(patient?.contact_risk) ? "Ja" : "Nein"}}</div>
+        </div>
+        <div *ngIf="patient?.contact_risk && patient?.contact_date != null" class="info-row row">
+          <div class="info-col title col">Datum des letzten Kontaktes</div>
+          <div class="info-col info col">{{patient?.contact_date}}</div>
+        </div>
+        <div *ngIf="patient?.smoker" class="info-row row">
+          <div class="info-col title col">Raucher</div>
+          <div class="info-col info col"
+               [ngClass]="{'warning': patient?.smoker}">{{(patient?.smoker) ? "Ja" : "Nein"}}</div>
+        </div>
+        <div class="info-row row">
+          <div class="info-col title col">Vorerkrankungen</div>
+          <div class="info-col info col">{{patient?.preexisting_conditions}}</div>
+        </div>
+        <div *ngIf="patient?.immunal_suppressors" class="info-row row">
+          <div class="info-col title col">Nimmt Immunsupressiva</div>
+          <div class="info-col info col">{{(patient?.immunal_suppressors) ? "Ja" : "Nein"}}</div>
+        </div>
+        <div *ngIf="patient?.pregnant" class="info-row row">
+          <div class="info-col title col">Schwanger</div>
+          <div class="info-col info col">{{(patient?.pregnant) ? "Ja" : "Nein"}}</div>
+        </div>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-md charts">
+        <h3>Symptome</h3>
+        <script src="node_modules/chart.js/src/chart.js"></script>
+        <div>
+          <div style="display: block">
+            <canvas baseChart
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType">
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Symptom-Log</h3>
+    <div class="symptom-row-wrapper">
+      <app-symptom-row *ngFor="let symptoms of symptomsByDate" [symptoms]=symptoms
+                       [symptomJourney]="this.patient?.symptomJourney"></app-symptom-row>
+    </div>
+
+    <!--      <div *ngFor="let symptom of patient?.symptomJourney" class="row">-->
+    <!--        <div class="info-col title col">{{symptom?.description}}</div>-->
+    <!--        <div class="info-col info col">{{symptom?.symptomSeverity}}</div>-->
+    <!--      </div>-->
   </div>
+<!--  <div class="actions col-md-4">-->
+<!--    <p>Test</p>-->
+<!--  </div>-->
+</div>

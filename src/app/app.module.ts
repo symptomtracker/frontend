@@ -28,6 +28,7 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { StoreModule } from '@ngrx/store';
 import {reducer} from "./reducers/patientdata.reducer";
+import { SymptomRowComponent } from './patient-data-view/symptom-row/symptom-row.component';
 
 
 const appRoutes: Routes = [
@@ -74,6 +75,7 @@ const appRoutes: Routes = [
     InputSuccessViewComponent,
     FilterPipe,
     TooltipComponent,
+    SymptomRowComponent,
 
   ],
   imports: [

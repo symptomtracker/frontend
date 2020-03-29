@@ -1,0 +1,38 @@
+.symptom-row {
+  border-bottom: 1px solid #AAAAAA;
+
+  &.show {
+    animation: ease;
+    fa-icon {
+      transform: rotate(90deg);
+    }
+
+    .symptom-row-body {
+      display: block;
+      padding: 20px;
+
+      &.table td {
+        padding: 4px;
+      }
+    }
+  }
+  .symptom-row-header {
+    display: flex;
+    align-items: center;
+    padding: 8px 8px 8px 12px;
+
+    fa-icon {
+      margin-right: 8px;
+      color: #206F9D;
+    }
+
+    h4 {
+      margin: 0;
+    }
+  }
+
+  .symptom-row-body {
+    display: none;
+  }
+}
+

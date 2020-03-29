@@ -15,19 +15,22 @@
   </div>
   <div class="data-wrapper">
     <table class="table table-striped">
-      <tr>
-        <th>Getestet?</th>
-        <th>Infiziert?</th>
-        <th>Code<img tooltip="Tracking-ID der COVID-Patienten" class="lamp" alt='Hint' src='./assets/img/lamp.svg'/></th>
-        <th>Name</th>
-        <th>Geschlecht</th>
-        <th>Alter</th>
-        <th>Stadt</th>
-        <th>Raucher</th>
-        <th>Aus Risikogebiet?</th>
-        <th>Infizierten Kontakt?</th>
-        <th>Schwanger</th>
-      </tr>
+      <thead>
+        <tr>
+          <th>Getestet?</th>
+          <th>Infiziert?</th>
+          <th>Code<img tooltip="Tracking-ID der COVID-Patienten" class="lamp" alt='Hint' src='./assets/img/lamp.svg'/></th>
+          <th>Name</th>
+          <th>Geschlecht</th>
+          <th>Alter</th>
+          <th>Stadt</th>
+          <th>Raucher</th>
+          <th>Aus Risikogebiet?</th>
+          <th>Infizierten Kontakt?</th>
+          <th>Schwanger</th>
+        </tr>
+      </thead>
+      <tbody>
       <tr class="patient-row" *ngFor="let patientItem of this.patientsList | filter: 'name': searchNameString;"
           (click)="goToPatientDetailView(patientItem?._id)">
         <td>-</td>
@@ -42,6 +45,8 @@
         <td *ngIf="patientItem?.contact_risk != null; else empty" [ngClass]="{'warning': patientItem?.contact_risk}">{{(patientItem?.contact_risk)? "Ja" : "Nein"}}</td>
         <td *ngIf="patientItem?.pregnant != null; else empty" [ngClass]="{'warning': patientItem?.pregnant}">{{(patientItem?.pregnant)? "Ja" : "Nein"}}</td>
       </tr>
+      </tbody>
+
     </table>
   </div>
 </div>

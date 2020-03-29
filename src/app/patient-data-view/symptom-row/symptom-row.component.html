@@ -1,0 +1,14 @@
+<div class="symptom-row" [ngClass]="{'show': show}">
+  <div class="symptom-row-header" (click)="toggleRow()">
+    <fa-icon [icon]="faChevronRight"></fa-icon>
+    <h4>{{symptoms[0] | date: 'dd.MM.yyyy'}}</h4>
+  </div>
+  <table class="symptom-row-body table">
+    <tbody>
+      <tr *ngFor="let singleSymptom of this.symptomDayList">
+        <td>{{singleSymptom.description}}</td>
+        <td>{{singleSymptom.symptomSeverity}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
