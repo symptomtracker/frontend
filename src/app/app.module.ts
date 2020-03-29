@@ -28,9 +28,13 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { StoreModule } from '@ngrx/store';
 import {reducer} from "./reducers/patientdata.reducer";
-import { KeycloakService, KeycloakAngularModule } from 'keycloak-angular';
+import {KeycloakService, KeycloakAngularModule, KeycloakBearerInterceptor} from 'keycloak-angular';
 import { initializer } from './utils/app-init';
 import { CanAuthenticationGuard } from './authenticationguard/authenticationguard';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import axios from 'axios';
+import {mergeMap} from 'rxjs/operators';
+import {from} from 'rxjs';
 
 
 const appRoutes: Routes = [
@@ -47,7 +51,7 @@ const appRoutes: Routes = [
   { path: 'datenschutzerklärung', component: PrivacyStatementViewComponent },
   { path: 'meinedaten', component: MyDataViewComponent },
   { path: 'patientdata', component: PatientDataViewComponent },
-  { path: 'overviewpatients', component: HealthOfficeViewComponent },
+  { path: 'overviewpatients', component: HealthOfficeViewComponent, canActivate: [CanAuthenticationGuard] },
   { path: 'success', component: InputSuccessViewComponent },
   { path: '',
     redirectTo: '/home',
@@ -106,7 +110,14 @@ const appRoutes: Routes = [
       multi: true,
       deps: [KeycloakService]
     },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useFactory: KeycloakBearerInterceptor,
+      multi: true
+    }
+
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {}

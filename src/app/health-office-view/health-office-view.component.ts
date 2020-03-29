@@ -19,7 +19,7 @@ export class HealthOfficeViewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.loadAllPatients()
+    this.loadAllPatients();
   }
 
   patientsList: PatientModel[];

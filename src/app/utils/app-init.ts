@@ -10,7 +10,6 @@ export function initializer(keycloak: KeycloakService): () => Promise<any> {
     initOptions: {
       checkLoginIframe: false
     },
-    enableBearerInterceptor: true,
-    bearerExcludedUrls: ['/assets', '/clients/public']
+    enableBearerInterceptor: true
   });
 }
