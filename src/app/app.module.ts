@@ -30,9 +30,8 @@ import { AboutViewComponent } from './about-view/about-view.component';
 import { StoreModule } from '@ngrx/store';
 import {reducer} from "./reducers/patientdata.reducer";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {HealthofficeService} from "./service/healthoffice.service";
-import {DataService} from "./service/data.service";
 import { HealthofficeFinderComponent } from './common/healthoffice-finder/healthoffice-finder.component';
+import { HealthofficeFinderViewComponent } from './healthoffice-finder-view/healthoffice-finder-view.component';
 
 
 const appRoutes: Routes = [
@@ -52,6 +51,7 @@ const appRoutes: Routes = [
   { path: 'patientdata', component: PatientDataViewComponent },
   { path: 'overviewpatients', component: HealthOfficeViewComponent },
   { path: 'success', component: InputSuccessViewComponent },
+  { path: 'gesundheitsamt-finden', component: HealthofficeFinderViewComponent},
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
@@ -82,6 +82,7 @@ const appRoutes: Routes = [
     TooltipComponent,
     AboutViewComponent,
     HealthofficeFinderComponent,
+    HealthofficeFinderViewComponent,
 
   ],
   imports: [
