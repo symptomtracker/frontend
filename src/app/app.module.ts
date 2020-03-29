@@ -30,6 +30,9 @@ import { AboutViewComponent } from './about-view/about-view.component';
 import { StoreModule } from '@ngrx/store';
 import {reducer} from "./reducers/patientdata.reducer";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HealthofficeService} from "./service/healthoffice.service";
+import {DataService} from "./service/data.service";
+import { HealthofficeFinderComponent } from './common/healthoffice-finder/healthoffice-finder.component';
 
 
 const appRoutes: Routes = [
@@ -78,11 +81,13 @@ const appRoutes: Routes = [
     FilterPipe,
     TooltipComponent,
     AboutViewComponent,
+    HealthofficeFinderComponent,
 
   ],
   imports: [
     TooltipModule.forRoot(),
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AlertModule.forRoot(),
@@ -94,7 +99,6 @@ const appRoutes: Routes = [
     ChartsModule,
     FontAwesomeModule,
     StoreModule.forRoot({patientdata: reducer}, {}),
-    HttpClientModule
   ],
   exports: [
     RouterModule,
