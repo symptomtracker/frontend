@@ -30,6 +30,6 @@ export class UserService {
   }
 
   logout() {
-    return this.keycloakAngular.logout();
+    return this.keycloakAngular.logout(window.location.origin + '/home');
   }
 }
