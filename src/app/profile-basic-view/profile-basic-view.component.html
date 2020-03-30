@@ -22,23 +22,17 @@
     </div>
     <small id="nameHelp" class="form-text text-muted">Ihre Daten sind bei uns sicher.</small>
   </div>
-</div>
 
 <div class="formWrapper">
   <div class="age-input">
     <p>Alter</p>
     <input required [(ngModel)]="patient.age" #age="ngModel" type="number" step="1" min=0 max="120"
            class="form-control" id="ageInput" placeholder="Ihr Alter">
-    <div *ngIf="age.invalid && (age.dirty || age.touched)"
-         class="alert alert-warning">
-      <div *ngIf="age.errors.required">
-        Bitte geben Sie Ihr Alter ein.
-      </div>
-      <div *ngIf="age.errors.max">
-        Sie haben ein ungültiges Alter eingegebn
-      </div>
+    <div *ngIf="age.invalid && hasFormBeenSubmitted"
+         class="alert alert-warning">Bitte geben Sie ihr Alter korrekt an.
     </div>
   </div>
+</div>
 
   <div class="formWrapper group-gender">
     <p>Bitte geben Sie Ihr Geschlecht an:</p>
