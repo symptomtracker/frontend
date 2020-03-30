@@ -19,7 +19,7 @@ import {FormGroup} from "@angular/forms";
 export class ProfileBasicViewComponent implements OnInit {
   patientData: Observable<Patientdata[]>;
 
-  @ViewChild("f", {static:false})
+  @ViewChild("f", {static: false})
   public form;
 
   public hasFormBeenSubmitted: boolean = false;
@@ -36,9 +36,11 @@ export class ProfileBasicViewComponent implements OnInit {
     console.log("PATIENTDATA");
     console.log(this.patientData)
   }
+
   //TODO Variablenames
   gender = ""; //Gender will be assigned, if any Radio Button is checked
   field = "";
+  jobb = ""; //TODO jobb and field are the same, jobb for binding, field for Radio Switch
   contact = "";
 
   patient: PatientModel = {}; //TODO Empty object
@@ -70,8 +72,16 @@ export class ProfileBasicViewComponent implements OnInit {
    *
    */
   onSubmit() {
-    //this.hasFormBeenSubmitted = true;
-   // document.getElementById("gender-hint").style.display="";
+    this.hasFormBeenSubmitted = true;
+
+    // check for form validity
+    console.log("INVALID:" + this.form.invalid);
+    if (this.form.invalid) {
+      return;
+    }
+
+    console.log(this.patient);
+
 
     let allAreFilled = true;
     let nameField = (<HTMLInputElement>document.getElementById("nameInput"));
@@ -91,25 +101,14 @@ export class ProfileBasicViewComponent implements OnInit {
     if (this.gender == "" || this.field == "" || this.contact == "") allAreFilled = false;
 
     console.log("Submit:"); //Check all fields in console output
-    console.log("Name: " + name + ", Age: "+age+", Gender: "+this.gender+", Job: "+ this.field+", Contact: "+this.contact);
+    console.log("Name: " + name + ", Age: " + age + ", Gender: " + this.gender + ", Job: " + this.field + ", Contact: " + this.contact);
 
     if (allAreFilled) {
       this.addData(name, age, this.gender, this.field, this.contact); //if Submit will be accepted, save filled values
+      //TODO add data to patient?   this.patient.relatedAttributes.push({Type: "contact", Value: "nocontact"})
       const url = 'profilecontact'; //Switch to profilecontact, if all fields are filled
       let routed = this.router.navigateByUrl(url);
     }
-  }
-
-  onSubmitTest() {
-    this.hasFormBeenSubmitted = true;
-
-    // check for form validity
-    console.log("INVALID:"+this.form.invalid);
-    if (this.form.invalid) {
-      return;
-    }
-
-    console.log(this.patient);
   }
 
   addData(name: string, alter: number, geschlecht: string, berufsfeld: string, menschenkontakt: string) {
@@ -125,4 +124,5 @@ export class ProfileBasicViewComponent implements OnInit {
       this.contact = fieldElement.id;
     }
   }
+
 }
