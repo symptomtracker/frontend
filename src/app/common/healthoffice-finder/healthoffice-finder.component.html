@@ -1,14 +1,16 @@
 <form>
   <div class="plz-input row">
-    <div class="col-md-10">
+    <div class="col-md-10 col-12">
       <input type="number" class="form-control" [(ngModel)]="plz" name="plz" id="inputPLZ"
              placeholder="Bitte geben Sie Ihre Postleitzahl ein">
 
     </div>
-    <button type="submit" class="btn btn-primary col" (click)="submitPLZ()">GO</button>
+    <div class="col-12 col-md-2">
+      <button type="submit" class="btn btn-primary" (click)="submitPLZ()">Suchen</button>
+    </div>
+
   </div>
 </form>
-
 <div *ngIf="this.healthOffice" class="healthoffice-wrapper">
   <h3>Dein Gesundheitsamt</h3>
   <div><b>{{this.healthOffice?.name}} {{this?.healthOffice.region}}</b></div>
