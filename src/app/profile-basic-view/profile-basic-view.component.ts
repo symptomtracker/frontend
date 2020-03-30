@@ -104,6 +104,7 @@ export class ProfileBasicViewComponent implements OnInit {
     this.hasFormBeenSubmitted = true;
 
     // check for form validity
+    console.log("INVALID:"+this.form.invalid);
     if (this.form.invalid) {
       return;
     }

@@ -3,57 +3,51 @@
   <div class="formWrapper data-label">
     <p>Hier können Sie Ihre persönlichen Daten eingeben.</p>
   </div>
-
+  <form name="form" #f="ngForm" (ngSubmit)="onSubmitTest()">
   <div class="name-input">
     <p>Name</p>
     <input required type="text" minlength="2" class="form-control" id="nameInput" aria-describedby="nameHelp"
-           placeholder="Geben Sie hier Ihren Namen ein" [(ngModel)]="patient.name" #name="ngModel">
-    <div *ngIf="name.invalid && (name.dirty || name.touched)"
-         class="alert alert-warning">
-      <div *ngIf="name.errors.required">
-        Geben Sie Ihren Namen ein.
-      </div>
-      <div *ngIf="name.errors.minlength">
-        Sie haben zu wenige Zeichen eingegeben.
-      </div>
+           placeholder="Geben Sie hier Ihren Namen ein" [(ngModel)]="patient.name" #name="ngModel" name="name">
+    <div *ngIf="name.errors?.required && hasFormBeenSubmitted"
+         class="alert alert-warning">Bitte geben Sie Ihren Namen ein.
+    </div>
       <!--<div *ngIf="name.errors.forbiddenName">
         Name cannot be Bob.
       </div> CustomValidation Example-->
     </div>
     <small id="nameHelp" class="form-text text-muted">Ihre Daten sind bei uns sicher.</small>
-  </div>
 
-<div class="formWrapper">
-  <div class="age-input">
-    <p>Alter</p>
-    <input required [(ngModel)]="patient.age" #age="ngModel" type="number" step="1" min=0 max="120"
-           class="form-control" id="ageInput" placeholder="Ihr Alter">
-    <div *ngIf="age.invalid && hasFormBeenSubmitted"
-         class="alert alert-warning">Bitte geben Sie ihr Alter korrekt an.
+
+  <div class="formWrapper">
+    <div class="age-input">
+      <p>Alter</p>
+      <input required [(ngModel)]="patient.age" name="age" #age="ngModel" type="number" step="1" min=0 max="120"
+             class="form-control" id="ageInput" placeholder="Ihr Alter">
+      <div *ngIf="age.errors?.required && hasFormBeenSubmitted"
+           class="alert alert-warning">Bitte geben Sie ihr Alter korrekt an.
+      </div>
     </div>
   </div>
-</div>
 
   <div class="formWrapper group-gender">
     <p>Bitte geben Sie Ihr Geschlecht an:</p>
   </div>
 
-  <form name="form" #f="ngForm" (ngSubmit)="onSubmitTest()">
-        <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-          <input class="radio-button" type="radio" name="selectedBy" id="female" [(ngModel)]="patient.gender"
-                 value="female" checked #selectedBy="ngModel" required> Weiblich
-        </label>
-        <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-          <input class="radio-button" type="radio" name="selectedBy" id="male" [(ngModel)]="patient.gender"
-                 value="male" checked #selectedBy="ngModel" required> Männlich
-        </label>
-        <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-          <input class="radio-button" type="radio" name="options" id="diverse" [(ngModel)]="patient.gender"
-                 value="diverse" checked #selectedBy="ngModel" required> Divers
-        </label>
-        <div class="alert alert-warning" *ngIf="selectedBy.errors?.required && hasFormBeenSubmitted">Die Angabe eines
-          Geschlechts ist erforderlich.
-        </div>
+    <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+      <input class="radio-button" type="radio" name="selectedBy" id="female" [(ngModel)]="patient.gender"
+             value="female" checked #selectedBy="ngModel" required> Weiblich
+    </label>
+    <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+      <input class="radio-button" type="radio" name="selectedBy" id="male" [(ngModel)]="patient.gender"
+             value="male" checked #selectedBy="ngModel" required> Männlich
+    </label>
+    <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
+      <input class="radio-button" type="radio" name="options" id="diverse" [(ngModel)]="patient.gender"
+             value="diverse" checked #selectedBy="ngModel" required> Divers
+    </label>
+    <div class="alert alert-warning" *ngIf="selectedBy.errors?.required && hasFormBeenSubmitted">Die Angabe eines
+      Geschlechts ist erforderlich.
+    </div>
     <button type="submit" class="btn btn-primary">Weiter</button>
   </form>
 
