@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import {PatientModel, RelatedAttribute} from "../_service/api";
 import { ProfileContactViewComponent } from './profile-contact-view.component';
 
 describe('ProfileContactViewComponent', () => {
