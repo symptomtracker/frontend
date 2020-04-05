@@ -3,9 +3,6 @@ import {PatientService} from "../_service/patient.service";
 import {PatientModel} from "../_service/api";
 import {ActivatedRoute} from "@angular/router";
 import {Observable} from "rxjs";
-import {Patientdata} from "../models/patientdata.model";
-import {AppState} from "../app.state";
-import {Store} from "@ngrx/store";
 
 @Component({
   selector: 'app-my-data-view',
@@ -15,19 +12,16 @@ import {Store} from "@ngrx/store";
 
 @Injectable()
 export class MyDataViewComponent implements OnInit {
-  patientdata: Observable<Patientdata[]>
 
   id: string;
 
   constructor(
     private patientService:PatientService,
     private activeRoute: ActivatedRoute,
-    private store: Store<AppState>
   ) {
     this.activeRoute.queryParams.subscribe(params => {
       this.id = params['id'];
     });
-    this.patientdata = store.select('patientdata')
   }
   ngOnInit(): void {
     this.loadPatient(this.id)

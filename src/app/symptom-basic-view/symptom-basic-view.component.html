@@ -35,7 +35,7 @@
 
   <div class="symptom-list formWrapper">
     <div *ngFor="let symptomcategory of categories">
-      <h2 class="symptom-header">{{symptomcategory}}</h2>
+      <h2 class="symptom-header">{{symptomcategory}}</h2> <!-- TODO hier einfach am Ende, wenn eins fehlt Fehler anzeigen: Überprüfen Sie, ob Sie alle Symptome ausgewählt haben-->
       <div *ngFor="let symptomelement of symptomGroups[symptomcategory]">
         <app-symptom-question [symptomDescription]="symptomelement"></app-symptom-question>
       </div>

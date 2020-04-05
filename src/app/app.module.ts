@@ -27,7 +27,6 @@ import { TooltipComponent } from './tooltip/tooltip.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import { AboutViewComponent } from './about-view/about-view.component';
 import { StoreModule } from '@ngrx/store';
-import {reducer} from "./reducers/patientdata.reducer";
 
 
 const appRoutes: Routes = [
@@ -90,7 +89,6 @@ const appRoutes: Routes = [
     ),
     ChartsModule,
     FontAwesomeModule,
-    StoreModule.forRoot({patientdata: reducer}, {})
   ],
   exports: [
     RouterModule,

@@ -1,14 +1,19 @@
 <div class="content">
+  <form name="form" #f="ngForm" (ngSubmit)="onSubmit()">
   <h1>Aufenthalt / Kontaktpersonen</h1>
   <div class="formWrapper riskArea">
     <p>Kommen Sie aus einem Risikogebiet?<img tooltipHtml="Wo sind Sie in den letzten 2 Wochen gewesen? Sie können auf rki.de überprüfen, ob Sie in einem Risikogebiet waren." class="lamp" alt='Hint' src='./assets/img/lamp.svg'/></p>
     <div class="btn-group" data-toggle="buttons">
       <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-        <input type="hidden" name="options" id="risk-yes" autocomplete="off"> Ja
+        <input class="radio-button" type="radio" name="risk" id="risk-yes" [(ngModel)]="risk"
+               value="risk-yes" checked #riskChecked="ngModel" required> Ja
       </label>
       <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-        <input type="hidden" name="options" id="risk-no" autocomplete="off"> Nein
+        <input class="radio-button" type="radio" name="risk" id="risk-no" [(ngModel)]="risk"
+               value="risk-no" checked #riskChecked="ngModel" required> Nein
       </label>
+    </div>
+    <div class="alert alert-warning" *ngIf="riskChecked.errors?.required && hasFormBeenSubmitted">Geben Sie an, ob Sie vor Kurzem in einem Risikogebiet waren.
     </div>
   </div>
 
@@ -17,29 +22,38 @@
 " class="lamp" alt='Hint' src='./assets/img/lamp.svg'/></p>
     <div class="btn-group" data-toggle="buttons">
       <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-        <input type="hidden" name="options" id="contact-yes" autocomplete="off" checked> Ja
+        <input class="radio-button" type="radio" name="contact" id="contact-yes" [(ngModel)]="contact"
+               value="contact-yes" checked #contactChecked="ngModel" required> Ja
       </label>
       <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-        <input type="hidden" name="options" id="contact-no" autocomplete="off"> Nein
+        <input class="radio-button" type="radio" name="contact" id="contact-no" [(ngModel)]="contact"
+               value="contact-no" checked #contactChecked="ngModel" required> Nein
       </label>
+    </div>
+    <div class="alert alert-warning" *ngIf="contactChecked.errors?.required && hasFormBeenSubmitted">Geben Sie an, ob Sie Kontakt zu einer positiv getesteten Person hatten.
     </div>
   </div>
 
   <div class="formWrapper lastContactArea">
-    <p>Wenn Ja, wann war der letzte Kontakt?</p>
-    <input type="text" class="form-control" id="lastContact" aria-describedby="nameHelp"
-           placeholder="Datum des letzten Kontakts">
+    <p>Wenn Ja, wann war der letzte Kontakt?</p> <!-- TODO ausblenden, wenn nein-->
+    <input type="date" class="form-control" id="lastContact" name="contact-date" aria-describedby="nameHelp" [(ngModel)]="date" #dateChecked="ngModel">
+    <div class="alert alert-warning" *ngIf="!allAreFilled && hasFormBeenSubmitted">Wann war der letzte Kontakt?
+    </div>
   </div>
 
   <div class="formWrapper smokerArea">
     <p>Sind Sie Raucher?</p>
     <div class="btn-group" data-toggle="buttons">
       <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-        <input type="hidden" name="options" id="male" autocomplete="off" checked> Ja
+        <input class="radio-button" type="radio" name="smoker" id="smoker-yes" [(ngModel)]="smoker"
+               value="smoker-yes" checked #smokerChecked="ngModel" required> Ja
       </label>
       <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-        <input type="hidden" name="options" id="female" autocomplete="off"> Nein
+        <input class="radio-button" type="radio" name="smoker" id="smoker-no" [(ngModel)]="smoker"
+               value="smoker-no" checked #smokerChecked="ngModel" required> Nein
       </label>
+    </div>
+    <div class="alert alert-warning" *ngIf="smokerChecked.errors?.required && hasFormBeenSubmitted">Geben Sie an, ob Sie Raucher sind.
     </div>
   </div>
 
@@ -47,22 +61,22 @@
     <p>Ist eine der folgenden Vorerkrankungen bei Ihnen bekannt?</p>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="checkbox" class="form-check-input" name="optradio"> Immunschwäche
+        <input type="checkbox" class="form-check-input" name="optradio" id="illness-immun"> Immunschwäche
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="checkbox" class="form-check-input" name="optradio"> Herz-Kreislauf-Erkrankung
+        <input type="checkbox" class="form-check-input" name="optradio" id="illness-hearth"> Herz-Kreislauf-Erkrankung
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="checkbox" class="form-check-input" name="optradio"> Diabetes
+        <input type="checkbox" class="form-check-input" name="optradio" id="illness-diabetes"> Diabetes
       </label>
     </div>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="checkbox" class="form-check-input" name="optradio"> Lungen Vorerkrankungen
+        <input type="checkbox" class="form-check-input" name="optradio" id="illness-lung"> Lungen Vorerkrankungen
       </label>
     </div>
   </div>
@@ -70,18 +84,22 @@
 
   <div class="formWrapper otherIllnessArea">
     <p>Haben Sie andere Vorerkrankungen?</p>
-    <input type="text" class="form-control" id="nameInput" aria-describedby="nameHelp" placeholder="Vorerkrankungen">
+    <input type="text" class="form-control" id="illnesses" aria-describedby="nameHelp" placeholder="Vorerkrankungen" name="illnesses" [(ngModel)]="illnesses">
   </div>
 
   <div class="formWrapper smokerArea">
     <p>Nehmen Sie aktuell Immunsupressiva?<img tooltipHtml="Nehmen Sie Medikamente, die die Funktion Ihres Immunsystems beeinträchtigen (z.B. Cortison)" class="lamp" alt='Hint' src='./assets/img/lamp.svg'/></p>
     <div class="btn-group" data-toggle="buttons">
       <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-        <input type="hidden" name="options" id="immun-yes" autocomplete="off" checked> Ja
+        <input class="radio-button" type="radio" name="immun" id="immun-yes" [(ngModel)]="immun"
+               value="immun-yes" checked #immunChecked="ngModel" required> Ja
       </label>
       <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-        <input type="hidden" name="options" id="immun-no" autocomplete="off"> Nein
+        <input class="radio-button" type="radio" name="immun" id="immun-no" [(ngModel)]="immun"
+               value="immun-no" checked #immunChecked="ngModel" required> Nein
       </label>
+    </div>
+    <div class="alert alert-warning" *ngIf="immunChecked.errors?.required && hasFormBeenSubmitted">Geben Sie an, ob Sie beeinträchtigende Medikamente nehmen.
     </div>
   </div>
 
@@ -89,16 +107,20 @@
     <p>Sind Sie schwanger?</p>
     <div class="btn-group" data-toggle="buttons">
       <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-        <input type="hidden" name="options" id="smoker-yes" autocomplete="off" checked> Ja
+        <input class="radio-button" type="radio" name="pregnant" id="pregnant-yes" [(ngModel)]="pregnant"
+               value="pregnant-yes" checked #pregnantChecked="ngModel" required> Ja
       </label>
       <label class="btn btn-outline-primary" (click)="toggleActiveStatus($event)">
-        <input type="hidden" name="options" id="smoker-no" autocomplete="off"> Nein
+        <input class="radio-button" type="radio" name="pregnant" id="pregnant-no" [(ngModel)]="pregnant"
+               value="pregnant-no" checked #pregnantChecked="ngModel" required> Nein
       </label>
+    </div>
+    <div class="alert alert-warning" *ngIf="pregnantChecked.errors?.required && hasFormBeenSubmitted">Geben Sie an, ob Sie schwanger sind.
     </div>
   </div>
 
   <div class="formWrapper confirm-button">
-    <button type="submit" class="btn btn-primary"><a routerLink="/symptombasic">Weiter</a></button>
+    <button type="submit" class="btn btn-primary">Weiter</button>
   </div>
-
+  </form>
 </div>
